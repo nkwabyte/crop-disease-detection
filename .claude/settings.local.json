@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(nc -z -G 8 69.30.250.120 22)",
+      "Bash(export SSHPASS='Lawal@lovey2k!')",
+      "Bash(sshpass -e ssh -o StrictHostKeyChecking=accept-new -o ConnectTimeout=15 administrator@69.30.250.120 ' *)",
+      "Bash(ssh-keygen -t ed25519 -f id_ed25519_gpumart -N '' -C 'gpumart-5090-trial')",
+      "Bash(sshpass -e ssh-copy-id -o StrictHostKeyChecking=accept-new -i id_ed25519_gpumart.pub administrator@69.30.250.120)",
+      "Bash(ssh -i ~/.ssh/id_ed25519_gpumart -o IdentitiesOnly=yes -o PasswordAuthentication=no -o BatchMode=yes administrator@69.30.250.120 'echo OK: keyless login as $\\(whoami\\)@$\\(hostname\\)')",
+      "Bash(sshpass -e ssh -o StrictHostKeyChecking=accept-new administrator@69.30.250.120 ' *)"
+    ]
+  }
+}
