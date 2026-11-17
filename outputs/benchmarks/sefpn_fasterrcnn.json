@@ -1,0 +1,33 @@
+{
+  "model_name": "sefpn_fasterrcnn",
+  "architecture": "SE-FPN Faster RCNN ResNet-50-FPN-v2 (final)",
+  "split": "valid",
+  "map50": 0.05267,
+  "num_params": 43409863,
+  "per_class_ap": {
+    "Corn Cercospora Leaf Spot": 0.04209,
+    "Corn Common Rust": 0.10766,
+    "Corn Healthy": 0.04991,
+    "Corn Streak": 0.08138,
+    "Corn Northern Leaf Blight": 0.0,
+    "Pepper Leaf Curl": 0.09021,
+    "Pepper Cercospora": 0.05843,
+    "Pepper Leaf Blight": 0.07987,
+    "Pepper Bacterial Spot": 0.05324,
+    "Pepper Leaf Mosaic": 0.00535,
+    "Pepper Healthy": 0.249,
+    "Pepper Fusarium": 0.17914,
+    "Pepper Septoria": 0.00157,
+    "Pepper Late Blight": 0.0,
+    "Pepper Early Blight": 0.0,
+    "Tomato Late Blight": 0.09205,
+    "Tomato Early Blight": 0.01677,
+    "Tomato Bacterial Spot": 0.00535,
+    "Tomato Septoria": 0.01778,
+    "Tomato Fusarium": 0.01866,
+    "Tomato Leaf Curl": 0.00793,
+    "Tomato Healthy": 0.0378,
+    "Tomato Mosaic": 0.01731
+  },
+  "evaluated_at": "2026-10-19T10:38:38.346200Z"
+}

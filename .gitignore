@@ -1,0 +1,118 @@
+# =============================================================================
+# Python & Virtual Environments
+# =============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+.eggs/
+dist/
+build/
+.Python
+pip-wheel-metadata/
+
+.idea/
+._*
+.DS_Store
+
+papers/
+
+.venv/
+venv/
+env/
+ENV/
+.env
+.env.*
+
+# =============================================================================
+# Jupyter & IDEs
+# =============================================================================
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# =============================================================================
+# macOS / System
+# =============================================================================
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Thumbs.db
+
+# =============================================================================
+# Large Documents & Office Spreadsheets
+# =============================================================================
+*.xlsx
+*.xls
+*.docx
+*.pptx
+
+# =============================================================================
+# Datasets & Auto-Generated CSVs
+# See docs/07_dataset.md for dataset download instructions
+# =============================================================================
+# The whole data tree is ignored — images, labels, annotations and all.
+# Nothing under data/ is version-controlled, so keep your own backup of it:
+#   data/detector/final_*_labels.csv   bounding-box annotations for 58,361 images
+#   data/detector/label_map.json       class name -> integer label
+#   data/yolo/data.yaml                YOLO dataset config
+# These were tracked until 2026-08-04 and remain recoverable from git history:
+#   git show <commit>:data/detector/final_train_labels.csv > <path>
+data/
+
+# Auto-generated config (written by train.py at startup)
+data_fixed.yaml
+
+# =============================================================================
+# Model Weights & Exported Artifacts (Pretrained, Checkpoints & ExecuTorch/ONNX)
+# =============================================================================
+*.pt
+*.pth
+*.onnx
+*.ptl
+*.pte
+*.tflite
+*.engine
+*.bin
+*.safetensors
+yolo*.pt
+models/*
+!models/.gitkeep
+!models/README.md
+
+# =============================================================================
+# Training Outputs, Runs & Logs
+# =============================================================================
+outputs/*
+# …except the cross-model comparison artifacts: they are paper figures and tables,
+# they are small (~128 KB), and docs/ links to them — an ignored path would render
+# as a broken image on GitHub. Git needs each parent un-ignored before a nested
+# negation can apply, hence the stepwise rules.
+!outputs/benchmarks/
+outputs/benchmarks/*
+!outputs/benchmarks/*.md
+!outputs/benchmarks/*.json
+!outputs/benchmarks/figures/
+outputs/benchmarks/figures/*
+!outputs/benchmarks/figures/*.png
+runs/
+logs/
+*.log
+
+# RT-DETR generated data yaml
+data_rtdetr.yaml
+
+# Versioned weight snapshots (scripts/archive_weights.py) — large binaries
+weights/
+
+# Derived YOLO-format view of data/detector (symlinks + generated labels)
+data/detector_yolo/
+.venv-eval/

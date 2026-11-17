@@ -1,0 +1,33 @@
+{
+  "model_name": "swin_v2_t_fpn",
+  "architecture": "Swin-V2-T backbone + FPN + Faster R-CNN head",
+  "split": "test",
+  "map50": 0.05253,
+  "num_params": 44923633,
+  "per_class_ap": {
+    "Corn Cercospora Leaf Spot": 0.07075,
+    "Corn Common Rust": 0.04824,
+    "Corn Healthy": 0.03762,
+    "Corn Streak": 0.03661,
+    "Corn Northern Leaf Blight": 0.00413,
+    "Pepper Leaf Curl": 0.04818,
+    "Pepper Cercospora": 0.12201,
+    "Pepper Leaf Blight": 0.03351,
+    "Pepper Bacterial Spot": 0.12788,
+    "Pepper Leaf Mosaic": 0.00337,
+    "Pepper Healthy": 0.16972,
+    "Pepper Fusarium": 0.17905,
+    "Pepper Septoria": 0.00399,
+    "Pepper Late Blight": 0.00826,
+    "Pepper Early Blight": 0.00882,
+    "Tomato Late Blight": 0.04923,
+    "Tomato Early Blight": 0.03445,
+    "Tomato Bacterial Spot": 0.01626,
+    "Tomato Septoria": 0.01661,
+    "Tomato Fusarium": 0.01467,
+    "Tomato Leaf Curl": 0.03661,
+    "Tomato Healthy": 0.03897,
+    "Tomato Mosaic": 0.09936
+  },
+  "evaluated_at": "2026-10-20T13:23:13.734114Z"
+}

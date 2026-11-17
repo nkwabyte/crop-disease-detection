@@ -1,0 +1,33 @@
+{
+  "model_name": "vitdet_vit_b16",
+  "architecture": "ViT-B/16 backbone + Faster R-CNN head",
+  "split": "test",
+  "map50": 0.04911,
+  "num_params": 102471339,
+  "per_class_ap": {
+    "Corn Cercospora Leaf Spot": 0.03348,
+    "Corn Common Rust": 0.03144,
+    "Corn Healthy": 0.10254,
+    "Corn Streak": 0.02634,
+    "Corn Northern Leaf Blight": 0.00608,
+    "Pepper Leaf Curl": 0.05789,
+    "Pepper Cercospora": 0.05176,
+    "Pepper Leaf Blight": 0.07413,
+    "Pepper Bacterial Spot": 0.10634,
+    "Pepper Leaf Mosaic": 0.01143,
+    "Pepper Healthy": 0.2387,
+    "Pepper Fusarium": 0.20604,
+    "Pepper Septoria": 0.00351,
+    "Pepper Late Blight": 0.00436,
+    "Pepper Early Blight": 0.03057,
+    "Tomato Late Blight": 0.03301,
+    "Tomato Early Blight": 0.04294,
+    "Tomato Bacterial Spot": 0.00635,
+    "Tomato Septoria": 0.00414,
+    "Tomato Fusarium": 0.02008,
+    "Tomato Leaf Curl": 0.01087,
+    "Tomato Healthy": 0.01788,
+    "Tomato Mosaic": 0.00971
+  },
+  "evaluated_at": "2026-10-19T23:12:59.789710Z"
+}
