@@ -1,0 +1,59 @@
+\tablehead{tab:S4}{Physical iPhone~15 Pro Max mobile measurements, three
+consecutive sessions. The table reports the observed measurements from each
+session separately. Only the out-of-distribution rejection path was measured
+on this device.}
+\begin{center}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{l r r r}
+\toprule
+ & Run 1 & Run 2 & Run 3 \\
+\midrule
+Thermal state                         & nominal & fair & fair \\
+Battery \% / charging                 & 100 / yes & 100 / yes & 100 / yes \\
+Warm-up / measured ($n$)              & 10 / 100 & 10 / 100 & 10 / 100 \\
+End-to-end mean (ms)                  & 43.14 & 44.26 & 52.63 \\
+End-to-end median (ms)                & 43.00 & 44.41 & 52.28 \\
+End-to-end p95 (ms)                   & 45.22 & 45.03 & 56.06 \\
+End-to-end stddev (ms)                & 1.06 & 0.65 & 1.58 \\
+End-to-end min (ms)                   & 41.44 & 43.04 & 50.81 \\
+End-to-end max (ms)                   & 47.33 & 46.69 & 57.73 \\
+Classifier inference mean (ms)        & 21.50 & 20.87 & 21.97 \\
+Preprocess mean (ms)                  & 13.00 & 13.46 & 16.05 \\
+Image decode mean (ms)                & 0.0853 & 0.0771 & 0.0954 \\
+Orientation-correction mean (ms)      & 0.00023 & 0.00021 & 0.00026 \\
+Routing mean (ms)                     & 0.00070 & 0.00068 & 0.00074 \\
+Detector executed / skipped           & 0 / 100 & 0 / 100 & 0 / 100 \\
+Offline success / failure             & 100 / 0 & 100 / 0 & 100 / 0 \\
+CPU utilisation ratio (process-level) & 1.48 & 1.53 & 1.51 \\
+Memory before loop (KB)               & 251936 & 243536 & 239968 \\
+Memory after loop (KB)                & 251952 & 243552 & 239984 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+{\footnotesize
+\textit{Device and model details, identical across all three runs.} Tests were
+performed on a physical iPhone~15 Pro Max running iOS~26.6.2. The
+EfficientNet-B2 classifier was approximately 30.8~MB and the YOLO26n detector
+approximately 9.8~MB. The installed application occupied approximately
+576~MB when estimated from the sum of files in the application bundle.
+
+\textit{Notes.} (1)~Do not average these three runs. Thermal state moved
+nominal $\rightarrow$ fair $\rightarrow$ fair and end-to-end mean rose
+43.14 $\rightarrow$ 44.26 $\rightarrow$ 52.63~ms (a 22\% increase from Run~1
+to Run~3); this is an observed within-session pattern ($n = 3$), never a
+statistically established effect.
+(2)~Sub-millisecond model-initialisation readings are excluded because the
+runtime loads model data lazily; these readings do not represent the full
+cost of bringing the models into memory (main text, Limitations).
+(3)~Accepted-path and selected-crop-mismatch latency are \emph{absent} for
+this device, not zero, and are not equated with the Xiaomi figures in
+Table~\ref{tab:S5}.
+(4)~The application build included the corrected output-transfer
+implementation, but those changes had not yet been committed when this test
+was run. The measurements are therefore retained as provisional
+physical-device evidence rather than evidence tied to an exact source-code
+revision.
+\par}
+\tabletail

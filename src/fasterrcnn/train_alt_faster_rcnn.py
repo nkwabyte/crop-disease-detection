@@ -621,6 +621,12 @@ def build_model(num_classes: int = NUM_CLASSES) -> nn.Module:
     """
     weights = FasterRCNN_ResNet50_FPN_V2_Weights.DEFAULT
     model   = fasterrcnn_resnet50_fpn_v2(weights=weights)
+    # FRCNN_MIN_SIZE / FRCNN_MAX_SIZE (optional) override torchvision's 800/1333
+    # resize, e.g. 640/640 to keep 640-px images at native size. Unset = default.
+    if os.environ.get("FRCNN_MIN_SIZE"):
+        model.transform.min_size = (int(os.environ["FRCNN_MIN_SIZE"]),)
+    if os.environ.get("FRCNN_MAX_SIZE"):
+        model.transform.max_size = int(os.environ["FRCNN_MAX_SIZE"])
     in_features = model.roi_heads.box_predictor.cls_score.in_features
     model.roi_heads.box_predictor = FastRCNNPredictor(in_features, num_classes)
     return model

@@ -1,0 +1,493 @@
+
+\documentclass[preprint,12pt,authoryear]{elsarticle}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+%% needspace stops a caption or a part heading from being printed when too
+%% little of the page remains for the table that must follow it. It changes
+%% page breaking only, never content.
+\usepackage{needspace}
+\usepackage{longtable}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\newcommand{\us}{\_\allowbreak}
+\newcommand{\tablehead}[2]{%
+  \par\addvspace{\bigskipamount}%
+  \needspace{12\baselineskip}%
+  \refstepcounter{table}\label{#1}%
+  {\footnotesize\noindent\textbf{Table \thetable.}~#2\par}%
+  \nopagebreak\addvspace{4pt}\nopagebreak}
+\newcommand{\tabletail}{\par\addvspace{\bigskipamount}}
+
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thesection}{S\arabic{section}}
+
+\tolerance=1500
+\setlength{\emergencystretch}{3em}
+
+\journal{Smart Agricultural Technology}
+
+\begin{document}
+
+\begin{center}
+{\Large\bfseries Supplementary material}\\[4pt]
+{\large Offline On-Device Two-Stage Crop Disease Detection for Smartphone
+Deployment in Ghana}\\[6pt]
+\end{center}
+
+\noindent This document provides supporting evidence for the main manuscript.
+The emulator and simulator results in Section~\ref{sup:harness} were collected
+only to validate the benchmark instrumentation and application behaviour.
+They are not measurements of physical-device performance and are not combined
+with the iPhone or Xiaomi results reported in the main manuscript.
+
+\section{Physical-device benchmark evidence}
+\label{sup:physical}
+
+The physical-device results are presented in the main manuscript and are not
+duplicated here. They were derived from three benchmark sessions on an
+iPhone~15 Pro Max and one complete session on a Xiaomi Redmi Note~14 Pro+~5G.
+The original benchmark records have been retained by the authors for
+verification.
+
+Each value presented in the physical-device tables was independently
+recalculated from the corresponding benchmark record. The verification
+included latency summaries, routing outcomes, failure counts, thermal
+conditions, battery state and model-version consistency.
+
+\section{Emulator and simulator validation}
+\label{sup:harness}
+
+\tablehead{tab:S1}{Android-emulator and iOS-simulator benchmark validation.
+These results confirm that the shared Kotlin Multiplatform instrumentation
+operates correctly on both platforms and produces complete, internally
+consistent measurements. They are not physical-device latency results and are
+not combined with the physical-device measurements in the main manuscript.
+All latency values are reported in milliseconds.}
+
+\needspace{20\baselineskip}
+\noindent\textbf{Part A. Android-emulator quick benchmark}
+
+The quick benchmark was repeated in two sessions on an Android phone emulator.
+Each condition included 10 warm-up iterations followed by 50 measured
+iterations.
+
+\begin{center}
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{c l r r r r r r}
+\toprule
+Session & Stage & Mean & Min & Max & p50 & p95 & p99 \\
+\midrule
+1 & classifier                    & 17.994 & 16.990 & 40.342 & 17.548 & 18.159 & 19.048 \\
+1 & detector @$1920\times1080$    & 43.739 & 42.307 & 47.853 & 43.649 & 44.964 & 46.141 \\
+1 & detector @$1280\times960$     & 43.637 & 42.078 & 52.034 & 43.229 & 46.715 & 47.004 \\
+1 & detector @$640\times480$      & 43.743 & 41.242 & 60.960 & 42.607 & 49.868 & 51.325 \\
+2 & classifier                    & 17.568 & 16.812 & 18.796 & 17.496 & 18.183 & 18.329 \\
+2 & detector @$1920\times1080$    & 44.189 & 42.932 & 47.879 & 44.100 & 45.396 & 45.954 \\
+2 & detector @$1280\times960$     & 44.166 & 42.705 & 59.619 & 43.752 & 45.450 & 46.112 \\
+2 & detector @$640\times480$      & 42.432 & 41.217 & 46.410 & 42.320 & 43.344 & 44.775 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+{\footnotesize
+The two sessions are reported separately because their upper-tail measurements
+differed. For example, the 95th-percentile detector latency at
+$640\times480$ was 49.868~ms in the first session and 43.344~ms in the
+second, despite similar median values. The emulator also reported software
+rendering during startup because of memory pressure on the host computer.
+\par}
+
+\medskip
+
+\needspace{20\baselineskip}
+\noindent\textbf{Part B. Extended benchmark comparison}
+
+The extended benchmark was run on an Android emulator and an iOS simulator.
+Each platform completed 10 warm-up iterations followed by 100 measured
+iterations.
+
+\begin{center}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{p{168pt} r r}
+\toprule
+Metric & Android emulator & iOS simulator \\
+\midrule
+Classifier initialisation, mean ($n=5$)       & 0.322 ms & 0.354 ms \\
+Detector initialisation, mean ($n=5$)         & 0.220 ms & 0.311 ms \\
+Image decoding, mean                          & 0.211 ms & 0.129 ms \\
+Orientation correction, mean                  & 0.055 ms & 0.001 ms \\
+Preprocessing, mean                           & 0.449 ms & 7.154 ms \\
+Classifier inference, mean                    & 17.040 ms & 10.841 ms \\
+Routing decision, mean                        & 0.000 ms & 0.000 ms \\
+Detector inference @$1920\times1080$, mean    & 38.199 ms & 19.248 ms \\
+Detector inference @$1280\times960$, mean     & 38.274 ms & 19.343 ms \\
+Detector inference @$640\times480$, mean      & 39.300 ms & 19.007 ms \\
+Output-buffer transfer @$1920\times1080$, mean & 0.000 ms & 1.386 ms \\
+End-to-end rejection path, mean               & 18.933 ms & 27.803 ms \\
+End-to-end rejection path, p95                & 19.130 ms & 32.213 ms \\
+Detector executed / skipped                   & 0 / 100 & 0 / 100 \\
+Successful / failed iterations                & 100 / 0 & 100 / 0 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+{\footnotesize
+\textit{Notes.}
+(1)~The Android output-buffer transfer is reported as 0.000~ms because
+Android already exposes detector output as a directly usable numerical array.
+The iOS implementation requires a separate transfer from the native inference
+layer into shared application memory. This difference reflects the platform
+implementations and is not a missing Android measurement.
+
+(2)~The two columns should not be interpreted as a comparison of Android and
+iOS hardware. Both environments ran on the same desktop computer using
+different emulation and virtualisation systems, resource allocations and
+rendering paths. They are shown together only to demonstrate that the
+instrumentation operates correctly on both platforms.
+
+(3)~The values do not represent the performance of the physical Xiaomi or
+iPhone devices.
+
+(4)~Both runs exercised only the out-of-distribution rejection path because
+the synthetic benchmark image was rejected by the classifier. Accepted-crop
+and crop-mismatch measurements are unavailable rather than zero.
+
+(5)~A separate six-case Android-emulator evaluation used real photographs and
+the application interface to verify accepted crops, out-of-distribution
+rejection, crop mismatch and image-orientation handling. That behavioural
+test is distinct from the repeated synthetic-image benchmark summarised here.
+\par}
+
+\tabletail
+
+\tablehead{tab:S2}{Simulator-only memory evidence. These measurements are
+reported separately so that simulator results are not presented alongside
+physical-device memory measurements.}
+
+\needspace{20\baselineskip}
+\noindent\textbf{Part A. Memory before and after the measured loop}
+
+\begin{center}
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{p{150pt} r r}
+\toprule
+Environment & Before measured loop & After measured loop \\
+\midrule
+iOS simulator & 365{,}024 KB (356.5 MB) & 365{,}376 KB (356.8 MB) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\medskip
+
+\needspace{20\baselineskip}
+\noindent\textbf{Part B. Extended simulator memory test}
+
+The extended memory test included 20 warm-up detector calls followed by 500
+measured calls.
+
+\begin{center}
+\footnotesize
+\setlength{\tabcolsep}{8pt}
+\begin{tabular}{l r}
+\toprule
+Measurement point & Resident memory \\
+\midrule
+Start              & 385.7 MB \\
+After warm-up      & 441.8 MB \\
+Call 50            & 441.4 MB \\
+Call 100           & 395.4 MB \\
+Call 200           & 395.7 MB \\
+Call 300           & 395.7 MB \\
+Call 400           & 368.2 MB \\
+Call 500           & 367.9 MB \\
+Peak               & 443.5 MB \\
+Final              & 367.9 MB \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+{\footnotesize
+Resident memory did not show continuous growth during the 500 measured calls.
+After increasing during warm-up, it stabilised and later declined, ending
+73.9~MB below the post-warm-up value. This test used the corrected contiguous
+output-buffer transfer. It was designed to examine sustained simulator memory
+behaviour and should not be interpreted as physical-device evidence.
+\par}
+
+\tabletail
+
+\section{Benchmark conditions}
+\label{sup:conditions}
+
+\begin{enumerate}
+  \item \textbf{iPhone~15 Pro Max.} Three consecutive sessions were recorded
+  while the device was charging at 100\% battery. The reported thermal state
+  was nominal during the first session and fair during the second and third
+  sessions. No cooling interval was required between sessions.
+
+  \item \textbf{Xiaomi Redmi Note~14 Pro+~5G.} One complete session was
+  recorded while the device was charging. Battery level ranged from 93\% to
+  100\%, and Android reported its lowest thermal category. Charging is
+  reported as part of the measurement condition; no claim is made that it
+  improved or reduced performance.
+
+  \item \textbf{Iteration counts.} Each extended benchmark used 10 warm-up
+  iterations followed by 100 measured iterations for every available routing
+  outcome.
+
+  \item \textbf{Inference backend.} Both applications used ExecuTorch with
+  the XNNPACK CPU backend. Inspection of the Android runtime found no active
+  path for NNAPI, Vulkan, QNN, Hexagon or the Snapdragon neural processing
+  unit. The reported measurements therefore represent CPU inference rather
+  than accelerator-assisted execution.
+\end{enumerate}
+
+\section{Build and model provenance}
+\label{sup:provenance}
+
+The three iPhone sessions were produced from the same application build. That
+build included the corrected detector-output transfer, although some of the
+source changes implementing the correction had not yet been committed. Its
+recorded revision therefore identifies the nearest committed source state
+rather than the complete build contents.
+
+The Xiaomi session was produced from a clean, committed release build. The
+two platforms were not measured from an identical source revision and are
+therefore presented as separate platform evaluations rather than as a
+controlled comparison.
+
+Builds containing uncommitted changes are now identified automatically and
+are excluded from citable Android benchmark results. No reported Android
+measurement was obtained from a build marked as modified.
+
+Both devices used the same four-class EfficientNet-B2 classifier and YOLO26n
+detector. The classifier was approximately 30.8~MB and the detector
+approximately 9.8~MB. Model checksums were compared across the four
+physical-device sessions and confirmed that the same model versions were used.
+
+\section{Routing outcomes}
+\label{sup:routing}
+
+Five mutually exclusive routing outcomes were evaluated:
+
+\begin{enumerate}
+  \item \textbf{Accepted Corn, Pepper or Tomato.} The classifier agrees with
+  the crop selected by the user. The detector runs, and its predictions are
+  restricted to the disease classes associated with that crop.
+
+  \item \textbf{Out-of-distribution rejection.} The classifier identifies the
+  image as Other or does not reach the required confidence threshold. The
+  detector is skipped.
+
+  \item \textbf{Crop-mismatch rejection.} The classifier recognises a
+  supported crop but disagrees with the user's selection. The detector is
+  skipped.
+\end{enumerate}
+
+Detector-invocation counters recorded whether detection ran or was skipped for
+every measured image. This made the application's fail-closed behaviour
+directly verifiable.
+
+\section{Measurement limitations}
+\label{sup:limitations}
+
+\begin{enumerate}
+  \item \textbf{Timing boundary.} Latency was measured inside the application
+  using monotonic system clocks. The measurements include only application
+  processing and inference; device-control commands, interface automation and
+  communication with the development computer are excluded.
+
+  \item \textbf{Initialisation is not complete cold-start latency.}
+  ExecuTorch uses memory mapping and delays part of the model-weight loading
+  until the first inference. The recorded initialisation values therefore do
+  not represent the complete time required to prepare a model for its first
+  prediction and are excluded from the main latency comparisons.
+
+  \item \textbf{Xiaomi memory change is unavailable.} The Xiaomi session's
+  before-and-after memory samples were captured consecutively at the end of
+  the benchmark rather than on opposite sides of the measured loop. The
+  resulting difference was not meaningful and was excluded from all tables
+  and claims. The instrumentation was corrected after this session.
+
+  \item \textbf{Platform resource measures differ.} Processor utilisation is
+  measured differently by Android and iOS and cannot be compared directly.
+  Installed-application size is also represented differently: Android uses
+  the application package size, while iOS uses the sum of files in the
+  application bundle.
+
+  \item \textbf{Limited device and session coverage.} The physical-device
+  evidence consists of three sessions on one iPhone and one session on one
+  Xiaomi device. These results should not be generalised to other units,
+  device models or the broader Android and iOS populations.
+
+  \item \textbf{Routing coverage differs by platform.} The iPhone benchmark
+  covered only the out-of-distribution rejection path. Accepted-crop and
+  crop-mismatch measurements were available only for the Xiaomi device.
+\end{enumerate}
+
+\section{Evidence traceability}
+\label{sup:mapping}
+
+The numerical results were traced to the following retained evidence:
+
+\begin{enumerate}
+  \item Detector results were derived from the archived evaluation summaries
+  and environment records for YOLO26n, YOLO26s, YOLO26m and RT-DETR-L.
+
+  \item Classifier results were derived from the archived three-class and
+  four-class evaluation summaries.
+
+  \item Composed-pipeline results were derived from the archived evaluation
+  summaries and routing records for YOLO26n and RT-DETR-L under both
+  classifier configurations.
+
+  \item Physical-device latency and routing results were derived from the
+  three retained iPhone benchmark records and the single retained Xiaomi
+  benchmark record.
+
+  \item Android behavioural-acceptance results were derived from the
+  six-case application log and detector-invocation records.
+
+  \item The iOS memory comparison was derived from the recorded
+  pre-correction diagnostic trace and the completed post-correction
+  physical-device benchmark.
+
+  \item Supplementary Table~S1 was derived from two Android-emulator quick
+  benchmarks and one extended benchmark from each simulated platform.
+
+  \item Supplementary Table~S2 was derived from the iOS-simulator extended
+  benchmark and the 500-call memory test.
+
+  \item Dataset-overlap findings were derived from the retained average-hash
+  audits comparing the test images with the training and validation images.
+\end{enumerate}
+
+\section{Optional future measurements}
+\label{sup:future}
+
+The following measurements may strengthen the evidence but are not required
+to interpret the results currently reported:
+
+\begin{enumerate}
+  \item Collect unplugged sessions or sessions beginning from a cooler device
+  state to examine the sensitivity of latency to charging and accumulated
+  heat.
+
+  \item Repeat both device evaluations from the same committed source version
+  to support a more controlled cross-platform comparison.
+
+  \item Repeat the complete Xiaomi benchmark to characterise run-to-run and
+  thermal variation.
+
+  \item Measure accepted-crop and crop-mismatch paths on the iPhone using a
+  fixed set of real crop images.
+
+  \item Complete the cross-platform output-agreement evaluation to compare
+  desktop, Android and iOS classification, routing and detection outputs,
+  including image-orientation handling.
+\end{enumerate}
+
+
+\section{Dataset audit and rebuilt split}
+\label{sup:audit}
+
+Two views of the same photograph collection exist in the modelling repository.
+The \emph{exported view} is the Roboflow export used to train and evaluate every finalised model: 5{,}239 photographs split into 3{,}199 train, 1{,}024 validation and 1{,}016 test images, carrying 24{,}530, 8{,}247 and 8{,}241 boxes, at a 640-pixel long side.
+The \emph{consolidated view} holds 58{,}361 files under UUID names at $640 \times 640$ pixels, with exactly one annotation row per file.
+Grouping its files by SHA-256 recovers 7{,}004 unique photographs with 8.3 boxes each on average: a repository refactor had flattened a many-boxes-per-photograph dataset into one file per box.
+
+\paragraph{Internal duplication.}
+The consolidated view's declared test split of 11{,}672 rows resolved to 4{,}723 unique photographs, of which 4{,}569 (96.7\%) were byte-identical to a file in its train or validation directories.
+We therefore rebuilt a photograph-level split.
+Photographs, not rows, were assigned to train, validation and test by rarest-class-first greedy stratified assignment under a fixed seed, targeting 70:15:15, with a floor rule that prevents any class's validation or test allocation from falling to zero or one box.
+A naive random or crop-stratified assignment had left the rarest class, Pepper Early Blight, with a single test box.
+Cross-split SHA-256 overlap in the rebuilt split was re-verified at zero in all three pairwise directions.
+
+\paragraph{Label consistency.}
+Conflicting Pepper and Tomato crop labels were found on 215 of the 7{,}004 photographs (3.1\%).
+After manual verification, 212 were relabelled as Tomato and three that could not be assigned confidently were excluded.
+The rebuilt split holds 7{,}001 photographs (4{,}902 train, 1{,}052 validation, 1{,}047 test) with 40{,}676 training and 8{,}698 test boxes.
+Its training partition has a 77.6-fold box imbalance (6{,}595 Corn Cercospora Leaf Spot to 85 Pepper Early Blight) and its test partition a 43.4-fold imbalance.
+No reported model was trained on this split.
+
+\paragraph{Cross-view overlap.}
+Because the finalised models were trained on the exported view, we compared the consolidated test partition with the exported train and validation images.
+Of the consolidated test photographs, 50.4\% matched exactly and 60.5\% within an average-hash Hamming distance of 5; manual inspection of flagged pairs confirmed re-exported copies of the same photographs.
+Results on the consolidated test partition were retained for audit only and are not reported in the main text.
+Against the consolidated \emph{training} partition, on which the earlier torchvision detectors were trained, 88.0\% of the held-out test photographs matched exactly and 99.0\% within 5 bits, so those runs are not reported; the Faster R-CNN in the main text was retrained on the exported view with complete annotations.
+
+\paragraph{Taxonomy and identifiers.}
+The 23 classes were verified as consistent across the two label maps, the detector dataset configuration and the dataset documentation.
+YOLO-format labels use identifiers 0 to 22 with no background class; the region-proposal label map uses 1 to 23 with 0 reserved for background.
+
+\section{Per-class held-out detection results}
+\label{sup:perclass}
+
+\tablehead{tab:S3}{Per-class AP@0.50 on the held-out test split (1{,}016 images, 8{,}241 boxes), with recall at confidence 0.50 for YOLO26n and RT-DETR-L. Classes with fewer than 100 boxes are indicative only.}
+\begin{center}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{l r r r r r r r}
+\toprule
+ & & \multicolumn{4}{c}{AP@0.50} & \multicolumn{2}{c}{Recall @ 0.50} \\
+\cmidrule(lr){3-6}\cmidrule(lr){7-8}
+Class & Boxes & 26n & 26s & 26m & RT-DETR-L & 26n & RT-DETR-L \\
+\midrule
+Corn Cercospora Leaf Spot & 1{,}338 & 0.3430 & 0.3759 & 0.3740 & 0.3872 & 0.1151 & 0.4723 \\
+Corn Common Rust & 310 & 0.2915 & 0.2492 & 0.3072 & 0.3111 & 0.1194 & 0.3613 \\
+Corn Healthy & 290 & 0.2824 & 0.2932 & 0.2750 & 0.3098 & 0.1379 & 0.3931 \\
+Corn Northern Leaf Blight & 33 & 0.2013 & 0.2006 & 0.3293 & 0.4402 & 0.0303 & 0.4242 \\
+Corn Streak & 721 & 0.3822 & 0.3877 & 0.3753 & 0.4367 & 0.0749 & 0.5562 \\
+Pepper Bacterial Spot & 327 & 0.1995 & 0.2140 & 0.2161 & 0.2404 & 0.0245 & 0.2569 \\
+Pepper Cercospora & 89 & 0.2528 & 0.2884 & 0.2963 & 0.3146 & 0.0337 & 0.3146 \\
+Pepper Early Blight & 8 & 0.0000 & 0.0000 & 0.0054 & 0.0000 & 0.0000 & 0.0000 \\
+Pepper Fusarium & 94 & 0.4887 & 0.4877 & 0.4726 & 0.6072 & 0.4468 & 0.6809 \\
+Pepper Healthy & 141 & 0.5859 & 0.6370 & 0.5902 & 0.5920 & 0.5248 & 0.7234 \\
+Pepper Late Blight & 127 & 0.0617 & 0.0580 & 0.0605 & 0.1017 & 0.0079 & 0.1102 \\
+Pepper Leaf Blight & 87 & 0.3341 & 0.4320 & 0.3597 & 0.4582 & 0.1264 & 0.4253 \\
+Pepper Leaf Curl & 331 & 0.2426 & 0.2583 & 0.2767 & 0.2597 & 0.1631 & 0.2991 \\
+Pepper Leaf Mosaic & 526 & 0.0444 & 0.0562 & 0.0343 & 0.0594 & 0.0019 & 0.1122 \\
+Pepper Septoria & 483 & 0.1444 & 0.1622 & 0.1841 & 0.2198 & 0.0269 & 0.1263 \\
+Tomato Bacterial Spot & 84 & 0.3081 & 0.3044 & 0.2737 & 0.4319 & 0.1071 & 0.4524 \\
+Tomato Early Blight & 465 & 0.3820 & 0.4384 & 0.3990 & 0.4470 & 0.2043 & 0.4710 \\
+Tomato Fusarium & 207 & 0.3432 & 0.3323 & 0.3867 & 0.3445 & 0.2899 & 0.4831 \\
+Tomato Healthy & 486 & 0.6345 & 0.6622 & 0.6724 & 0.6871 & 0.4630 & 0.7695 \\
+Tomato Late Blight & 813 & 0.1586 & 0.1564 & 0.1880 & 0.2195 & 0.0541 & 0.2891 \\
+Tomato Leaf Curl & 73 & 0.3093 & 0.3039 & 0.2873 & 0.3578 & 0.1781 & 0.3836 \\
+Tomato Mosaic & 25 & 0.3052 & 0.3267 & 0.4124 & 0.4489 & 0.1200 & 0.3600 \\
+Tomato Septoria & 1{,}183 & 0.2012 & 0.2101 & 0.2271 & 0.2727 & 0.0482 & 0.2857 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\tabletail
+
+\section{Full physical-device records}
+\label{sup:devicetables}
+
+The main-text latency table summarises these records. The tables below give
+the full per-session detail for each phone, the routing counters, and the iOS
+memory trace behind the main-text memory figure. Table and section references
+inside them refer to this supplement unless marked as main text.
+
+\input{tables/S4_iphone_measurements}
+\input{tables/S5_xiaomi_measurements}
+\input{tables/S6_routing_fail_closed}
+\input{tables/S7_memory_correction}
+
+\section{Reviewed studies}
+\label{sup:literature}
+
+Table~\ref{tab:S8} compares the twenty-two primary studies discussed in the
+main-text Related Work section on the dimensions that determine cross-study
+comparability.
+
+\input{tables/S8_literature_comparison}
+
+\end{document}

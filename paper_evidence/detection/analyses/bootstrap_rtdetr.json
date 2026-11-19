@@ -1,0 +1,11 @@
+{
+  "model": "rtdetr",
+  "mAP50_full": 0.3455337406152048,
+  "n_bootstrap": 1000,
+  "seed": 42,
+  "rng": "numpy default_rng(42).choice, image-level, with replacement",
+  "mean": 0.3542318693144618,
+  "std": 0.017512557170347928,
+  "ci_95_low": 0.3214060620738843,
+  "ci_95_high": 0.3885562525538351
+}

@@ -1,0 +1,59 @@
+\tablehead{tab:S5}{Physical Xiaomi Redmi Note~14 Pro+~5G mobile latency by
+routing path during one session using a clean release build. All timing values
+are reported in milliseconds.}
+\begin{center}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{l c r r r r r r c c}
+\toprule
+      & Warm/ &      &        &     & Std- &     &     & Det.\ exec./ & Succ./ \\
+Path  & meas. & Mean & Median & p95 & dev  & Min & Max & skipped      & fail.  \\
+\midrule
+Accepted Corn       & 10/100 & 147.73 & 148.58 & 157.59 & 10.26 & 137.33 & 207.18 & 100 / 0 & 100 / 0 \\
+Accepted Pepper     & 10/100 & 151.81 & 151.29 & 160.91 & 8.61  & 139.42 & 192.18 & 100 / 0 & 100 / 0 \\
+Accepted Tomato     & 10/100 & 150.25 & 150.70 & 158.67 & 5.80  & 139.05 & 163.42 & 100 / 0 & 100 / 0 \\
+OOD rejection       & 10/100 & 53.64  & 53.12  & 57.58  & 2.07  & 52.33  & 63.94  & 0 / 100 & 100 / 0 \\
+Crop mismatch       & 10/100 & 48.93  & 48.55  & 56.99  & 4.40  & 44.74  & 66.20  & 0 / 100 & 100 / 0 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+{\footnotesize
+The five routing outcomes are defined in
+the main-text protocol section.
+
+\textit{Isolated-stage figures} (from a separate measured loop using the same
+stage-timed functions, so they need not sum exactly to the end-to-end means;
+this is run-to-run jitter, not an inconsistency): classifier inference mean
+43.23~ms; image decode mean 0.69~ms; orientation-correction mean 0.079~ms;
+preprocess mean 0.70~ms. Detector inference mean by input resolution:
+$1920\times1080$, 93.75~ms; $1280\times960$, 92.79~ms; $640\times480$,
+94.13~ms. Output-buffer transfer accounted for 0.54--0.55~ms in each case and was included
+within detector inference. The Android processor-utilisation estimate was
+0.98 and was derived from time spent by one processor thread; it is therefore
+not directly comparable with the process-level estimate reported for iOS in
+Table~\ref{tab:S4}.
+
+\textit{Device and build.} Testing used a clean release build on a physical
+Xiaomi Redmi Note~14 Pro+~5G running Android~16 with HyperOS. The device had a
+QTI SM7635 processor, a 64-bit ARM architecture and approximately 11.09~GiB
+of memory. The battery was at 100\% and charging throughout, while the device
+reported its lowest thermal state. Charging is treated as part of the test
+condition, and its effect is not estimated. The same classifier and detector
+versions were used on both mobile platforms. The installed Android package
+was approximately 381~MB, although this package-size estimate is not directly
+comparable with the iOS bundle estimate. Inference used the CPU-based XNNPACK
+backend; no mobile graphics, neural-network or vendor NPU backend was present.
+The reported measurements must therefore not be described as NPU-accelerated.
+
+\textit{Notes.} (1)~Memory samples from this run are not used for any claim
+(see Table~\ref{tab:S7}) because the before and after readings were taken at
+the same point rather than on opposite sides of the measured loop. This
+sampling defect has since been corrected. (2)~Sub-millisecond
+model-initialisation readings are excluded for the same reason as in
+Table~\ref{tab:S4}. (3)~This is a single session
+($n = 1$); run-to-run and thermal-drift variability on this device, as
+observed for the iPhone in Table~\ref{tab:S4}, has not yet been
+characterised.
+\par}
+\tabletail

@@ -6,9 +6,15 @@
 [![YOLO](https://img.shields.io/badge/YOLO-Ultralytics_YOLO26-10B981?style=flat)](#)
 [![Transformers](https://img.shields.io/badge/Transformers-RT--DETR--L_%7C_ViTDet-8B5CF6?style=flat)](#)
 [![Dataset](https://img.shields.io/badge/Dataset-Ghana_Crop_v2-F59E0B?style=flat)](#)
-[![License](https://img.shields.io/badge/License-CC_BY_4.0-718096?style=flat)](#)
+[![License](https://img.shields.io/badge/License-MIT-718096?style=flat)](LICENSE)
 
 Production-grade, two-stage deep learning pipeline for fine-grained crop disease diagnosis, out-of-distribution leaf gating, and mobile edge compilation.
+
+## Paper and evidence package
+
+This repository accompanies *Offline On-Device Two-Stage Crop Disease Detection for Smartphone Deployment in Ghana: Held-Out Model Evaluation and Physical-Device Benchmarking* (submitted to *Smart Agricultural Technology*).
+[`paper_evidence/`](paper_evidence/README.md) maps every number in the paper to its source file, and release `paper-v1.0` archives that state.
+The code is MIT-licensed ([LICENSE](LICENSE)); the images are the RAIL [Crop Disease (Ghana) dataset](https://www.kaggle.com/datasets/responsibleailab/crop-disease-ghana) (CC BY 4.0). Citation metadata: [CITATION.cff](CITATION.cff).
 
 ---
 
@@ -17,7 +23,7 @@ Production-grade, two-stage deep learning pipeline for fine-grained crop disease
 The **Crop Disease Detection Pipeline** is an end-to-end computer vision and deep learning research platform developed for diagnosing diseases in West African staple crops—**Corn** (*Zea mays*), **Pepper** (*Capsicum* spp.), and **Tomato** (*Solanum lycopersicum*). Trained on the **Ghana Crop Disease Challenge v2** dataset, it handles 23 disease and health classes across more than 35,000 lesion annotations.
 
 To eliminate cross-crop false positives (e.g. non-crop vegetation such as mango or cassava leaves being erroneously diagnosed with Tomato Late Blight), the system implements a **Two-Stage Gating Pipeline**:
-1. **Stage 1 (Crop Classifier & OOD Guard):** An EfficientNet-B2 network verifies leaf identity and rejects out-of-distribution flora with **98.74% accuracy**.
+1. **Stage 1 (Crop Classifier & OOD Guard):** An EfficientNet-B2 network verifies leaf identity and rejects out-of-distribution images (98.99% of 395 held-out non-target images in the paper's evaluation; see `paper_evidence/`).
 2. **Stage 2 (Disease Detector):** High-capacity detection architectures (YOLO26, RT-DETR-L, SE-FPN Faster R-CNN) localize and classify lesions on confirmed crop leaves.
 
 ### Model Training & Research Suite

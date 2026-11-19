@@ -1,0 +1,9 @@
+# SHA-256 of the training artefacts (held on the RAIL GPU server; not in git).
+# best.pth = last.pth = epoch_0030.pth (selected checkpoint, epoch 30).
+6d1ee7dcdee18dd7324bd71c16f36599d1e86e83719bfa784893eed209c0b05f  checkpoints/best.pth
+efbd8cac05307e7943b1461841813b00e824fddf7077e8eca1f4d89d85f6f896  checkpoints/epoch_0010.pth
+d6b30bf0dc0b6fbacee03c11fcda75d27a04583571e78bc79fe6a76be34eeccc  checkpoints/epoch_0020.pth
+06b0ad1137e1bbafeb6a90ee45d3ee087c005ce0b4422776d8ddd8fe66da8a5c  models/crop_disease_fasterrcnn_backbone.pte
+08d09261ba4937d074f0eee2f08343084869ebf39f07f80ce183465a214c0409  models/crop_disease_fasterrcnn_jit.pt
+1fa43841b5fada0b4f9e92a77289c5fc187acd108a8aa5e599df2271c975ca99  models/crop_disease_fasterrcnn.ptl
+6a0dfab7af151749058cc6a713074ad5c875198c2f3821ba1d6796d30d03f077  models/model_metadata.yaml

@@ -1,0 +1,11 @@
+{
+  "model": "fasterrcnn_full",
+  "mAP50_full": 0.14846433073448193,
+  "n_bootstrap": 1000,
+  "seed": 42,
+  "rng": "numpy default_rng(42).choice, image-level, with replacement",
+  "mean": 0.15474173069043093,
+  "std": 0.007887467835060285,
+  "ci_95_low": 0.14001760596164464,
+  "ci_95_high": 0.16954081134962964
+}

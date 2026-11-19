@@ -28,6 +28,10 @@ OUT = ROOT / "outputs" / "revision_2026-11"
 GT = json.loads((EVAL / "ground_truth_yolo_native_test_coco.json").read_text())
 
 MODELS = {"YOLO26n": "yolo26n", "YOLO26s": "yolo26s", "YOLO26m": "yolo26m", "RT-DETR-L": "rtdetr"}
+# Faster R-CNN retrained on complete annotations (exported view); included once
+# eval_fasterrcnn_full.py has written its held-out predictions.
+if (ROOT / "outputs/phase2_holdout_eval_yolo_native_test/fasterrcnn_full/raw_predictions_conf0.001.json").exists():
+    MODELS["Faster R-CNN"] = "fasterrcnn_full"
 # (conf, nms_iou or None). None = no NMS (RT-DETR is query-based; the app
 # sets applyNms=false for it).
 POINTS = [(0.50, None), (0.50, 0.45), (0.10, 0.10), (0.10, None), (0.25, None)]
@@ -125,14 +129,16 @@ def main():
     result = {}
     for name, d in MODELS.items():
         preds = json.loads((EVAL / d / "raw_predictions_conf0.001.json").read_text())
-        archived = json.loads((EVAL / d / "metrics.json").read_text())["operating_point"]["micro_avg"]
+        archived = json.loads((EVAL / d / "metrics.json").read_text()).get("operating_point", {}).get("micro_avg")
         result[name] = {}
         for conf, nms in POINTS:
-            if name == "RT-DETR-L" and nms is not None:
-                continue  # query-based head; the app sets applyNms=false
+            if name in ("RT-DETR-L", "Faster R-CNN") and nms is not None:
+                continue  # RT-DETR: query-based, app sets applyNms=false; Faster R-CNN: built-in class-wise NMS (IoU 0.5)
             key = f"conf{conf:.2f}_nms{'none' if nms is None else f'{nms:.2f}'}"
             result[name][key] = score(preds, conf, nms)
         ref = result[name]["conf0.50_nmsnone"]  # archived harness applied no extra NMS
+        if archived is None:  # new model (no archived Phase-2 operating point)
+            print(name, json.dumps(result[name], indent=1)); continue
         result[name]["validation_vs_archived_operating_point"] = {
             "archived": {k: archived[k] for k in ("tp", "fp", "fn")},
             "recomputed": {k: ref[k] for k in ("tp", "fp", "fn")},

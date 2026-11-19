@@ -1,0 +1,17 @@
+{
+  "model": "Faster R-CNN ResNet-50-FPN-v2, complete annotations (exported view)",
+  "evaluation_track": "yolo_native_test (1,016 images, 8,241 boxes), held out from training",
+  "checkpoint": "outputs/fasterrcnn_full_output/checkpoints/best.pth",
+  "epoch": 30,
+  "val_best_map_during_training": 0.1549578263486916,
+  "params": 43368903,
+  "input": "native 640-px long side (min_size=max_size=640), as trained",
+  "score_thresh": 0.001,
+  "detections_per_img": 300,
+  "inference_device": "cpu",
+  "seconds_per_image": 0.5955488693526411,
+  "torch": "2.8.0",
+  "torchvision": "0.23.0",
+  "mAP50": 0.14846433073448193,
+  "mAP50_95": 0.056501296147268655
+}

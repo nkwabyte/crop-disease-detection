@@ -5,8 +5,14 @@ from pathlib import Path
 
 # ── Paths ──────────────────────────────────────────────────────────────────────
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
-DATASET_DIR  = PROJECT_ROOT / "data" / "detector"
-NEG_DIR      = PROJECT_ROOT / "data" / "negatives"
+# FRCNN_DATASET_DIR / FRCNN_NEG_DIR (optional) point the trainer at another
+# dataset in the same layout, e.g. data/detector_full built from the exported
+# YOLO view with complete annotations. Unset = the original paths.
+def _env_path(var, default):
+    p = Path(os.environ.get(var, default))
+    return p if p.is_absolute() else PROJECT_ROOT / p
+DATASET_DIR  = _env_path("FRCNN_DATASET_DIR", PROJECT_ROOT / "data" / "detector")
+NEG_DIR      = _env_path("FRCNN_NEG_DIR", PROJECT_ROOT / "data" / "negatives")
 
 # FRCNN_OUT lets the divergence bisect write each arm to its own directory so no
 # arm overwrites another, or the real run.
@@ -41,7 +47,7 @@ WARMUP_EPOCHS         = 3
 FREEZE_BACKBONE_EPOCHS= int(os.environ.get("FRCNN_FREEZE", 5))
 GRAD_CLIP             = 10.0
 EVAL_EVERY            = 5
-NUM_NEGATIVES         = 200
+NUM_NEGATIVES         = int(os.environ.get("FRCNN_NUM_NEGATIVES", 200))
 
 # ── Class Names (1-indexed, matching dataset/label_map.json and the ─────────────
 #    integer_label column of the annotation CSVs the models train on) ───────────

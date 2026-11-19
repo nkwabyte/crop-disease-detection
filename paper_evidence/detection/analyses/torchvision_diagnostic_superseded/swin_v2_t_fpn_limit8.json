@@ -1,0 +1,15 @@
+{
+  "model": "swin_v2_t_fpn",
+  "checkpoint": "outputs/a6000_20261019/swin_output/checkpoints/best.pth",
+  "weights_key": "model_state_dict",
+  "epoch": 6,
+  "train_time_best_map": 0.061514743150988586,
+  "params": 44923633,
+  "n_images": 8,
+  "evaluation": "COCO pycocotools 101-pt, FULL annotations, native test images -- DIAGNOSTIC: 88% of these photographs are exact-hash matches of this model's training set",
+  "mAP50": 0.24774742241755635,
+  "mAP50_95": 0.08039019929348558,
+  "desktop_cpu_seconds_per_image": 0.17301049828529358,
+  "torch": "2.8.0",
+  "torchvision": "0.23.0"
+}

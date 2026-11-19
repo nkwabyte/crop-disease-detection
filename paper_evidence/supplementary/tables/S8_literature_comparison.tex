@@ -1,0 +1,114 @@
+\tablehead{tab:S8}{Reviewed crop-disease recognition studies compared
+against the dimensions that determine cross-study comparability. Twenty-two
+primary studies; the four reviews and surveys in the collection are cited in
+the narrative but omitted here because they report no primary dataset,
+architecture, split or metric. \textit{Not reported} means the field is
+absent from every retrievable part of the record; \textit{none reported}
+means the paper describes its system in enough detail to establish that no
+such mechanism or measurement is present. The metric column gives the single
+highest figure each study reports for its own system, with the metric named.
+Figures in that column are not comparable across rows.}
+
+%% longtable steps the table counter internally, so \thetable inside the
+%% environment is one higher than the number \tablehead printed above. Freeze
+%% the printed number here and use it in both continuation headers.
+\edef\litcomptablenum{\thetable}
+
+\needspace{10\baselineskip}\noindent\textbf{Part A. Task, data and model}
+
+{\tiny\setlength{\tabcolsep}{3pt}
+\setlength{\LTcapwidth}{\textwidth}
+\begin{longtable}{L{66pt} L{50pt} L{86pt} L{48pt} L{96pt}}
+\toprule
+Study & Task & Dataset and imaging condition & Crops and classes & Architecture \\
+\midrule
+\endfirsthead
+\multicolumn{5}{l}{\textit{Table \litcomptablenum{} (Part A), continued}}\\
+\toprule
+Study & Task & Dataset and imaging condition & Crops and classes & Architecture \\
+\midrule
+\endhead
+Mohanty et al. (2016) & Classification & PlantVillage; controlled & 14 crops, 38 classes & AlexNet, GoogLeNet \\
+Chen et al. (2024) & Detection & Own database combining PlantVillage, Kaggle and field-collected images (19{,}989 annotated) & 9 crops, 34 disease classes & YOLOv5 with SE, CARAFE, EIoU, Ghost convolution \\
+Rathod et al. (2025) & Classification with binary input gate & Customised PlantVillage with curated and augmented images; controlled base & Not reported & DenseNet201, plus a leaf/non-leaf gate; TensorFlow Lite \\
+Krishna et al. (2025) & Classification & PlantDoc (internet-scraped) plus approx.\ 3{,}000 web-sourced images & 27 classes combined (PlantDoc 27, web 16) & EfficientNet-B0, EfficientNet-B3, ResNet50, DenseNet201 \\
+Mamba Kabala et al. (2023) & Classification, federated & PlantVillage subsets partitioned across simulated learners; controlled & 4 crops (grape, apple, corn, tomato) & ResNet50, DenseNet121, VGG16, InceptionV3, MobileNetV2, ViT-B/16, ViT-B/32 \\
+Feng et al. (2024) & Classification & PlantVillage; cassava (26{,}337 field images, Uganda); tomato leaves (32{,}531) & 38 / 5 / 11 classes & EfficientNet convolution plus group-wise transformer \\
+Subhan et al. (2026) & Classification & `New Plant Diseases' (augmented), approx.\ 87{,}000 images & 38 classes & EfficientNetB0 with transfer learning \\
+Zainab and Mahum (2025) & Classification of leaf regions & PlantVillage; controlled & Not reported & Abstract: small Inception over leaf regions; body: VGG19, ResNet152, DenseNet169, MobileNetV3 \\
+Qushtom et al. (2025) & Classification & Wheat fields, Kotli, Azad Kashmir (prior collection of 1{,}567); 450 images used & Wheat; 2 classes & Enhanced CNN with LIME and SHAP \\
+Deputy et al. (2023) & Classification & PlantVillage in colour, greyscale and leaf-segmented renderings; controlled & 38 classes & AlexNet, GoogLeNet, ResNet50, InceptionV3 \\
+Nikam (2025) & Classification & PlantVillage subset (Kaggle), with lighting and background augmentation & Not reported & CNN, ResNet50, VGG16, EfficientNet, ViT \\
+Wang et al. (2024) & Classification & PlantVillage as stated (54{,}306, 38 classes); paper's rice description inconsistent with it & Rice & DC-GAN plus MDFC-ResNet, with SVD preprocessing \\
+Al-Shahari et al. (2025) & Classification & Fruit and leaf disease image sets, 250 samples each & 5 classes per set & Vector median filter, DenseNet201 features, spotted-hyena optimiser, recurrent spiking network \\
+Khandagale (2025) & Classification & Cotton leaf, grape, soybean and corn datasets, singly and combined & 4 crops; 15 classes stated (Table 1 lists more) & Residual blocks, attention and lightweight layers \\
+Singh et al. (2020) & Classification & 54{,}305-image, 38-class set (cites Mohanty et al.; PlantVillage inferred) & 14 crops, 38 classes & AlexNet, deep CNN, residual network, recurrent CNN, MobileNet \\
+Pulicherla et al. (2024) & Classification & Offline-augmented PlantVillage plus public cotton, rice and groundnut sets & Not reported & ResNet9 \\
+Reddy et al. (2025) & Classification & Annotated potato leaf images; source not named & Potato & CNN comparison including EfficientNet \\
+Fathima et al. (2023) & Classification & Kaggle rice-leaf images plus online and on-site photographs & Rice & VGG16 with transfer learning \\
+Jadhav et al. (2023) & Classification & Banana leaf images (web, Kaggle, own capture) & Banana; 4 classes & Image processing plus CNN \\
+Chavan et al. (2025) & Classification & Own field images, five farms, Kolhapur & Sugarcane; 10 disease classes & DenseNet and a plain sequential CNN \\
+Mathew et al. (2023) & Classification & Not reported & Not reported & Leaf-image classifier plus a microcontroller detector unit \\
+S et al. (2026) & Classification & PlantVillage; controlled & Multiple crops; count not reported & MobileNetV2 with Flask delivery \\
+\midrule
+This study & Detection with crop-aware out-of-distribution gate & RAIL Crop Disease (Ghana) field photographs; uncontrolled & 3 crops, 23 classes & YOLO26n, YOLO26s, YOLO26m, RT-DETR-L; EfficientNet-B2 gate \\
+\bottomrule
+\end{longtable}\addtocounter{table}{-1}\par}
+
+\medskip
+\needspace{10\baselineskip}\noindent\textbf{Part B. Evaluation, gating and deployment}
+
+{\tiny\setlength{\tabcolsep}{2.5pt}
+\begin{longtable}{L{58pt} L{66pt} L{60pt} L{50pt} L{54pt} L{56pt}}
+\toprule
+Study & Split design & Best metric reported for own system & Input gating & Deployment target & On-device measurement \\
+\midrule
+\endfirsthead
+\multicolumn{6}{l}{\textit{Table \litcomptablenum{} (Part B), continued}}\\
+\toprule
+Study & Split design & Best metric reported for own system & Input gating & Deployment target & On-device measurement \\
+\midrule
+\endhead
+Mohanty et al. (2016) & Leaf-level grouping where mappings exist (41{,}112 of 54{,}306 images); several ratios & 99.35\% accuracy & None reported & Smartphone, as motivation & None reported \\
+Chen et al. (2024) & Random division 8:1:1; no leakage audit described & mAP@0.50 92.1\% & None reported & Real-time use, asserted from parameter and computation counts & None reported \\
+Rathod et al. (2025) & Validation accuracy; no held-out protocol stated & 96\% classification; 99\% gate & Binary leaf / non-leaf & Android, TensorFlow Lite, operates offline & Average prediction time under 2~s on unnamed Android phones; no memory, CPU or thermal data \\
+Krishna et al. (2025) & Within-, cross- and combined-dataset; test sets differ by experiment & 80.19\% (combined training, web test) & None reported & None reported & None reported \\
+Mamba Kabala et al. (2023) & Federated partitions; varying learners, rounds and local iterations & ResNet50 99.59\%; ViT variants costlier & None reported & Distributed training, not on-device inference & None reported \\
+Feng et al. (2024) & 85:15 train-test (SMOTE and augmentation applied) & 99.8\% PlantVillage; 86.9\% cassava & None reported & None reported & None reported \\
+Subhan et al. (2026) & 80:20 train-validation & 99.51\% (split described as train/validation) & None reported & Field monitoring, proposed & None reported \\
+Zainab and Mahum (2025) & 80:20 train-test & 99.75\% (listed as training; 98.52\% testing) & None reported; extends the label space instead & None reported & None reported \\
+Qushtom et al. (2025) & 70:15:15, 75:15:10 and 80:10:10 & Up to 100\%; binary task, test sets of approx.\ 45--68 images & None reported & None reported & None reported \\
+Deputy et al. (2023) & 60:40 to 90:10, crossed with three renderings & 0.999 accuracy; $F_1$ up to 1.0 & None reported & Smartphone, as motivation & None reported \\
+Nikam (2025) & Not reported & ViT 98.7\%; VGG16 95.1\% & None reported & None reported & None reported \\
+Wang et al. (2024) & Train/validation/test; ratios not given & 95.99\% validation; 88.66\% test & None reported & Agricultural Internet-of-Things & None reported \\
+Al-Shahari et al. (2025) & 80:20 and 70:30 & 98.60\% (training portion); 98.40\% test & None reported & IoT infrastructure stated; image-only experiments & None reported \\
+Khandagale (2025) & 80:10:10 per class & 99.7\% grape; 95.3\% combined (corn 98\% in body) & None reported & Real-time use, asserted from model size & None reported \\
+Singh et al. (2020) & 80:20 train-validation & 99\% (abstract); 100\% on 570 test images; 97.5\% validation & None reported & Advisory tool for farmers and extension workers & None reported \\
+Pulicherla et al. (2024) & 80:20 train-validation plus 33 test images & 99.2\% (abstract only) & None reported & Browser-delivered web interface & None reported \\
+Reddy et al. (2025) & Not reported & 97\% accuracy, EfficientNet & None reported & Cloud-server inference; mobile/web dashboard & Not on-device; inference time stated without value \\
+Fathima et al. (2023) & 70:30 train-test, with a further validation split & 95\% test (40 train, 20 test photographs) & None reported & None reported & None reported \\
+Jadhav et al. (2023) & Not reported & 88\% testing accuracy & None reported & None reported & None reported \\
+Chavan et al. (2025) & Not reported & 94\% / 75\% (abstract); 89.98\% / 73.28\% test & None reported & None reported & None reported \\
+Mathew et al. (2023) & Not reported & 70\% test accuracy & None reported & Microcontroller unit writing to an online database & None reported \\
+S et al. (2026) & Not reported & Approx.\ 94\% accuracy & None reported & Browser-delivered web platform & None reported \\
+\midrule
+This study & Inherited export split, audited for near-duplicates after training; residual overlap and its effect reported & mAP@0.50 0.3455, RT-DETR-L, 23-class field test split & Crop-aware out-of-distribution gate, with its end-to-end cost reported & Android and iOS phones, fully offline & Per-path latency, memory, processor utilisation, thermal state and charging condition \\
+\bottomrule
+\end{longtable}\addtocounter{table}{-1}\par}
+
+{\footnotesize
+\textit{Notes.} (1)~The metric column is deliberately heterogeneous and is
+not a ranking. All twenty-two primary studies report a metric: twenty-one
+report classification accuracy, mostly on controlled or partly controlled
+imagery, and one reports detection mAP. Several headline figures are
+training, validation or abstract-only values, marked as such. (2)~Only
+Mohanty et al.\ describe subject-level (leaf) grouping, and seven studies give
+no split ratio. (3)~One study places a model on a handset and reports a
+coarse prediction-time bound only; none reports on-device memory, processor
+utilisation, thermal state or power condition. (4)~One study reports an input
+gate; it is binary and its effect on end-to-end performance is not
+quantified. (5)~Every cell was read from the full text of the corresponding
+study, item by item; page references are held in the authors' audit record.
+\par}
+\tabletail
+

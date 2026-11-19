@@ -1,0 +1,11 @@
+{
+  "model": "yolo26m",
+  "mAP50_full": 0.3044942732681132,
+  "n_bootstrap": 1000,
+  "seed": 42,
+  "rng": "numpy default_rng(42).choice, image-level, with replacement",
+  "mean": 0.313430039854488,
+  "std": 0.016023897701005107,
+  "ci_95_low": 0.28401954328806894,
+  "ci_95_high": 0.34463681152670933
+}

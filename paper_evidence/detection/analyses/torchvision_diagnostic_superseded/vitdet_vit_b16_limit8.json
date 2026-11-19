@@ -1,0 +1,15 @@
+{
+  "model": "vitdet_vit_b16",
+  "checkpoint": "outputs/a6000_20261019/vit_output/checkpoints/best.pth",
+  "weights_key": "model_state_dict",
+  "epoch": 18,
+  "train_time_best_map": 0.06882095732266016,
+  "params": 102471339,
+  "n_images": 8,
+  "evaluation": "COCO pycocotools 101-pt, FULL annotations, native test images -- DIAGNOSTIC: 88% of these photographs are exact-hash matches of this model's training set",
+  "mAP50": 0.5251911630986131,
+  "mAP50_95": 0.20835588192063917,
+  "desktop_cpu_seconds_per_image": 0.30671122670173645,
+  "torch": "2.8.0",
+  "torchvision": "0.23.0"
+}

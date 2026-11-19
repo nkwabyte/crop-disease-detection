@@ -1,0 +1,57 @@
+model_name: crop_disease_fasterrcnn
+architecture: FasterRCNN-ResNet50-FPN-v2
+task: object_detection
+exported_at: '2026-11-17T16:43:17.986786+00:00'
+input_size: 640
+input_channels: 3
+num_classes: 23
+class_names:
+- Corn Cercospora Leaf Spot
+- Corn Common Rust
+- Corn Healthy
+- Corn Streak
+- Corn Northern Leaf Blight
+- Pepper Leaf Curl
+- Pepper Cercospora
+- Pepper Leaf Blight
+- Pepper Bacterial Spot
+- Pepper Leaf Mosaic
+- Pepper Healthy
+- Pepper Fusarium
+- Pepper Septoria
+- Pepper Late Blight
+- Pepper Early Blight
+- Tomato Late Blight
+- Tomato Early Blight
+- Tomato Bacterial Spot
+- Tomato Septoria
+- Tomato Fusarium
+- Tomato Leaf Curl
+- Tomato Healthy
+- Tomato Mosaic
+conf_threshold: 0.5
+iou_nms_threshold: 0.45
+crops_covered:
+- Corn
+- Pepper
+- Tomato
+label_offset: 1
+notes: Trained on Ghana Crop Disease dataset. Hard-negative mining applied for OOD
+  robustness. Labels 1-23 correspond to class_names[0]-class_names[22].
+mobile_integration:
+  primary_format: .pte  (ExecuTorch backbone, XNNPACK)
+  pte_file: crop_disease_fasterrcnn_backbone.pte
+  full_detector_pte: not exported; torchvision NMS is data-dependent
+  input_format: NCHW_RGB_float32
+  input_normalize:
+    mean:
+    - 0.485
+    - 0.456
+    - 0.406
+    std:
+    - 0.229
+    - 0.224
+    - 0.225
+  model_transform: This .pte is the backbone and FPN only. Normalise the image before
+    calling it.
+  outputs: five feature maps, keys 0, 1, 2, 3, pool

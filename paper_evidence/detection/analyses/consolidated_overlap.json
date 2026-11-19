@@ -1,0 +1,15 @@
+{
+  "n_test": 1016,
+  "train": {
+    "files": 40852,
+    "unique_hashes": 6552,
+    "test_frac_exact": 0.8799212598425197,
+    "test_frac_le5": 0.9901574803149606
+  },
+  "validate": {
+    "files": 5837,
+    "unique_hashes": 3243,
+    "test_frac_exact": 0.4301181102362205,
+    "test_frac_le5": 0.6190944881889764
+  }
+}

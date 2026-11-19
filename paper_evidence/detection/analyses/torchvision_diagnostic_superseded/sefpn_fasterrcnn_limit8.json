@@ -1,0 +1,15 @@
+{
+  "model": "sefpn_fasterrcnn",
+  "checkpoint": "outputs/final_output/checkpoints/best.pth",
+  "weights_key": "ema_state_dict",
+  "epoch": 45,
+  "train_time_best_map": 0.05263372739637087,
+  "params": 43409863,
+  "n_images": 8,
+  "evaluation": "COCO pycocotools 101-pt, FULL annotations, native test images -- DIAGNOSTIC: 88% of these photographs are exact-hash matches of this model's training set",
+  "mAP50": 0.33346875759566735,
+  "mAP50_95": 0.13165526843933448,
+  "desktop_cpu_seconds_per_image": 0.7102088928222656,
+  "torch": "2.8.0",
+  "torchvision": "0.23.0"
+}

@@ -32,6 +32,10 @@ EVAL = ROOT / "outputs" / "phase2_holdout_eval_yolo_native_test"
 OUT = ROOT / "outputs" / "revision_2026-11"
 GT_PATH = EVAL / "ground_truth_yolo_native_test_coco.json"
 MODELS = {"YOLO26n": "yolo26n", "YOLO26s": "yolo26s", "YOLO26m": "yolo26m", "RT-DETR-L": "rtdetr"}
+# Faster R-CNN retrained on complete annotations (exported view); included once
+# eval_fasterrcnn_full.py has written its held-out predictions.
+if (ROOT / "outputs/phase2_holdout_eval_yolo_native_test/fasterrcnn_full/raw_predictions_conf0.001.json").exists():
+    MODELS["Faster R-CNN"] = "fasterrcnn_full"
 
 
 def ahash_bits(path: Path) -> np.ndarray:

@@ -1,0 +1,297 @@
+{
+  "model": "YOLO26n",
+  "evaluation_track": "yolo_native_test (data/yolo/test split, NOT the contaminated data/detector-based manifest)",
+  "mAP50": 0.2824643075508875,
+  "mAP50_95": 0.11388593053834237,
+  "bootstrap_mAP50": {
+    "n_bootstrap": 1000,
+    "seed": 42,
+    "mean": 0.29107319677986093,
+    "std": 0.014940856977615009,
+    "ci_95_low": 0.26302448527030137,
+    "ci_95_high": 0.32189469003496946
+  },
+  "mAP50_custom_recompute_sanity_check": 0.2824643075508875,
+  "operating_point": {
+    "conf_threshold": 0.5,
+    "nms_iou": 0.45,
+    "match_iou_threshold": 0.5,
+    "micro_avg": {
+      "precision": 0.6445161290322581,
+      "recall": 0.12122315253003277,
+      "f1": 0.20406495761413546,
+      "tp": 999,
+      "fp": 551,
+      "fn": 7242
+    },
+    "macro_avg": {
+      "precision": 0.5819071935666859,
+      "recall": 0.14340444683611284,
+      "f1": 0.21297921049963628
+    }
+  },
+  "per_class": {
+    "Corn Streak": {
+      "AP50": 0.38217805865174437,
+      "AP50_95": 0.12370147079616088,
+      "precision": 0.6666666666666666,
+      "recall": 0.07489597780859916,
+      "f1": 0.13466334164588528,
+      "support": 721,
+      "tp": 54,
+      "fp": 27,
+      "fn": 667
+    },
+    "Pepper Leaf Curl": {
+      "AP50": 0.2425662292335597,
+      "AP50_95": 0.08044199714238896,
+      "precision": 0.6585365853658537,
+      "recall": 0.16314199395770393,
+      "f1": 0.26150121065375304,
+      "support": 331,
+      "tp": 54,
+      "fp": 28,
+      "fn": 277
+    },
+    "Tomato Early Blight": {
+      "AP50": 0.38201804227505226,
+      "AP50_95": 0.16510600744249848,
+      "precision": 0.7851239669421488,
+      "recall": 0.20430107526881722,
+      "f1": 0.3242320819112628,
+      "support": 465,
+      "tp": 95,
+      "fp": 26,
+      "fn": 370
+    },
+    "Tomato Bacterial Spot": {
+      "AP50": 0.3080807798137787,
+      "AP50_95": 0.11911825090414567,
+      "precision": 0.9,
+      "recall": 0.10714285714285714,
+      "f1": 0.19148936170212766,
+      "support": 84,
+      "tp": 9,
+      "fp": 1,
+      "fn": 75
+    },
+    "Pepper Leaf Blight": {
+      "AP50": 0.33413502874160295,
+      "AP50_95": 0.11676060418603679,
+      "precision": 0.6875,
+      "recall": 0.12643678160919541,
+      "f1": 0.21359223300970878,
+      "support": 87,
+      "tp": 11,
+      "fp": 5,
+      "fn": 76
+    },
+    "Pepper Healthy": {
+      "AP50": 0.5859196766968352,
+      "AP50_95": 0.266908336993851,
+      "precision": 0.6851851851851852,
+      "recall": 0.524822695035461,
+      "f1": 0.5943775100401607,
+      "support": 141,
+      "tp": 74,
+      "fp": 34,
+      "fn": 67
+    },
+    "Tomato Healthy": {
+      "AP50": 0.6345347472624008,
+      "AP50_95": 0.38002483332958376,
+      "precision": 0.7785467128027682,
+      "recall": 0.46296296296296297,
+      "f1": 0.5806451612903226,
+      "support": 486,
+      "tp": 225,
+      "fp": 64,
+      "fn": 261
+    },
+    "Corn Common Rust": {
+      "AP50": 0.29146650135930546,
+      "AP50_95": 0.09558980686001059,
+      "precision": 0.6065573770491803,
+      "recall": 0.11935483870967742,
+      "f1": 0.1994609164420485,
+      "support": 310,
+      "tp": 37,
+      "fp": 24,
+      "fn": 273
+    },
+    "Corn Healthy": {
+      "AP50": 0.28240598234611003,
+      "AP50_95": 0.09643912363821591,
+      "precision": 0.5882352941176471,
+      "recall": 0.13793103448275862,
+      "f1": 0.223463687150838,
+      "support": 290,
+      "tp": 40,
+      "fp": 28,
+      "fn": 250
+    },
+    "Pepper Fusarium": {
+      "AP50": 0.48873749986740106,
+      "AP50_95": 0.1759035563923353,
+      "precision": 0.6774193548387096,
+      "recall": 0.44680851063829785,
+      "f1": 0.5384615384615384,
+      "support": 94,
+      "tp": 42,
+      "fp": 20,
+      "fn": 52
+    },
+    "Tomato Leaf Curl": {
+      "AP50": 0.30934418314938,
+      "AP50_95": 0.1560536889499435,
+      "precision": 0.5,
+      "recall": 0.1780821917808219,
+      "f1": 0.2626262626262626,
+      "support": 73,
+      "tp": 13,
+      "fp": 13,
+      "fn": 60
+    },
+    "Tomato Late Blight": {
+      "AP50": 0.15864873942598803,
+      "AP50_95": 0.05304764438322718,
+      "precision": 0.5641025641025641,
+      "recall": 0.05412054120541206,
+      "f1": 0.09876543209876543,
+      "support": 813,
+      "tp": 44,
+      "fp": 34,
+      "fn": 769
+    },
+    "Pepper Bacterial Spot": {
+      "AP50": 0.19951461180541957,
+      "AP50_95": 0.05479522475905973,
+      "precision": 0.6666666666666666,
+      "recall": 0.024464831804281346,
+      "f1": 0.04719764011799409,
+      "support": 327,
+      "tp": 8,
+      "fp": 4,
+      "fn": 319
+    },
+    "Pepper Septoria": {
+      "AP50": 0.14438119175158895,
+      "AP50_95": 0.05673714716555371,
+      "precision": 0.25,
+      "recall": 0.026915113871635612,
+      "f1": 0.0485981308411215,
+      "support": 483,
+      "tp": 13,
+      "fp": 39,
+      "fn": 470
+    },
+    "Corn Cercospora Leaf Spot": {
+      "AP50": 0.3429864245828047,
+      "AP50_95": 0.11757641509690958,
+      "precision": 0.7439613526570048,
+      "recall": 0.11509715994020926,
+      "f1": 0.19935275080906148,
+      "support": 1338,
+      "tp": 154,
+      "fp": 53,
+      "fn": 1184
+    },
+    "Corn Northern Leaf Blight": {
+      "AP50": 0.20125247608681293,
+      "AP50_95": 0.04196017293121521,
+      "precision": 1.0,
+      "recall": 0.030303030303030304,
+      "f1": 0.05882352941176471,
+      "support": 33,
+      "tp": 1,
+      "fp": 0,
+      "fn": 32
+    },
+    "Pepper Cercospora": {
+      "AP50": 0.25276696906811164,
+      "AP50_95": 0.09309653717926263,
+      "precision": 0.42857142857142855,
+      "recall": 0.033707865168539325,
+      "f1": 0.06249999999999999,
+      "support": 89,
+      "tp": 3,
+      "fp": 4,
+      "fn": 86
+    },
+    "Tomato Fusarium": {
+      "AP50": 0.3431626606623211,
+      "AP50_95": 0.14222323195493153,
+      "precision": 0.5825242718446602,
+      "recall": 0.2898550724637681,
+      "f1": 0.3870967741935484,
+      "support": 207,
+      "tp": 60,
+      "fp": 43,
+      "fn": 147
+    },
+    "Pepper Late Blight": {
+      "AP50": 0.06173483133536973,
+      "AP50_95": 0.018606938901221698,
+      "precision": 0.16666666666666666,
+      "recall": 0.007874015748031496,
+      "f1": 0.015037593984962405,
+      "support": 127,
+      "tp": 1,
+      "fp": 5,
+      "fn": 126
+    },
+    "Tomato Mosaic": {
+      "AP50": 0.3051978004062614,
+      "AP50_95": 0.18425608565451096,
+      "precision": 0.21428571428571427,
+      "recall": 0.12,
+      "f1": 0.15384615384615383,
+      "support": 25,
+      "tp": 3,
+      "fp": 11,
+      "fn": 22
+    },
+    "Pepper Leaf Mosaic": {
+      "AP50": 0.04440900967953335,
+      "AP50_95": 0.011041943294980774,
+      "precision": 0.25,
+      "recall": 0.0019011406844106464,
+      "f1": 0.003773584905660377,
+      "support": 526,
+      "tp": 1,
+      "fp": 3,
+      "fn": 525
+    },
+    "Tomato Septoria": {
+      "AP50": 0.20123762946903026,
+      "AP50_95": 0.06998738442583062,
+      "precision": 0.4014084507042254,
+      "recall": 0.04818258664412511,
+      "f1": 0.0860377358490566,
+      "support": 1183,
+      "tp": 57,
+      "fp": 85,
+      "fn": 1126
+    },
+    "Pepper Early Blight": {
+      "AP50": 0.0,
+      "AP50_95": 0.0,
+      "precision": NaN,
+      "recall": 0.0,
+      "f1": NaN,
+      "support": 8,
+      "tp": 0,
+      "fp": 0,
+      "fn": 8
+    }
+  },
+  "ground_truth_reference": {
+    "note": "Ground truth is IDENTICAL across all four models in this yolo-native-test harness (same frozen data/yolo/test manifest, built independently of the contaminated data/detector rebuilt_split_manifest.csv used for the earlier/exploratory evaluation). A copy of ground_truth_yolo_native_test_coco.json is included in this folder for self-containedness."
+  },
+  "notes": {
+    "why_this_track_exists": "The original held-out evaluation (outputs/phase2_holdout_eval/) used a manifest rebuilt from data/detector, which was later found to overlap substantially with data/yolo/train+valid at the underlying-photograph level (50.4% exact-ahash match, confirmed by visual inspection) because all four YOLO-family models were actually trained on data/yolo. This yolo-native-test track instead evaluates against data/yolo's own native test split, whose leakage against data/yolo/train+valid is much lower (2.95% exact ahash match; see supplementary/yolo_test_vs_yolo_train_ahash_check.csv in the research repo) though not exactly zero, which is disclosed rather than hidden.",
+    "mAP_computed_from": "raw_predictions_conf0.001.json (full PR sweep via pycocotools COCOeval, 101-point interpolation, validated against toy perfect/zero-overlap sanity cases)",
+    "per_class_PRF1_confusion_matrix_computed_from": "raw_predictions_conf0.50.json at the documented operating point (conf=0.50; NMS IoU=0.45 for YOLO26 models, RT-DETR is NMS-free/query-based with no iou= parameter applied), boxes matched to ground truth via greedy cross-class IoU>=0.50 matching (highest-confidence prediction claims best-IoU unclaimed ground truth first).",
+    "model_class_index_remap": "This checkpoint's own best.pt/model.names ordering was independently re-verified against label_map.json (NOT assumed identical to another checkpoint's mapping); see environment_manifest.json's model_class_index_to_label_map_mapping for this checkpoint's exact table."
+  }
+}
