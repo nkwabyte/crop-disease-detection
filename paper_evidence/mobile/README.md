@@ -1,6 +1,6 @@
 # Physical-device benchmark exports
 
-These are the raw exports written by the application's built-in benchmark (export schema v4) and used in the paper's on-device results: Table 4 and Figures 3 and 4.
+These are the raw exports written by the application's built-in benchmark (export schema v4) and used in the paper's on-device results: Table 4 and Figures 2 and 3.
 The measurement boundaries are defined in the paper's Methods section.
 
 Common settings:
@@ -24,23 +24,28 @@ The two phones are separate single-device evaluations, not a hardware comparison
 
 `SHA256SUMS` verifies the two export files.
 
-## `iphone_15_pro_max/` — the iOS sessions in Table 4
+## `iphone_15_pro_max_2026-11-19/` — the iOS session in Table 4 and Figure 3
 
 | Field | Value |
 |---|---|
-| Device | iPhone 15 Pro Max (`iPhone16,2`), iOS 26.6.2, 8 GB RAM |
-| Build | `31fb8f5576a6` plus uncommitted changes to the iOS bridge and benchmark files; not the same commit as the Android build |
-| Sessions | Three consecutive runs from fresh launches, 2026-09-14; thermal state nominal, then fair, then fair; charging at 100% |
-| Path | Out-of-distribution rejection only: the synthetic benchmark image is rejected by the classifier. The detector executed 0 of 100 times in each run. |
-| End-to-end mean | 43.14, 44.26 and 52.63 ms in runs 1–3 |
-| Memory | Peak resident memory 247.8 MB, flat across the 1920×1080, 1280×960 and 640×480 detector inputs. |
+| Device | iPhone 15 Pro Max (`iPhone16,2`), iOS 27.2.1, 8 GB RAM |
+| Build | Debug build of committed source `1ca6261b8df8` (no `-dirty` suffix, so no uncommitted tracked changes). The headless benchmark entry point (`--run-extended-benchmark`) is compiled only into debug builds. Relative to the Android build `f5193cb92d24`, the source differs only in benchmark instrumentation (memory-sample placement, notes) and an Xcode build-script check. |
+| Session | One session, 2026-11-19 (started 16:27:56 UTC); all five routing paths on the same checksum-locked photographs as the Android session; 100 measured iterations each, 0 failures |
+| Condition | Charging at 45% battery; thermal state fair |
+| Fail-closed | Detector executed 100 of 100 times on each accepted path and 0 of 100 times on each rejection path |
+| Memory | `console_phase_trace_run1.txt`: resident memory printed at each phase boundary (labelled `residentMB`, but the value is bytes / 1024², i.e. MiB): 41.2 → 43.2 → 113.8 → 148.7 → 212.6 / 212.6 / 211.7 across the three detector resolutions. The console connection dropped during the end-to-end loop; the export's `memorySamples` give 43.3 MiB before and 311.8 MiB after all measured loops. Figure 3 (file F04) is drawn from these two files by `scripts/revision/make_F04_memory.py`. |
+| Do not use | `coldLoad` (memory-mapping setup only). `aborted_run_rtdetr_selected_phase_trace.txt` is from a run aborted because RT-DETR-L was selected; it is kept for completeness only. |
 
-The memory figure is for the build after the fix that replaced per-value boxed transfer with a contiguous buffer.
-The pre-fix build reached about 1,594 MB at the same point and was terminated by the operating system, so it left no export.
-That figure comes from the device-session record.
+The build before the output-transfer fix (per-value boxed objects) was terminated by iOS at about 1,600 MiB during the first detector stage, according to the session record of 2026-09-14.
+That process left no export, so no pre-fix trace is included.
 
-`pre_fix_schema_v3_not_comparable/` holds three earlier exports from the pre-fix build.
-They are kept for completeness, are not used in the paper and must not be compared with the schema-v4 runs.
+`SHA256SUMS` verifies the files in the folder.
+
+## `iphone_15_pro_max_2026-09-14/` — earlier iOS sessions, not reported
+
+Three rejection-path-only sessions (iOS 26.6.2) from build `31fb8f5576a6` plus uncommitted changes to the iOS bridge and benchmark files.
+They are superseded by the 2026-11-19 session and not used in the paper.
+`pre_fix_schema_v3_not_comparable/` holds three exports from the pre-fix build; they must not be compared with schema-v4 runs.
 
 ## `emulator_and_simulator_not_performance/`
 

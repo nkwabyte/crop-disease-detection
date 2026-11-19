@@ -1,0 +1,11 @@
+[HeadlessBenchmark] START warmupRuns=10 measuredRuns=100
+[iOS-Bench] phase=start residentMB=41.2
+[iOS-Bench] phase=after_cold_load_loop residentMB=43.2
+[iOS-Bench] phase=after_artifacts_and_images residentMB=113.8
+[iOS-Bench] phase=after_classifier_stage residentMB=148.7
+[iOS-Bench] phase=detector_stage_1920x1080_done residentMB=212.6
+[iOS-Bench] phase=detector_stage_1280x960_done residentMB=212.6
+[iOS-Bench] phase=detector_stage_640x480_done residentMB=211.7
+[iOS-Bench] phase=after_detector_stages residentMB=211.7
+ERROR: An error occurred while communicating with a remote process. (com.apple.dt.CoreDeviceError error 3 (0x03))
+           The connection was invalidated. (com.apple.Mercury.error error 1001 (0x3E9))

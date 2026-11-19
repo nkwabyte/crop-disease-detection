@@ -1,59 +1,48 @@
-\tablehead{tab:S4}{Physical iPhone~15 Pro Max mobile measurements, three
-consecutive sessions. The table reports the observed measurements from each
-session separately. Only the out-of-distribution rejection path was measured
-on this device.}
+%% Source: paper_evidence/mobile/iphone_15_pro_max_2026-11-19/extended_benchmark_1795105797518.json
+%% Rewritten 2026-11-19 (replaces the three rejection-path sessions of 2026-09-14).
+\tablehead{tab:S4}{Physical iPhone~15 Pro Max mobile latency by routing path
+during one session (19 November 2026) using a clean, committed debug build.
+All timing values are reported in milliseconds.}
 \begin{center}
-\footnotesize
-\setlength{\tabcolsep}{4pt}
-\begin{tabular}{l r r r}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{l c r r r r r r c c}
 \toprule
- & Run 1 & Run 2 & Run 3 \\
+      & Warm/ &      &        &     & Std- &     &     & Det.\ exec./ & Succ./ \\
+Path  & meas. & Mean & Median & p95 & dev  & Min & Max & skipped      & fail.  \\
 \midrule
-Thermal state                         & nominal & fair & fair \\
-Battery \% / charging                 & 100 / yes & 100 / yes & 100 / yes \\
-Warm-up / measured ($n$)              & 10 / 100 & 10 / 100 & 10 / 100 \\
-End-to-end mean (ms)                  & 43.14 & 44.26 & 52.63 \\
-End-to-end median (ms)                & 43.00 & 44.41 & 52.28 \\
-End-to-end p95 (ms)                   & 45.22 & 45.03 & 56.06 \\
-End-to-end stddev (ms)                & 1.06 & 0.65 & 1.58 \\
-End-to-end min (ms)                   & 41.44 & 43.04 & 50.81 \\
-End-to-end max (ms)                   & 47.33 & 46.69 & 57.73 \\
-Classifier inference mean (ms)        & 21.50 & 20.87 & 21.97 \\
-Preprocess mean (ms)                  & 13.00 & 13.46 & 16.05 \\
-Image decode mean (ms)                & 0.0853 & 0.0771 & 0.0954 \\
-Orientation-correction mean (ms)      & 0.00023 & 0.00021 & 0.00026 \\
-Routing mean (ms)                     & 0.00070 & 0.00068 & 0.00074 \\
-Detector executed / skipped           & 0 / 100 & 0 / 100 & 0 / 100 \\
-Offline success / failure             & 100 / 0 & 100 / 0 & 100 / 0 \\
-CPU utilisation ratio (process-level) & 1.48 & 1.53 & 1.51 \\
-Memory before loop (KB)               & 251936 & 243536 & 239968 \\
-Memory after loop (KB)                & 251952 & 243552 & 239984 \\
+Accepted Corn       & 10/100 & 148.19 & 148.09 & 150.30 & 1.38 & 145.72 & 151.73 & 100 / 0 & 100 / 0 \\
+Accepted Pepper     & 10/100 & 157.44 & 157.45 & 167.06 & 7.15 & 147.96 & 184.59 & 100 / 0 & 100 / 0 \\
+Accepted Tomato     & 10/100 & 172.16 & 172.00 & 189.18 & 7.03 & 160.42 & 193.28 & 100 / 0 & 100 / 0 \\
+OOD rejection       & 10/100 & 51.80  & 50.76  & 59.44  & 3.06 & 49.45  & 65.75  & 0 / 100 & 100 / 0 \\
+Crop mismatch       & 10/100 & 50.75  & 50.67  & 52.46  & 1.08 & 49.15  & 56.89  & 0 / 100 & 100 / 0 \\
 \bottomrule
 \end{tabular}
 \end{center}
 
 {\footnotesize
-\textit{Device and model details, identical across all three runs.} Tests were
-performed on a physical iPhone~15 Pro Max running iOS~26.6.2. The
-EfficientNet-B2 classifier was approximately 30.8~MB and the YOLO26n detector
-approximately 9.8~MB. The installed application occupied approximately
-576~MB when estimated from the sum of files in the application bundle.
+\textit{Device and models.} iPhone~15 Pro Max (\texttt{iPhone16,2}), iOS~27.2.1,
+8~GB RAM; charging at 45\% battery; thermal state fair. Build revision
+\texttt{1ca6261b8df8} (no uncommitted tracked changes). Classifier
+30{,}820{,}096~B (SHA-256 \texttt{39e1b63dac8d\ldots}) and YOLO26n detector
+9{,}768{,}796~B (\texttt{baa36404dbb6\ldots}), the same files as on the Xiaomi
+device. The end-to-end paths used the same checksum-locked photographs as the
+Xiaomi session.
 
-\textit{Notes.} (1)~Do not average these three runs. Thermal state moved
-nominal $\rightarrow$ fair $\rightarrow$ fair and end-to-end mean rose
-43.14 $\rightarrow$ 44.26 $\rightarrow$ 52.63~ms (a 22\% increase from Run~1
-to Run~3); this is an observed within-session pattern ($n = 3$), never a
-statistically established effect.
-(2)~Sub-millisecond model-initialisation readings are excluded because the
-runtime loads model data lazily; these readings do not represent the full
-cost of bringing the models into memory (main text, Limitations).
-(3)~Accepted-path and selected-crop-mismatch latency are \emph{absent} for
-this device, not zero, and are not equated with the Xiaomi figures in
-Table~\ref{tab:S5}.
-(4)~The application build included the corrected output-transfer
-implementation, but those changes had not yet been committed when this test
-was run. The measurements are therefore retained as provisional
-physical-device evidence rather than evidence tied to an exact source-code
-revision.
+\textit{Isolated-stage figures} (separate measured loops on synthetic patterns,
+so they need not sum to the end-to-end means): classifier inference mean
+20.77~ms; preprocess 8.64~ms; image decode 0.12~ms. Detector inference mean by
+input resolution: $1920\times1080$, 50.50~ms; $1280\times960$, 52.81~ms;
+$640\times480$, 54.07~ms; post-processing 0.91--0.92~ms and output transfer
+1.69--1.76~ms.
+
+\textit{Notes.} (1)~Process-level CPU utilisation was 1.48 (iOS
+\texttt{getrusage}), which is not comparable with the Android per-thread
+figure. (2)~Sub-millisecond model-initialisation readings are excluded because
+the runtime loads model data lazily. (3)~The headless benchmark entry point is
+compiled only into debug builds. (4)~Three earlier sessions of 14 September
+2026 (iOS~26.6.2) covered the rejection path only, from a build with
+uncommitted changes; they are archived in the evidence package but not
+reported.
 \par}
 \tabletail

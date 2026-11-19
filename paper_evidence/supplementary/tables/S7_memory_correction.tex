@@ -1,80 +1,61 @@
-%% The caption and Part A must share a page: ask for room for both.
+%% Source: paper_evidence/mobile/iphone_15_pro_max_2026-11-19/
+%%   console_phase_trace_run1.txt (Part A) and
+%%   extended_benchmark_1795105797518.json, memorySamples (Part B).
+%% Rewritten 2026-11-19; the earlier pre/post series had no surviving source.
 \needspace{22\baselineskip}
-\tablehead{tab:S7}{iOS bridge memory correction on the physical iPhone~15
-Pro Max, comparing the original boxed-object output transfer with the revised
-contiguous-buffer transfer. This was an implementation correction at the
-iOS-to-shared-code boundary, not a change to the model itself. Values are
-megabytes of resident memory.}
+\tablehead{tab:S7}{iOS resident memory with the contiguous output buffer on
+the physical iPhone~15 Pro Max (one session, 19 November 2026, iOS~27.2.1,
+committed debug build). Values are mebibytes (MiB) of resident memory.}
 
-\nopagebreak\noindent\textbf{Part A. Phase-boundary diagnostic trace (physical
-iPhone~15 Pro Max)}
+\nopagebreak\noindent\textbf{Part A. Phase-boundary trace}
 
 \begin{center}\footnotesize\setlength{\tabcolsep}{5pt}
-\begin{tabular}{p{125pt} p{125pt} p{80pt}}
+\begin{tabular}{p{190pt} r}
 \toprule
- & Pre-fix & Post-fix \\
-Phase & (boxed objects) & (contiguous buffer) \\
+Phase boundary & Resident memory \\
 \midrule
-Start                              & 55.3 MB   & 55.6 MB \\
-After cold-load loop               & 56.8 MB   & 56.2 MB \\
-After models and images loaded     & 127.3 MB  & 113.8 MB \\
-After classifier stage (110 calls) & 306.2 MB ($+179$ MB) & 158.5 MB \\
-Detector stage, $1920\times1080$   & 1{,}594.6 MB ($+1{,}288$ MB); killed (jetsam) & 224.0 MB \\
-Detector stage, $1280\times960$    & not reached (process killed) & 224.0 MB \\
-Detector stage, $640\times480$     & not reached (process killed) & 223.1 MB \\
-End-to-end peak                    & 1{,}594.6 MB (process terminated) & 247.8 MB (flat) \\
+Start of benchmark                       & 41.2 \\
+After cold-load loop                     & 43.2 \\
+After models and benchmark images loaded & 113.8 \\
+After classifier stage (110 calls)       & 148.7 \\
+After detector stage, $1920\times1080$   & 212.6 \\
+After detector stage, $1280\times960$    & 212.6 \\
+After detector stage, $640\times480$     & 211.7 \\
 \bottomrule
 \end{tabular}\end{center}
-
-{\footnotesize
-Before the correction, resident memory increased by approximately 11.7~MB per
-detector call across 110 calls. This growth is consistent with converting the
-226{,}800 detector outputs into individually allocated objects and then
-creating an additional intermediate copy during box-coordinate processing.
-\par}
 
 \medskip
-\needspace{10\baselineskip}\noindent\textbf{Part B. Standard benchmark memory samples, physical device}
+\noindent\textbf{Part B. Benchmark memory samples}
 
 \begin{center}\footnotesize\setlength{\tabcolsep}{5pt}
-\begin{tabular}{p{145pt} r r}
+\begin{tabular}{p{190pt} r}
 \toprule
-             & Before measured & After measured \\
-Device / run & loop            & loop \\
+Sample & Resident memory \\
 \midrule
-iPhone 15 Pro Max, Run 1 (physical) & 251{,}936 KB (246.0 MB) & 251{,}952 KB (246.05 MB) \\
+Before the measured loops (after cold-load timing) & 43.3 \\
+After all measured loops, including end-to-end     & 311.8 \\
 \bottomrule
 \end{tabular}\end{center}
 
 {\footnotesize
-\textit{Measurement note.} Part~A comes from a diagnostic run that sampled
-resident memory at major processing stages to identify the cause of an iOS
-out-of-memory termination. Part~B comes from the standard benchmark, which
-records memory only before and after the complete 100-iteration loop. Those
-two snapshots cannot capture a short-lived peak during an individual
-inference. The two measurement methods are therefore reported separately.
-
-\textit{Notes.} (1)~The pre-correction figures are retained as historical
-diagnostic evidence. They cannot be reproduced with the current application
-because the original transfer method is no longer used.
-(2)~Comparing Part~A with Part~B directly is not appropriate: Part~A
-instruments resident memory at named phases \emph{within} the measured loop's
-execution, whereas Part~B samples only immediately before and after the entire
-100-iteration loop as a single span. They measure the same underlying process
-at different temporal granularity and are reported separately rather than
-reconciled into one figure.
-(3)~The correction replaced individually boxed output values with a
-contiguous numerical buffer. Model weights, thresholds, class indexing,
-coordinate transformations and non-maximum suppression were unchanged. An
-output-equivalence check confirmed that the new transfer method was lossless.
-(4)~No comparable phase-boundary diagnostic trace exists for Android or the
-Xiaomi device. The issue was specific to the iOS transfer path; Android already
-used a contiguous numerical representation. The Xiaomi memory difference is
-excluded because both samples were captured at the same point and therefore
-did not bracket the measured loop.
-(5)~The corresponding iOS Simulator memory samples and the simulator-only
-500-call memory-soak diagnostic are reported in the supplementary material,
-not here, because simulator figures may not appear alongside physical-device
-evidence.
+\textit{Notes.} (1)~The application printed Part~A at each phase boundary;
+the value is the process resident size divided by $1024^2$. The console
+connection dropped during the end-to-end loop, so the trace has no
+end-to-end line; Part~B's second sample, written to the benchmark export,
+covers that point.
+(2)~Neither part samples inside a timed call, so a short-lived peak during a
+single inference is not captured.
+(3)~The earlier build passed each of the 226{,}800 detector output values to
+shared code as a separate object. According to the session record of
+14 September 2026, resident memory grew with every detector call until iOS
+terminated the application at about 1{,}600~MiB during the first detector
+stage. That process left no export, so no pre-correction trace is reported.
+(4)~The correction replaced the boxed values with a contiguous numerical
+buffer. Model weights, thresholds, class indexing, coordinate transformations
+and non-maximum suppression were unchanged. An output-equivalence check in
+the iOS Simulator reproduced all 226{,}800 values bit for bit.
+(5)~No phase-boundary trace exists for Android. Android already used a
+contiguous numerical representation. The Xiaomi memory difference is
+excluded because both samples were captured at the same point.
 \par}
 \tabletail

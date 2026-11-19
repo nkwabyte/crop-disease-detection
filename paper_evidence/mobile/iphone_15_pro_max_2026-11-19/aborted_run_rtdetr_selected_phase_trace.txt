@@ -1,0 +1,4 @@
+[iOS-Bench] phase=start residentMB=40.3
+[iOS-Bench] phase=after_cold_load_loop residentMB=40.6
+[iOS-Bench] phase=after_artifacts_and_images residentMB=216.5
+[iOS-Bench] phase=after_classifier_stage residentMB=146.3

@@ -47,10 +47,12 @@ with the iPhone or Xiaomi results reported in the main manuscript.
 \label{sup:physical}
 
 The physical-device results are presented in the main manuscript and are not
-duplicated here. They were derived from three benchmark sessions on an
-iPhone~15 Pro Max and one complete session on a Xiaomi Redmi Note~14 Pro+~5G.
-The original benchmark records have been retained by the authors for
-verification.
+duplicated here. They were derived from one complete session on an
+iPhone~15 Pro Max (19 November 2026) and one complete session on a Xiaomi
+Redmi Note~14 Pro+~5G (14 September 2026). Three earlier iPhone sessions
+(14 September 2026) covered the rejection path only, from a build with
+uncommitted changes; they are archived but not reported. All benchmark
+records are archived in the evidence package.
 
 Each value presented in the physical-device tables was independently
 recalculated from the corresponding benchmark record. The verification
@@ -227,14 +229,14 @@ behaviour and should not be interpreted as physical-device evidence.
 \label{sup:conditions}
 
 \begin{enumerate}
-  \item \textbf{iPhone~15 Pro Max.} Three consecutive sessions were recorded
-  while the device was charging at 100\% battery. The reported thermal state
-  was nominal during the first session and fair during the second and third
-  sessions. No cooling interval was required between sessions.
+  \item \textbf{iPhone~15 Pro Max.} One complete session was recorded on
+  iOS~27.2.1 while the device was charging at 45\% battery. iOS reported the
+  thermal state as fair. All five routing paths were measured with the same
+  checksum-locked photographs as on the Xiaomi device.
 
   \item \textbf{Xiaomi Redmi Note~14 Pro+~5G.} One complete session was
-  recorded while the device was charging. Battery level ranged from 93\% to
-  100\%, and Android reported its lowest thermal category. Charging is
+  recorded while the device was charging at 100\% battery, and Android
+  reported its lowest thermal category. Charging is
   reported as part of the measurement condition; no claim is made that it
   improved or reduced performance.
 
@@ -252,24 +254,21 @@ behaviour and should not be interpreted as physical-device evidence.
 \section{Build and model provenance}
 \label{sup:provenance}
 
-The three iPhone sessions were produced from the same application build. That
-build included the corrected detector-output transfer, although some of the
-source changes implementing the correction had not yet been committed. Its
-recorded revision therefore identifies the nearest committed source state
-rather than the complete build contents.
+The reported iPhone session was produced from a clean, committed debug
+build; the headless benchmark entry point is compiled only into debug builds.
+The Xiaomi session was produced from a clean, committed release build. The two
+revisions differ only in benchmark instrumentation (the placement of the
+memory samples and explanatory notes) and an Xcode build-script check; the
+inference, routing and output-transfer code is identical. The platforms are
+nevertheless presented as separate evaluations rather than as a controlled
+comparison.
 
-The Xiaomi session was produced from a clean, committed release build. The
-two platforms were not measured from an identical source revision and are
-therefore presented as separate platform evaluations rather than as a
-controlled comparison.
-
-Builds containing uncommitted changes are now identified automatically and
-are excluded from citable Android benchmark results. No reported Android
-measurement was obtained from a build marked as modified.
+Builds containing uncommitted tracked changes are identified automatically by
+a suffix on the recorded revision. Neither reported session carries it.
 
 Both devices used the same four-class EfficientNet-B2 classifier and YOLO26n
 detector. The classifier was approximately 30.8~MB and the detector
-approximately 9.8~MB. Model checksums were compared across the four
+approximately 9.8~MB. Model checksums were compared across the
 physical-device sessions and confirmed that the same model versions were used.
 
 \section{Routing outcomes}
@@ -323,13 +322,12 @@ directly verifiable.
   application bundle.
 
   \item \textbf{Limited device and session coverage.} The physical-device
-  evidence consists of three sessions on one iPhone and one session on one
+  evidence consists of one session on one iPhone and one session on one
   Xiaomi device. These results should not be generalised to other units,
   device models or the broader Android and iOS populations.
 
-  \item \textbf{Routing coverage differs by platform.} The iPhone benchmark
-  covered only the out-of-distribution rejection path. Accepted-crop and
-  crop-mismatch measurements were available only for the Xiaomi device.
+  \item \textbf{Build configuration differs by platform.} The iPhone session
+  used a debug build and the Xiaomi session a release build.
 \end{enumerate}
 
 \section{Evidence traceability}
@@ -349,15 +347,16 @@ The numerical results were traced to the following retained evidence:
   classifier configurations.
 
   \item Physical-device latency and routing results were derived from the
-  three retained iPhone benchmark records and the single retained Xiaomi
-  benchmark record.
+  retained iPhone benchmark record of 19 November 2026 and the single
+  retained Xiaomi benchmark record.
 
   \item Android behavioural-acceptance results were derived from the
   six-case application log and detector-invocation records.
 
-  \item The iOS memory comparison was derived from the recorded
-  pre-correction diagnostic trace and the completed post-correction
-  physical-device benchmark.
+  \item The iOS memory trace was derived from the phase-boundary console log
+  and memory samples of the iPhone session of 19 November 2026. The
+  pre-correction termination point comes from the session record of
+  14 September 2026; that process left no export.
 
   \item Supplementary Table~S1 was derived from two Android-emulator quick
   benchmarks and one extended benchmark from each simulated platform.
@@ -385,9 +384,6 @@ to interpret the results currently reported:
 
   \item Repeat the complete Xiaomi benchmark to characterise run-to-run and
   thermal variation.
-
-  \item Measure accepted-crop and crop-mismatch paths on the iPhone using a
-  fixed set of real crop images.
 
   \item Complete the cross-platform output-agreement evaluation to compare
   desktop, Android and iOS classification, routing and detection outputs,

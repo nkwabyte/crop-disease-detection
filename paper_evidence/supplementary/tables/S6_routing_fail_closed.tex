@@ -25,28 +25,28 @@ Crop mismatch        & 100 & 0   & 100 & 100 & 0 \\
 \end{tabular}\end{center}
 
 \smallskip
-\noindent\textit{iPhone~15 Pro Max (three consecutive physical sessions;
-$n = 100$ per run; only the out-of-distribution path was exercised in the
-100-iteration harness loop in the current evidence set)}
+\noindent\textit{iPhone~15 Pro Max (one session while charging; $n = 100$
+per path)}
 
 \begin{center}\footnotesize\setlength{\tabcolsep}{5pt}
-\begin{tabular}{l l r r r r r}
+\begin{tabular}{p{115pt} r r r r r}
 \toprule
-    & Thermal &     & Det.  & Det.  & Offline & Offline \\
-Run & state   & $n$ & exec. & skip. & success & failure \\
+             &     & Det.  & Det.  & Offline & Offline \\
+Routing path & $n$ & exec. & skip. & success & failure \\
 \midrule
-Run 1 & nominal & 100 & 0 & 100 & 100 & 0 \\
-Run 2 & fair    & 100 & 0 & 100 & 100 & 0 \\
-Run 3 & fair    & 100 & 0 & 100 & 100 & 0 \\
+Accepted Corn        & 100 & 100 & 0   & 100 & 0 \\
+Accepted Pepper      & 100 & 100 & 0   & 100 & 0 \\
+Accepted Tomato      & 100 & 100 & 0   & 100 & 0 \\
+OOD rejection        & 100 & 0   & 100 & 100 & 0 \\
+Crop mismatch        & 100 & 0   & 100 & 100 & 0 \\
 \bottomrule
 \end{tabular}\end{center}
 
 {\footnotesize
-Across the five Xiaomi paths and three iPhone runs, all operations completed
-without an offline failure. The detector was never invoked for an
-out-of-distribution image or a crop mismatch, but it was invoked for every
-accepted image. These are observed counts rather than statistically estimated
-failure rates.
+On both phones all operations completed without an offline failure. The
+detector was never invoked for an out-of-distribution image or a crop
+mismatch, but it was invoked for every accepted image. These are observed
+counts rather than statistically estimated failure rates.
 \par}
 
 \medskip
@@ -81,13 +81,10 @@ reported separately and are not combined into a single count.
 \textit{Notes.} (1)~\emph{Fail-closed} means that the detector is not invoked
 when the classifier rejects an unsupported image or when its prediction does
 not match the crop selected by the user. In both situations, the application
-still returns a valid response rather than failing. (2)~No accepted-path or
-crop-mismatch-path 100-iteration harness data exists for the iPhone in the
-current evidence set; this is recorded as a limitation, not filled with an
-estimate. (3)~The Xiaomi evidence in Part~A is from a single pilot session
-while the device was plugged in and charging, a disclosed measurement
-condition. This may affect the timing figures in Table~\ref{tab:S5}, but not
-the observed routing counts reported here. (4)~Part~B rows are
+still returns a valid response rather than failing. (2)~Both sessions in Part~A ran while the devices were charging, a disclosed
+measurement condition. This may affect the timing figures in
+Tables~\ref{tab:S4} and~\ref{tab:S5}, but not the observed routing counts
+reported here. (3)~Part~B rows are
 Android-only and were run under software emulation on a desktop host; they
 are not physical-device performance evidence for the iPhone, the Xiaomi or any
 other handset.
