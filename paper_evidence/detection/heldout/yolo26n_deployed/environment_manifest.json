@@ -1,0 +1,10 @@
+{
+  "checkpoint": "runs/crop_disease_yolo26/weights/best.pt",
+  "torch": "2.8.0",
+  "torchvision": "0.23.0",
+  "ultralytics": "8.4.37",
+  "head": "one-to-many (end2end=False)",
+  "nms": "class-wise IoU 0.1",
+  "letterbox": "square 640x640, grey 114, centred",
+  "conf_floor_stored": 0.001
+}

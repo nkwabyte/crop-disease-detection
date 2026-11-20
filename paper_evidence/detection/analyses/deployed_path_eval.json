@@ -1,0 +1,137 @@
+{
+  "definition": "The output-agreement check (paper_evidence/output_agreement/README.md) showed that the\napp's detector path differs from the Ultralytics predict()/val defaults used for the\narchived held-out figures:",
+  "coco": {
+    "full": {
+      "images": 1016,
+      "mAP50": 0.2867350515297415,
+      "mAP50_95": 0.11355012534119906
+    },
+    "no_near_dup": {
+      "images": 652,
+      "mAP50": 0.26097194828630765,
+      "mAP50_95": 0.10174645312702353
+    }
+  },
+  "operating_points": {
+    "conf0.10_nms0.10": {
+      "tp": 2908,
+      "fp": 5063,
+      "fn": 5333,
+      "precision": 0.3648224814954209,
+      "recall": 0.35286979735469,
+      "f1": 0.3587466074512707,
+      "detections": 7971
+    },
+    "conf0.25_nms0.10": {
+      "tp": 2282,
+      "fp": 2190,
+      "fn": 5959,
+      "precision": 0.5102862254025045,
+      "recall": 0.2769081422157505,
+      "f1": 0.3590025957681114,
+      "detections": 4472
+    },
+    "conf0.50_nms0.10": {
+      "tp": 1172,
+      "fp": 572,
+      "fn": 7069,
+      "precision": 0.6720183486238532,
+      "recall": 0.1422157505157141,
+      "f1": 0.2347521281922884,
+      "detections": 1744
+    }
+  },
+  "composed": {
+    "A_3class_thr055": {
+      "conf0.50": {
+        "conditional": {
+          "tp": 1152,
+          "fp": 501,
+          "fn": 6226,
+          "precision": 0.6969147005444646,
+          "recall": 0.1561398753049607,
+          "f1": 0.25512124903111505,
+          "detections": 1653
+        },
+        "true_e2e": {
+          "tp": 1163,
+          "fp": 522,
+          "fn": 7078,
+          "precision": 0.6902077151335312,
+          "recall": 0.14112365004247057,
+          "f1": 0.23433407213379007,
+          "detections": 1685
+        }
+      },
+      "conf0.10": {
+        "conditional": {
+          "tp": 2775,
+          "fp": 4469,
+          "fn": 4603,
+          "precision": 0.3830756488128106,
+          "recall": 0.37611818921116835,
+          "f1": 0.3795650389823554,
+          "detections": 7244
+        },
+        "true_e2e": {
+          "tp": 2825,
+          "fp": 4720,
+          "fn": 5416,
+          "precision": 0.3744201457919152,
+          "recall": 0.342798204101444,
+          "f1": 0.35791207398961106,
+          "detections": 7545
+        }
+      }
+    },
+    "B_4class_floor055": {
+      "conf0.50": {
+        "conditional": {
+          "tp": 1144,
+          "fp": 502,
+          "fn": 6297,
+          "precision": 0.6950182260024301,
+          "recall": 0.1537427765085338,
+          "f1": 0.25178826895565093,
+          "detections": 1646
+        },
+        "true_e2e": {
+          "tp": 1154,
+          "fp": 521,
+          "fn": 7087,
+          "precision": 0.688955223880597,
+          "recall": 0.14003154956922703,
+          "f1": 0.23275514320290439,
+          "detections": 1675
+        }
+      },
+      "conf0.10": {
+        "conditional": {
+          "tp": 2770,
+          "fp": 4474,
+          "fn": 4671,
+          "precision": 0.3823854224185533,
+          "recall": 0.372261792769789,
+          "f1": 0.37725570309839973,
+          "detections": 7244
+        },
+        "true_e2e": {
+          "tp": 2814,
+          "fp": 4709,
+          "fn": 5427,
+          "precision": 0.37405290442642564,
+          "recall": 0.34146341463414637,
+          "f1": 0.35701598579040855,
+          "detections": 7523
+        }
+      }
+    }
+  },
+  "image_level_shipped": {
+    "images": 1016,
+    "any_hit": 0.7263779527559056,
+    "top1_present": 0.8248031496062992,
+    "no_output": 0.07578740157480315,
+    "gate_failures": 28
+  }
+}

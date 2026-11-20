@@ -1,12 +1,11 @@
-"""Figure 4: iOS resident memory by benchmark phase (iPhone 15 Pro Max, 2026-11-19).
+"""Figure 4: iOS resident memory by benchmark phase (iPhone 15 Pro Max, Release build, 2026-11-20).
 
 Reads only archived evidence:
-  paper_evidence/mobile/iphone_15_pro_max_2026-11-19/console_phase_trace_run1.txt
+  paper_evidence/mobile/iphone_15_pro_max_release_2026-11-20/console_phase_trace.txt
       '[iOS-Bench] phase=<name> residentMB=<v>' lines printed by the app at each
-      phase boundary (v = mach resident_size / 1024^2, i.e. MiB despite the label)
-  paper_evidence/mobile/iphone_15_pro_max_2026-11-19/extended_benchmark_1795105797518.json
-      memorySamples 'after_measured_loop' (KiB) -> point after the end-to-end loop,
-      whose console line was lost when the device connection dropped.
+      phase boundary (v = mach resident_size / 1024^2, i.e. MiB despite the label),
+      including 'after_end_to_end'. (Redrawn 2026-11-20; the 2026-11-19 debug-build
+      version took its last point from the export because that console line was lost.)
 
 The pre-fix build left no trace; its termination at about 1,600 MiB (session record,
 2026-09-14) is drawn as an annotated reference line, not as data points.
@@ -21,7 +20,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 ROOT = Path(__file__).resolve().parents[2]
-EV = ROOT / "paper_evidence" / "mobile" / "iphone_15_pro_max_2026-11-19"
+EV = ROOT / "paper_evidence" / "mobile" / "iphone_15_pro_max_release_2026-11-20"
 
 LABELS = {
     "start": "Start",
@@ -31,26 +30,24 @@ LABELS = {
     "detector_stage_1920x1080_done": "Detector\n1920×1080",
     "detector_stage_1280x960_done": "Detector\n1280×960",
     "detector_stage_640x480_done": "Detector\n640×480",
+    "after_end_to_end": "After\nend-to-end\nloop",
 }
 
 
 def main(outs):
     trace = {}
-    for line in (EV / "console_phase_trace_run1.txt").read_text().splitlines():
+    for line in (EV / "console_phase_trace.txt").read_text().splitlines():
         m = re.search(r"phase=(\S+) residentMB=([\d.]+)", line)
         if m:
             trace[m.group(1)] = float(m.group(2))
     xs, ys = [], []
     for k, lab in LABELS.items():
         xs.append(lab); ys.append(trace[k])
-    exp = json.loads((EV / "extended_benchmark_1795105797518.json").read_text())
-    after = next(s for s in exp["memorySamples"] if s["label"] == "after_measured_loop")
-    xs.append("After\nend-to-end\nloop"); ys.append(after["totalPssKb"] / 1024)
 
     green, orange = "#009E73", "#D55E00"
     fig, ax = plt.subplots(figsize=(7.4, 4.4), dpi=300)
     ax.plot(range(len(xs)), ys, "-o", color=green, lw=2.4, ms=6,
-            label="Contiguous-buffer build (recorded, 2026-11-19)")
+            label="Contiguous-buffer build (Release, recorded 2026-11-20)")
     for i, y in enumerate(ys):
         ax.annotate(f"{y:.1f}", (i, y), textcoords="offset points", xytext=(0, -15),
                     ha="center", fontsize=8.5, color=green)
