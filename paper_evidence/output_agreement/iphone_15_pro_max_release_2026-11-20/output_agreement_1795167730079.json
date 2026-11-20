@@ -1,0 +1,2599 @@
+{
+    "schema": "output_agreement_v1",
+    "platform": "ios",
+    "generatedAtEpochMs": 1795167730079,
+    "environment": {
+        "osVersion": "27.2.1",
+        "buildIdentifier": "7859f987c1c0",
+        "kotlinNativeDebugBinary": "false",
+        "detectionModel": "YOLO26",
+        "detectionThreshold": "0.1",
+        "iouThreshold": "0.1",
+        "classifierThreshold": "0.55"
+    },
+    "boxCoordinateSpace": 640,
+    "records": [
+        {
+            "imageFile": "oa_001.jpg",
+            "imageSha256": "3ed7a24712975853a9520fa7892d2f01872fdd56c80231dbe7db8b40e3b2df9c",
+            "sizeBytes": 29775,
+            "orientedWidth": 640,
+            "orientedHeight": 288,
+            "outcome": "DETECTED",
+            "classifierLabel": "Corn",
+            "classifierConfidence": 0.94461817,
+            "classifierAccepted": true,
+            "routedCrop": "Corn",
+            "detectorExecuted": true,
+            "detections": [
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.54754496,
+                    "box": [
+                        455.68494,
+                        134.23245,
+                        472.0775,
+                        166.93576
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.35111868,
+                    "box": [
+                        478.58026,
+                        63.697918,
+                        491.47955,
+                        89.346115
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.27409363,
+                    "box": [
+                        573.68317,
+                        139.23059,
+                        589.45844,
+                        169.76254
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.24255784,
+                    "box": [
+                        348.5523,
+                        465.3595,
+                        367.0467,
+                        503.46796
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.2166823,
+                    "box": [
+                        326.96838,
+                        508.4047,
+                        343.98584,
+                        539.1168
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.19584659,
+                    "box": [
+                        419.5511,
+                        414.20123,
+                        439.0103,
+                        448.972
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.17087717,
+                    "box": [
+                        324.2074,
+                        354.95755,
+                        340.51465,
+                        384.05777
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.17076892,
+                    "box": [
+                        311.23483,
+                        543.4026,
+                        325.4083,
+                        571.4243
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.15808351,
+                    "box": [
+                        375.4733,
+                        387.51056,
+                        393.78903,
+                        419.9135
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.11858415,
+                    "box": [
+                        337.07666,
+                        421.42242,
+                        354.12054,
+                        453.05353
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.1043073,
+                    "box": [
+                        449.48364,
+                        30.29012,
+                        461.84924,
+                        56.98276
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.10094223,
+                    "box": [
+                        578.3047,
+                        192.1293,
+                        597.8032,
+                        223.35257
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.10043083,
+                    "box": [
+                        335.66992,
+                        237.17966,
+                        352.47717,
+                        265.85666
+                    ]
+                }
+            ],
+            "errorMessage": null
+        },
+        {
+            "imageFile": "oa_002.jpg",
+            "imageSha256": "ea1a68b872a70b2d7f6fd30f94ab56f55551f2d781ea74f80838fe512d676e71",
+            "sizeBytes": 32559,
+            "orientedWidth": 640,
+            "orientedHeight": 288,
+            "outcome": "DETECTED",
+            "classifierLabel": "Corn",
+            "classifierConfidence": 0.91446143,
+            "classifierAccepted": true,
+            "routedCrop": "Corn",
+            "detectorExecuted": true,
+            "detections": [
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.63592505,
+                    "box": [
+                        180.46725,
+                        456.10248,
+                        196.0455,
+                        479.72473
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.5663221,
+                    "box": [
+                        139.46684,
+                        216.24838,
+                        154.35121,
+                        241.70438
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.44812512,
+                    "box": [
+                        183.71147,
+                        277.57788,
+                        196.25572,
+                        300.1527
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.36531612,
+                    "box": [
+                        63.542175,
+                        525.1952,
+                        76.70213,
+                        548.14185
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.325588,
+                    "box": [
+                        252.6258,
+                        334.096,
+                        268.3648,
+                        358.00903
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.293782,
+                    "box": [
+                        254.83936,
+                        200.4408,
+                        266.97473,
+                        222.3291
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.26237437,
+                    "box": [
+                        322.3152,
+                        251.91269,
+                        336.58917,
+                        277.74332
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.26214772,
+                    "box": [
+                        4.054167,
+                        442.6184,
+                        20.108746,
+                        469.6875
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.26149514,
+                    "box": [
+                        210.81882,
+                        302.8788,
+                        227.5004,
+                        329.13968
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.2544342,
+                    "box": [
+                        133.21518,
+                        422.9765,
+                        148.33133,
+                        449.36127
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.2178529,
+                    "box": [
+                        72.2997,
+                        308.87616,
+                        86.85637,
+                        336.46564
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.21073954,
+                    "box": [
+                        296.6686,
+                        241.79254,
+                        307.84067,
+                        262.8437
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.20345134,
+                    "box": [
+                        2.0301418,
+                        523.30945,
+                        28.22433,
+                        555.989
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.19987498,
+                    "box": [
+                        107.210815,
+                        321.83673,
+                        119.43262,
+                        345.04883
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.17152458,
+                    "box": [
+                        229.0951,
+                        269.47565,
+                        242.53772,
+                        292.62518
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.17085737,
+                    "box": [
+                        141.10167,
+                        259.0403,
+                        152.02345,
+                        278.4518
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.16521493,
+                    "box": [
+                        366.45642,
+                        312.38733,
+                        378.69397,
+                        334.7815
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.16474633,
+                    "box": [
+                        288.3326,
+                        398.0135,
+                        300.77884,
+                        418.3675
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.15778744,
+                    "box": [
+                        0.039022446,
+                        478.52173,
+                        17.791882,
+                        507.54626
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.15058704,
+                    "box": [
+                        44.190018,
+                        315.10455,
+                        59.660156,
+                        342.43
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.11936502,
+                    "box": [
+                        193.25903,
+                        423.8321,
+                        203.39093,
+                        443.9947
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.11487787,
+                    "box": [
+                        102.754944,
+                        499.9959,
+                        114.70114,
+                        520.7493
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.10110697,
+                    "box": [
+                        263.89313,
+                        384.57504,
+                        274.72064,
+                        403.9894
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.10098778,
+                    "box": [
+                        293.97968,
+                        322.59888,
+                        306.11676,
+                        344.92255
+                    ]
+                }
+            ],
+            "errorMessage": null
+        },
+        {
+            "imageFile": "oa_003.jpg",
+            "imageSha256": "f2bd1fc18a72898bcbcd40b332f6225836b2ca2fa740cdbe1fde14704246cada",
+            "sizeBytes": 64636,
+            "orientedWidth": 640,
+            "orientedHeight": 480,
+            "outcome": "DETECTED",
+            "classifierLabel": "Corn",
+            "classifierConfidence": 0.91324645,
+            "classifierAccepted": true,
+            "routedCrop": "Corn",
+            "detectorExecuted": true,
+            "detections": [
+                {
+                    "classIndex": 4,
+                    "className": "Corn Streak",
+                    "score": 0.23231535,
+                    "box": [
+                        266.05188,
+                        239.82411,
+                        358.73303,
+                        405.59912
+                    ]
+                },
+                {
+                    "classIndex": 4,
+                    "className": "Corn Streak",
+                    "score": 0.22241597,
+                    "box": [
+                        349.92767,
+                        295.68622,
+                        492.98822,
+                        484.96826
+                    ]
+                },
+                {
+                    "classIndex": 4,
+                    "className": "Corn Streak",
+                    "score": 0.13551615,
+                    "box": [
+                        505.8573,
+                        350.32324,
+                        635.42664,
+                        507.54962
+                    ]
+                }
+            ],
+            "errorMessage": null
+        },
+        {
+            "imageFile": "oa_004.jpg",
+            "imageSha256": "59a0b695bce878ded0956e6bef5928aebc5f559f95b0f65ce2e8d583e956412f",
+            "sizeBytes": 26747,
+            "orientedWidth": 640,
+            "orientedHeight": 426,
+            "outcome": "DETECTED",
+            "classifierLabel": "Corn",
+            "classifierConfidence": 0.93091774,
+            "classifierAccepted": true,
+            "routedCrop": "Corn",
+            "detectorExecuted": true,
+            "detections": [
+                {
+                    "classIndex": 4,
+                    "className": "Corn Streak",
+                    "score": 0.57780445,
+                    "box": [
+                        296.05725,
+                        7.986328,
+                        414.23486,
+                        139.14816
+                    ]
+                },
+                {
+                    "classIndex": 4,
+                    "className": "Corn Streak",
+                    "score": 0.34295884,
+                    "box": [
+                        260.56342,
+                        229.8853,
+                        392.91498,
+                        471.02985
+                    ]
+                },
+                {
+                    "classIndex": 4,
+                    "className": "Corn Streak",
+                    "score": 0.33931515,
+                    "box": [
+                        298.40924,
+                        487.82227,
+                        385.3604,
+                        633.17334
+                    ]
+                },
+                {
+                    "classIndex": 4,
+                    "className": "Corn Streak",
+                    "score": 0.33574194,
+                    "box": [
+                        281.22772,
+                        112.40744,
+                        385.456,
+                        265.54004
+                    ]
+                }
+            ],
+            "errorMessage": null
+        },
+        {
+            "imageFile": "oa_005.jpg",
+            "imageSha256": "b1ab7b1dd8d193d3084b6cb9666ec9ccf8dc2897c69b279664cb5054d59922b1",
+            "sizeBytes": 35216,
+            "orientedWidth": 640,
+            "orientedHeight": 288,
+            "outcome": "DETECTED",
+            "classifierLabel": "Corn",
+            "classifierConfidence": 0.8961003,
+            "classifierAccepted": true,
+            "routedCrop": "Corn",
+            "detectorExecuted": true,
+            "detections": [
+                {
+                    "classIndex": 1,
+                    "className": "Corn Common Rust",
+                    "score": 0.3977117,
+                    "box": [
+                        483.73157,
+                        302.47308,
+                        639.64246,
+                        506.648
+                    ]
+                },
+                {
+                    "classIndex": 1,
+                    "className": "Corn Common Rust",
+                    "score": 0.35133004,
+                    "box": [
+                        2.3805847,
+                        263.1021,
+                        232.83905,
+                        630.37177
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.2170094,
+                    "box": [
+                        316.28748,
+                        508.38586,
+                        342.72742,
+                        541.95886
+                    ]
+                },
+                {
+                    "classIndex": 1,
+                    "className": "Corn Common Rust",
+                    "score": 0.120913014,
+                    "box": [
+                        295.96216,
+                        290.72595,
+                        473.7768,
+                        545.7726
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.10205724,
+                    "box": [
+                        314.3136,
+                        437.03223,
+                        332.08557,
+                        464.4397
+                    ]
+                }
+            ],
+            "errorMessage": null
+        },
+        {
+            "imageFile": "oa_006.jpg",
+            "imageSha256": "01d0dd9bb4fd738f1d6e5b44c4c39b1f775bb011a6981d9b6ec2c936ba10cc2c",
+            "sizeBytes": 30271,
+            "orientedWidth": 640,
+            "orientedHeight": 426,
+            "outcome": "DETECTED",
+            "classifierLabel": "Corn",
+            "classifierConfidence": 0.8437882,
+            "classifierAccepted": true,
+            "routedCrop": "Corn",
+            "detectorExecuted": true,
+            "detections": [
+                {
+                    "classIndex": 4,
+                    "className": "Corn Streak",
+                    "score": 0.4466035,
+                    "box": [
+                        273.74738,
+                        157.83502,
+                        347.91937,
+                        263.9702
+                    ]
+                },
+                {
+                    "classIndex": 4,
+                    "className": "Corn Streak",
+                    "score": 0.38793862,
+                    "box": [
+                        244.73938,
+                        277.4557,
+                        334.91333,
+                        391.18225
+                    ]
+                },
+                {
+                    "classIndex": 4,
+                    "className": "Corn Streak",
+                    "score": 0.38625604,
+                    "box": [
+                        263.5692,
+                        429.67926,
+                        321.86914,
+                        531.6025
+                    ]
+                },
+                {
+                    "classIndex": 4,
+                    "className": "Corn Streak",
+                    "score": 0.24165614,
+                    "box": [
+                        301.01025,
+                        569.7932,
+                        332.34143,
+                        637.52905
+                    ]
+                }
+            ],
+            "errorMessage": null
+        },
+        {
+            "imageFile": "oa_007.jpg",
+            "imageSha256": "3c78a7881fcd6988c822b170a59aa0fd95fcf26923c6302bd51d7c3e39da91ac",
+            "sizeBytes": 58965,
+            "orientedWidth": 640,
+            "orientedHeight": 480,
+            "outcome": "DETECTED",
+            "classifierLabel": "Corn",
+            "classifierConfidence": 0.9132063,
+            "classifierAccepted": true,
+            "routedCrop": "Corn",
+            "detectorExecuted": true,
+            "detections": [
+                {
+                    "classIndex": 4,
+                    "className": "Corn Streak",
+                    "score": 0.54495275,
+                    "box": [
+                        100.58611,
+                        265.81335,
+                        230.93555,
+                        434.53442
+                    ]
+                },
+                {
+                    "classIndex": 4,
+                    "className": "Corn Streak",
+                    "score": 0.52151954,
+                    "box": [
+                        269.98438,
+                        153.91972,
+                        490.52527,
+                        430.27692
+                    ]
+                },
+                {
+                    "classIndex": 4,
+                    "className": "Corn Streak",
+                    "score": 0.48059002,
+                    "box": [
+                        0.009159088,
+                        117.06763,
+                        49.55304,
+                        283.406
+                    ]
+                },
+                {
+                    "classIndex": 4,
+                    "className": "Corn Streak",
+                    "score": 0.28369722,
+                    "box": [
+                        418.8971,
+                        526.94946,
+                        527.2275,
+                        625.26855
+                    ]
+                },
+                {
+                    "classIndex": 4,
+                    "className": "Corn Streak",
+                    "score": 0.2658696,
+                    "box": [
+                        515.65344,
+                        251.05984,
+                        637.87537,
+                        380.65598
+                    ]
+                },
+                {
+                    "classIndex": 4,
+                    "className": "Corn Streak",
+                    "score": 0.2617115,
+                    "box": [
+                        288.3506,
+                        497.80005,
+                        443.19885,
+                        623.3457
+                    ]
+                },
+                {
+                    "classIndex": 4,
+                    "className": "Corn Streak",
+                    "score": 0.22117025,
+                    "box": [
+                        510.17285,
+                        507.1143,
+                        625.8723,
+                        616.8069
+                    ]
+                },
+                {
+                    "classIndex": 4,
+                    "className": "Corn Streak",
+                    "score": 0.15685087,
+                    "box": [
+                        425.25232,
+                        444.6648,
+                        535.33875,
+                        506.6902
+                    ]
+                }
+            ],
+            "errorMessage": null
+        },
+        {
+            "imageFile": "oa_008.jpg",
+            "imageSha256": "b295cfc0aff885af41055bf0f8b6a5d55554e6e2b8a4cff5c6672ce5bd4915ca",
+            "sizeBytes": 78734,
+            "orientedWidth": 640,
+            "orientedHeight": 480,
+            "outcome": "DETECTED",
+            "classifierLabel": "Corn",
+            "classifierConfidence": 0.92876446,
+            "classifierAccepted": true,
+            "routedCrop": "Corn",
+            "detectorExecuted": true,
+            "detections": [
+                {
+                    "classIndex": 4,
+                    "className": "Corn Streak",
+                    "score": 0.47662887,
+                    "box": [
+                        53.400375,
+                        298.36273,
+                        134.31668,
+                        434.42426
+                    ]
+                },
+                {
+                    "classIndex": 4,
+                    "className": "Corn Streak",
+                    "score": 0.32236725,
+                    "box": [
+                        281.70953,
+                        253.10419,
+                        382.15552,
+                        427.84326
+                    ]
+                },
+                {
+                    "classIndex": 4,
+                    "className": "Corn Streak",
+                    "score": 0.30235755,
+                    "box": [
+                        541.6639,
+                        233.82257,
+                        638.8525,
+                        406.95264
+                    ]
+                },
+                {
+                    "classIndex": 4,
+                    "className": "Corn Streak",
+                    "score": 0.28323403,
+                    "box": [
+                        452.22394,
+                        241.72943,
+                        558.31903,
+                        408.10803
+                    ]
+                },
+                {
+                    "classIndex": 4,
+                    "className": "Corn Streak",
+                    "score": 0.27113977,
+                    "box": [
+                        374.30786,
+                        245.05455,
+                        469.0006,
+                        419.71167
+                    ]
+                },
+                {
+                    "classIndex": 4,
+                    "className": "Corn Streak",
+                    "score": 0.24632747,
+                    "box": [
+                        182.44647,
+                        276.6018,
+                        277.75818,
+                        434.8103
+                    ]
+                }
+            ],
+            "errorMessage": null
+        },
+        {
+            "imageFile": "oa_009.jpg",
+            "imageSha256": "ed28ed3324b01d09d8f8ce2e80d55ca1e5e8f3ba6c4116c06e3885c196d16448",
+            "sizeBytes": 52175,
+            "orientedWidth": 640,
+            "orientedHeight": 426,
+            "outcome": "DETECTED",
+            "classifierLabel": "Pepper",
+            "classifierConfidence": 0.9306052,
+            "classifierAccepted": true,
+            "routedCrop": "Pepper",
+            "detectorExecuted": true,
+            "detections": [
+                {
+                    "classIndex": 11,
+                    "className": "Pepper Leaf Blight",
+                    "score": 0.6767409,
+                    "box": [
+                        298.38824,
+                        308.77072,
+                        315.17035,
+                        333.66104
+                    ]
+                }
+            ],
+            "errorMessage": null
+        },
+        {
+            "imageFile": "oa_010.jpg",
+            "imageSha256": "8570a132e1779cd24920bd01b45494636e3465cb5b0497c618c354261d33f400",
+            "sizeBytes": 61808,
+            "orientedWidth": 640,
+            "orientedHeight": 480,
+            "outcome": "DETECTED",
+            "classifierLabel": "Pepper",
+            "classifierConfidence": 0.5601841,
+            "classifierAccepted": true,
+            "routedCrop": "Pepper",
+            "detectorExecuted": true,
+            "detections": [
+                {
+                    "classIndex": 14,
+                    "className": "Pepper Septoria",
+                    "score": 0.25479233,
+                    "box": [
+                        220.65125,
+                        35.636414,
+                        249.5279,
+                        78.46731
+                    ]
+                }
+            ],
+            "errorMessage": null
+        },
+        {
+            "imageFile": "oa_011.jpg",
+            "imageSha256": "091b9f3b9b1753942fb2542c54bf8adaed1bd1f88fa9d8cd54389ac5fb2c6666",
+            "sizeBytes": 60453,
+            "orientedWidth": 640,
+            "orientedHeight": 480,
+            "outcome": "DETECTED",
+            "classifierLabel": "Pepper",
+            "classifierConfidence": 0.91135556,
+            "classifierAccepted": true,
+            "routedCrop": "Pepper",
+            "detectorExecuted": true,
+            "detections": [
+                {
+                    "classIndex": 9,
+                    "className": "Pepper Healthy",
+                    "score": 0.80378157,
+                    "box": [
+                        0.0,
+                        342.0835,
+                        104.204346,
+                        454.1411
+                    ]
+                },
+                {
+                    "classIndex": 9,
+                    "className": "Pepper Healthy",
+                    "score": 0.7530897,
+                    "box": [
+                        296.1515,
+                        299.5595,
+                        473.5487,
+                        433.82465
+                    ]
+                },
+                {
+                    "classIndex": 9,
+                    "className": "Pepper Healthy",
+                    "score": 0.6406357,
+                    "box": [
+                        196.53534,
+                        453.52975,
+                        281.70947,
+                        592.63306
+                    ]
+                },
+                {
+                    "classIndex": 9,
+                    "className": "Pepper Healthy",
+                    "score": 0.34869587,
+                    "box": [
+                        36.854843,
+                        542.40405,
+                        106.31465,
+                        639.0719
+                    ]
+                },
+                {
+                    "classIndex": 9,
+                    "className": "Pepper Healthy",
+                    "score": 0.13913123,
+                    "box": [
+                        604.21484,
+                        235.03856,
+                        640.0,
+                        346.88733
+                    ]
+                },
+                {
+                    "classIndex": 9,
+                    "className": "Pepper Healthy",
+                    "score": 0.12486487,
+                    "box": [
+                        550.30725,
+                        387.25415,
+                        614.5873,
+                        449.34973
+                    ]
+                }
+            ],
+            "errorMessage": null
+        },
+        {
+            "imageFile": "oa_012.jpg",
+            "imageSha256": "cec065bf96764e9390dca03a49aa5f2b6bd951388391ea2eee4dd33ba524eccc",
+            "sizeBytes": 59983,
+            "orientedWidth": 640,
+            "orientedHeight": 480,
+            "outcome": "DETECTED",
+            "classifierLabel": "Pepper",
+            "classifierConfidence": 0.93319756,
+            "classifierAccepted": true,
+            "routedCrop": "Pepper",
+            "detectorExecuted": true,
+            "detections": [
+                {
+                    "classIndex": 9,
+                    "className": "Pepper Healthy",
+                    "score": 0.76031923,
+                    "box": [
+                        266.6126,
+                        290.24805,
+                        385.64093,
+                        412.88318
+                    ]
+                },
+                {
+                    "classIndex": 9,
+                    "className": "Pepper Healthy",
+                    "score": 0.12002661,
+                    "box": [
+                        270.89722,
+                        129.86813,
+                        354.28845,
+                        227.38977
+                    ]
+                }
+            ],
+            "errorMessage": null
+        },
+        {
+            "imageFile": "oa_013.jpg",
+            "imageSha256": "f54100a0eee9322f28be7f7d2d71d43fbe31de1edf65cb7b17f6188cbd262deb",
+            "sizeBytes": 65899,
+            "orientedWidth": 640,
+            "orientedHeight": 480,
+            "outcome": "DETECTED",
+            "classifierLabel": "Pepper",
+            "classifierConfidence": 0.9265837,
+            "classifierAccepted": true,
+            "routedCrop": "Pepper",
+            "detectorExecuted": true,
+            "detections": [
+                {
+                    "classIndex": 9,
+                    "className": "Pepper Healthy",
+                    "score": 0.68475264,
+                    "box": [
+                        106.80622,
+                        392.4608,
+                        199.4347,
+                        475.15836
+                    ]
+                },
+                {
+                    "classIndex": 9,
+                    "className": "Pepper Healthy",
+                    "score": 0.6381687,
+                    "box": [
+                        298.75458,
+                        87.949066,
+                        480.16888,
+                        249.11191
+                    ]
+                },
+                {
+                    "classIndex": 9,
+                    "className": "Pepper Healthy",
+                    "score": 0.62204576,
+                    "box": [
+                        157.06195,
+                        547.0343,
+                        255.43707,
+                        626.82043
+                    ]
+                },
+                {
+                    "classIndex": 9,
+                    "className": "Pepper Healthy",
+                    "score": 0.5323484,
+                    "box": [
+                        346.04675,
+                        574.4353,
+                        423.69177,
+                        640.0
+                    ]
+                }
+            ],
+            "errorMessage": null
+        },
+        {
+            "imageFile": "oa_014.jpg",
+            "imageSha256": "2d261905c0fef9092f4d6fe5c424f797a03139f4755b2e5d4149ef57c58cb9b6",
+            "sizeBytes": 70935,
+            "orientedWidth": 640,
+            "orientedHeight": 480,
+            "outcome": "DETECTED",
+            "classifierLabel": "Pepper",
+            "classifierConfidence": 0.9336439,
+            "classifierAccepted": true,
+            "routedCrop": "Pepper",
+            "detectorExecuted": true,
+            "detections": [
+                {
+                    "classIndex": 8,
+                    "className": "Pepper Fusarium",
+                    "score": 0.8628008,
+                    "box": [
+                        148.67926,
+                        51.49643,
+                        365.13947,
+                        184.36972
+                    ]
+                }
+            ],
+            "errorMessage": null
+        },
+        {
+            "imageFile": "oa_015.jpg",
+            "imageSha256": "c249f01d54773650f477012f28eb9c01793d3de6d63b6c827250e7caa4e2e0b2",
+            "sizeBytes": 58227,
+            "orientedWidth": 640,
+            "orientedHeight": 480,
+            "outcome": "DETECTED",
+            "classifierLabel": "Pepper",
+            "classifierConfidence": 0.94301355,
+            "classifierAccepted": true,
+            "routedCrop": "Pepper",
+            "detectorExecuted": true,
+            "detections": [
+                {
+                    "classIndex": 12,
+                    "className": "Pepper Leaf Curl",
+                    "score": 0.7342154,
+                    "box": [
+                        269.2442,
+                        111.55452,
+                        336.62592,
+                        185.72237
+                    ]
+                },
+                {
+                    "classIndex": 12,
+                    "className": "Pepper Leaf Curl",
+                    "score": 0.7094781,
+                    "box": [
+                        250.95294,
+                        250.9125,
+                        288.62994,
+                        347.663
+                    ]
+                },
+                {
+                    "classIndex": 12,
+                    "className": "Pepper Leaf Curl",
+                    "score": 0.6174432,
+                    "box": [
+                        409.70563,
+                        293.55756,
+                        463.8255,
+                        391.19708
+                    ]
+                },
+                {
+                    "classIndex": 12,
+                    "className": "Pepper Leaf Curl",
+                    "score": 0.36388984,
+                    "box": [
+                        579.22754,
+                        319.95435,
+                        636.2539,
+                        401.75073
+                    ]
+                },
+                {
+                    "classIndex": 12,
+                    "className": "Pepper Leaf Curl",
+                    "score": 0.35322574,
+                    "box": [
+                        274.18213,
+                        394.97644,
+                        314.32397,
+                        464.45105
+                    ]
+                },
+                {
+                    "classIndex": 12,
+                    "className": "Pepper Leaf Curl",
+                    "score": 0.13667975,
+                    "box": [
+                        358.76685,
+                        100.003815,
+                        416.00916,
+                        211.65463
+                    ]
+                },
+                {
+                    "classIndex": 5,
+                    "className": "Pepper Bacterial Spot",
+                    "score": 0.10147793,
+                    "box": [
+                        192.93979,
+                        236.99211,
+                        205.52109,
+                        251.50398
+                    ]
+                }
+            ],
+            "errorMessage": null
+        },
+        {
+            "imageFile": "oa_016.jpg",
+            "imageSha256": "2fc9b3ba5efb345373f34c41194ecc460ad3cc18f572a0ca75f09f72b91bbaf8",
+            "sizeBytes": 59704,
+            "orientedWidth": 640,
+            "orientedHeight": 480,
+            "outcome": "DETECTED",
+            "classifierLabel": "Pepper",
+            "classifierConfidence": 0.9424108,
+            "classifierAccepted": true,
+            "routedCrop": "Pepper",
+            "detectorExecuted": true,
+            "detections": [
+                {
+                    "classIndex": 12,
+                    "className": "Pepper Leaf Curl",
+                    "score": 0.68580663,
+                    "box": [
+                        580.88696,
+                        187.82697,
+                        620.4702,
+                        333.1938
+                    ]
+                },
+                {
+                    "classIndex": 12,
+                    "className": "Pepper Leaf Curl",
+                    "score": 0.46560794,
+                    "box": [
+                        199.90482,
+                        125.942505,
+                        242.24625,
+                        237.86868
+                    ]
+                },
+                {
+                    "classIndex": 12,
+                    "className": "Pepper Leaf Curl",
+                    "score": 0.12740907,
+                    "box": [
+                        135.63004,
+                        65.14668,
+                        193.56381,
+                        184.73799
+                    ]
+                }
+            ],
+            "errorMessage": null
+        },
+        {
+            "imageFile": "oa_017.jpg",
+            "imageSha256": "dc05cc385e86021a23c5c037e6b5eaa87b7ec068164f1227f934d33a76b4ba56",
+            "sizeBytes": 24032,
+            "orientedWidth": 640,
+            "orientedHeight": 426,
+            "outcome": "DETECTED",
+            "classifierLabel": "Tomato",
+            "classifierConfidence": 0.92683434,
+            "classifierAccepted": true,
+            "routedCrop": "Tomato",
+            "detectorExecuted": true,
+            "detections": [
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.83639723,
+                    "box": [
+                        279.0193,
+                        235.25208,
+                        366.84912,
+                        491.65393
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.7950945,
+                    "box": [
+                        230.4834,
+                        2.2835312,
+                        269.54852,
+                        104.5403
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.77084756,
+                    "box": [
+                        216.14142,
+                        185.45142,
+                        305.5041,
+                        253.84418
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.7679461,
+                    "box": [
+                        295.8239,
+                        67.01915,
+                        341.35406,
+                        151.25105
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.74796355,
+                    "box": [
+                        265.12885,
+                        153.28763,
+                        308.5547,
+                        194.67368
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.7395909,
+                    "box": [
+                        305.69482,
+                        142.15222,
+                        356.37244,
+                        194.62042
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.72817636,
+                    "box": [
+                        319.398,
+                        183.7091,
+                        392.32684,
+                        235.15698
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.7189121,
+                    "box": [
+                        196.897,
+                        114.08478,
+                        258.21927,
+                        205.60071
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.13942057,
+                    "box": [
+                        294.7939,
+                        210.182,
+                        316.69424,
+                        238.68536
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.11178225,
+                    "box": [
+                        372.97052,
+                        110.638794,
+                        416.32477,
+                        207.15967
+                    ]
+                }
+            ],
+            "errorMessage": null
+        },
+        {
+            "imageFile": "oa_018.jpg",
+            "imageSha256": "700041acd85477081244081fff96f390e80f1523e9421445c9e5c46a69d3b166",
+            "sizeBytes": 65304,
+            "orientedWidth": 640,
+            "orientedHeight": 480,
+            "outcome": "DETECTED",
+            "classifierLabel": "Tomato",
+            "classifierConfidence": 0.77382475,
+            "classifierAccepted": true,
+            "routedCrop": "Tomato",
+            "detectorExecuted": true,
+            "detections": [
+                {
+                    "classIndex": 22,
+                    "className": "Tomato Septoria",
+                    "score": 0.23203015,
+                    "box": [
+                        68.52403,
+                        100.568115,
+                        84.34633,
+                        118.24594
+                    ]
+                },
+                {
+                    "classIndex": 22,
+                    "className": "Tomato Septoria",
+                    "score": 0.197945,
+                    "box": [
+                        23.153404,
+                        110.497986,
+                        49.11664,
+                        143.16283
+                    ]
+                },
+                {
+                    "classIndex": 19,
+                    "className": "Tomato Late Blight",
+                    "score": 0.11692491,
+                    "box": [
+                        23.579155,
+                        110.62329,
+                        50.519333,
+                        143.30148
+                    ]
+                },
+                {
+                    "classIndex": 22,
+                    "className": "Tomato Septoria",
+                    "score": 0.11233354,
+                    "box": [
+                        586.7709,
+                        554.94666,
+                        605.86584,
+                        574.86365
+                    ]
+                },
+                {
+                    "classIndex": 22,
+                    "className": "Tomato Septoria",
+                    "score": 0.10833014,
+                    "box": [
+                        61.793648,
+                        122.40441,
+                        80.133354,
+                        141.00604
+                    ]
+                }
+            ],
+            "errorMessage": null
+        },
+        {
+            "imageFile": "oa_019.jpg",
+            "imageSha256": "13ced11c0ec779be4451b6971a726a7b41485b0e0930db6c8ef39aa57814e09e",
+            "sizeBytes": 83579,
+            "orientedWidth": 640,
+            "orientedHeight": 480,
+            "outcome": "DETECTED",
+            "classifierLabel": "Tomato",
+            "classifierConfidence": 0.95255697,
+            "classifierAccepted": true,
+            "routedCrop": "Tomato",
+            "detectorExecuted": true,
+            "detections": [
+                {
+                    "classIndex": 19,
+                    "className": "Tomato Late Blight",
+                    "score": 0.4320312,
+                    "box": [
+                        324.92267,
+                        416.28345,
+                        345.24786,
+                        440.72375
+                    ]
+                },
+                {
+                    "classIndex": 19,
+                    "className": "Tomato Late Blight",
+                    "score": 0.41381386,
+                    "box": [
+                        182.79529,
+                        559.5366,
+                        205.15802,
+                        587.6466
+                    ]
+                },
+                {
+                    "classIndex": 19,
+                    "className": "Tomato Late Blight",
+                    "score": 0.4087396,
+                    "box": [
+                        493.09558,
+                        232.18414,
+                        513.34766,
+                        264.04578
+                    ]
+                },
+                {
+                    "classIndex": 19,
+                    "className": "Tomato Late Blight",
+                    "score": 0.3756429,
+                    "box": [
+                        446.4422,
+                        348.52646,
+                        474.31805,
+                        389.7418
+                    ]
+                },
+                {
+                    "classIndex": 19,
+                    "className": "Tomato Late Blight",
+                    "score": 0.31190526,
+                    "box": [
+                        222.94157,
+                        375.67145,
+                        241.29753,
+                        398.2273
+                    ]
+                },
+                {
+                    "classIndex": 19,
+                    "className": "Tomato Late Blight",
+                    "score": 0.3029009,
+                    "box": [
+                        606.04913,
+                        308.11096,
+                        622.4206,
+                        329.53174
+                    ]
+                },
+                {
+                    "classIndex": 19,
+                    "className": "Tomato Late Blight",
+                    "score": 0.27412558,
+                    "box": [
+                        259.46454,
+                        377.7583,
+                        289.6336,
+                        423.7049
+                    ]
+                },
+                {
+                    "classIndex": 19,
+                    "className": "Tomato Late Blight",
+                    "score": 0.26051682,
+                    "box": [
+                        64.35042,
+                        109.44829,
+                        81.77629,
+                        128.48589
+                    ]
+                },
+                {
+                    "classIndex": 19,
+                    "className": "Tomato Late Blight",
+                    "score": 0.24805535,
+                    "box": [
+                        296.62985,
+                        324.63647,
+                        317.68155,
+                        357.76862
+                    ]
+                },
+                {
+                    "classIndex": 19,
+                    "className": "Tomato Late Blight",
+                    "score": 0.20132281,
+                    "box": [
+                        522.67706,
+                        195.09332,
+                        550.07574,
+                        241.93982
+                    ]
+                },
+                {
+                    "classIndex": 19,
+                    "className": "Tomato Late Blight",
+                    "score": 0.19178957,
+                    "box": [
+                        92.91305,
+                        147.46198,
+                        113.25478,
+                        171.13062
+                    ]
+                },
+                {
+                    "classIndex": 19,
+                    "className": "Tomato Late Blight",
+                    "score": 0.15162395,
+                    "box": [
+                        613.2582,
+                        88.72717,
+                        629.6019,
+                        108.950806
+                    ]
+                },
+                {
+                    "classIndex": 19,
+                    "className": "Tomato Late Blight",
+                    "score": 0.14388634,
+                    "box": [
+                        430.52197,
+                        577.7976,
+                        444.7013,
+                        594.94495
+                    ]
+                },
+                {
+                    "classIndex": 19,
+                    "className": "Tomato Late Blight",
+                    "score": 0.12378882,
+                    "box": [
+                        598.1006,
+                        345.02673,
+                        633.4033,
+                        378.37634
+                    ]
+                },
+                {
+                    "classIndex": 19,
+                    "className": "Tomato Late Blight",
+                    "score": 0.108809255,
+                    "box": [
+                        0.012757301,
+                        534.88684,
+                        15.329627,
+                        565.7649
+                    ]
+                }
+            ],
+            "errorMessage": null
+        },
+        {
+            "imageFile": "oa_020.jpg",
+            "imageSha256": "f6d2f828930e8e258f99aaa0b5589fa33ad22fb3115356adc3571c75180d17ea",
+            "sizeBytes": 34278,
+            "orientedWidth": 640,
+            "orientedHeight": 426,
+            "outcome": "DETECTED",
+            "classifierLabel": "Tomato",
+            "classifierConfidence": 0.8924975,
+            "classifierAccepted": true,
+            "routedCrop": "Tomato",
+            "detectorExecuted": true,
+            "detections": [
+                {
+                    "classIndex": 19,
+                    "className": "Tomato Late Blight",
+                    "score": 0.38002834,
+                    "box": [
+                        289.47382,
+                        147.04974,
+                        316.29926,
+                        183.216
+                    ]
+                },
+                {
+                    "classIndex": 19,
+                    "className": "Tomato Late Blight",
+                    "score": 0.35362837,
+                    "box": [
+                        423.31177,
+                        600.9061,
+                        459.24304,
+                        626.96814
+                    ]
+                },
+                {
+                    "classIndex": 19,
+                    "className": "Tomato Late Blight",
+                    "score": 0.2275406,
+                    "box": [
+                        554.44006,
+                        385.88727,
+                        592.55334,
+                        420.0495
+                    ]
+                },
+                {
+                    "classIndex": 19,
+                    "className": "Tomato Late Blight",
+                    "score": 0.18607734,
+                    "box": [
+                        395.01355,
+                        559.9922,
+                        442.08337,
+                        593.0886
+                    ]
+                },
+                {
+                    "classIndex": 19,
+                    "className": "Tomato Late Blight",
+                    "score": 0.14621098,
+                    "box": [
+                        523.25037,
+                        222.90622,
+                        553.6459,
+                        273.69058
+                    ]
+                },
+                {
+                    "classIndex": 19,
+                    "className": "Tomato Late Blight",
+                    "score": 0.13887176,
+                    "box": [
+                        245.03046,
+                        101.166046,
+                        272.53058,
+                        167.96127
+                    ]
+                },
+                {
+                    "classIndex": 22,
+                    "className": "Tomato Septoria",
+                    "score": 0.10590824,
+                    "box": [
+                        343.28436,
+                        348.54553,
+                        380.89642,
+                        445.4535
+                    ]
+                }
+            ],
+            "errorMessage": null
+        },
+        {
+            "imageFile": "oa_021.jpg",
+            "imageSha256": "9b092fa8e191dcd3fe67f013db91e62a7b2568e879a4040c6347d4fb99ef7a81",
+            "sizeBytes": 33291,
+            "orientedWidth": 640,
+            "orientedHeight": 426,
+            "outcome": "DETECTED",
+            "classifierLabel": "Tomato",
+            "classifierConfidence": 0.9310098,
+            "classifierAccepted": true,
+            "routedCrop": "Tomato",
+            "detectorExecuted": true,
+            "detections": [
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.83496654,
+                    "box": [
+                        143.83817,
+                        171.11989,
+                        244.04056,
+                        371.22388
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.82481927,
+                    "box": [
+                        261.79626,
+                        251.23068,
+                        364.4776,
+                        487.18826
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.8054023,
+                    "box": [
+                        0.5196762,
+                        120.18619,
+                        81.302475,
+                        367.0863
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.7954204,
+                    "box": [
+                        48.982895,
+                        43.939438,
+                        155.53311,
+                        193.19699
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.79538494,
+                    "box": [
+                        230.36401,
+                        186.60486,
+                        293.0326,
+                        274.098
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.77165365,
+                    "box": [
+                        270.58,
+                        23.514313,
+                        364.81613,
+                        152.30333
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.741258,
+                    "box": [
+                        372.17664,
+                        240.7974,
+                        433.45,
+                        294.968
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.74125767,
+                    "box": [
+                        0.0,
+                        69.18619,
+                        28.095856,
+                        108.08731
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.67710865,
+                    "box": [
+                        359.00476,
+                        194.5632,
+                        399.8247,
+                        244.33066
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.61317,
+                    "box": [
+                        44.60405,
+                        0.0,
+                        103.24335,
+                        31.240177
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.5261346,
+                    "box": [
+                        0.033044815,
+                        0.0,
+                        17.354189,
+                        70.77832
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.1772223,
+                    "box": [
+                        28.79007,
+                        106.3891,
+                        47.18927,
+                        129.61378
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.16603766,
+                    "box": [
+                        0.121673584,
+                        359.56946,
+                        76.936455,
+                        537.6191
+                    ]
+                }
+            ],
+            "errorMessage": null
+        },
+        {
+            "imageFile": "oa_022.jpg",
+            "imageSha256": "b3457c2bbc6967029fcb1df1557af8ec428a0fe365b4aafd6efc9542e07e3ea0",
+            "sizeBytes": 66275,
+            "orientedWidth": 640,
+            "orientedHeight": 480,
+            "outcome": "DETECTED",
+            "classifierLabel": "Tomato",
+            "classifierConfidence": 0.8970286,
+            "classifierAccepted": true,
+            "routedCrop": "Tomato",
+            "detectorExecuted": true,
+            "detections": [
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.8421953,
+                    "box": [
+                        287.34866,
+                        107.06897,
+                        399.99203,
+                        191.67297
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.8040962,
+                    "box": [
+                        227.68433,
+                        53.591568,
+                        284.03256,
+                        100.815414
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.792963,
+                    "box": [
+                        202.17581,
+                        207.48672,
+                        331.0107,
+                        451.04507
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.633782,
+                    "box": [
+                        313.0788,
+                        187.5343,
+                        377.65765,
+                        313.1507
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.55186987,
+                    "box": [
+                        278.26898,
+                        27.468948,
+                        326.81378,
+                        106.3656
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.5046729,
+                    "box": [
+                        163.71991,
+                        135.43677,
+                        223.0755,
+                        210.52798
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.44925135,
+                    "box": [
+                        107.90262,
+                        188.15533,
+                        219.24826,
+                        358.4887
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.39995036,
+                    "box": [
+                        61.001083,
+                        0.0,
+                        140.38844,
+                        56.667828
+                    ]
+                },
+                {
+                    "classIndex": 22,
+                    "className": "Tomato Septoria",
+                    "score": 0.28608438,
+                    "box": [
+                        18.847824,
+                        215.18619,
+                        33.234715,
+                        240.09445
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.26076448,
+                    "box": [
+                        81.69614,
+                        60.999615,
+                        164.98053,
+                        143.95253
+                    ]
+                },
+                {
+                    "classIndex": 22,
+                    "className": "Tomato Septoria",
+                    "score": 0.2481367,
+                    "box": [
+                        131.25972,
+                        332.83484,
+                        147.6165,
+                        350.687
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.21716034,
+                    "box": [
+                        257.73633,
+                        152.08817,
+                        285.95972,
+                        189.86795
+                    ]
+                },
+                {
+                    "classIndex": 22,
+                    "className": "Tomato Septoria",
+                    "score": 0.14227152,
+                    "box": [
+                        13.527687,
+                        166.037,
+                        26.671383,
+                        191.53685
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.13950266,
+                    "box": [
+                        125.90451,
+                        158.56152,
+                        158.41147,
+                        198.30048
+                    ]
+                }
+            ],
+            "errorMessage": null
+        },
+        {
+            "imageFile": "oa_023.jpg",
+            "imageSha256": "154845703a3f2c79edf00276512a3276ac7af655ec420cc799e9a93e7eef72ed",
+            "sizeBytes": 55029,
+            "orientedWidth": 640,
+            "orientedHeight": 480,
+            "outcome": "DETECTED",
+            "classifierLabel": "Tomato",
+            "classifierConfidence": 0.9254753,
+            "classifierAccepted": true,
+            "routedCrop": "Tomato",
+            "detectorExecuted": true,
+            "detections": [
+                {
+                    "classIndex": 16,
+                    "className": "Tomato Early Blight",
+                    "score": 0.7781917,
+                    "box": [
+                        299.0534,
+                        385.68042,
+                        311.2691,
+                        403.82446
+                    ]
+                },
+                {
+                    "classIndex": 16,
+                    "className": "Tomato Early Blight",
+                    "score": 0.7107563,
+                    "box": [
+                        374.4709,
+                        283.40475,
+                        388.16217,
+                        304.12985
+                    ]
+                },
+                {
+                    "classIndex": 16,
+                    "className": "Tomato Early Blight",
+                    "score": 0.69707,
+                    "box": [
+                        307.21698,
+                        314.75244,
+                        320.26422,
+                        331.3949
+                    ]
+                },
+                {
+                    "classIndex": 16,
+                    "className": "Tomato Early Blight",
+                    "score": 0.6635361,
+                    "box": [
+                        418.8645,
+                        339.5491,
+                        432.26013,
+                        356.81155
+                    ]
+                },
+                {
+                    "classIndex": 16,
+                    "className": "Tomato Early Blight",
+                    "score": 0.5684724,
+                    "box": [
+                        434.67157,
+                        257.2689,
+                        451.49835,
+                        305.47543
+                    ]
+                },
+                {
+                    "classIndex": 16,
+                    "className": "Tomato Early Blight",
+                    "score": 0.51357657,
+                    "box": [
+                        384.92664,
+                        405.662,
+                        402.39417,
+                        424.96924
+                    ]
+                },
+                {
+                    "classIndex": 16,
+                    "className": "Tomato Early Blight",
+                    "score": 0.17269613,
+                    "box": [
+                        336.93756,
+                        243.87073,
+                        349.4223,
+                        261.6607
+                    ]
+                },
+                {
+                    "classIndex": 16,
+                    "className": "Tomato Early Blight",
+                    "score": 0.118752114,
+                    "box": [
+                        231.53397,
+                        406.5699,
+                        261.29892,
+                        432.34723
+                    ]
+                },
+                {
+                    "classIndex": 16,
+                    "className": "Tomato Early Blight",
+                    "score": 0.11527238,
+                    "box": [
+                        590.4336,
+                        142.93811,
+                        604.7417,
+                        163.53546
+                    ]
+                }
+            ],
+            "errorMessage": null
+        },
+        {
+            "imageFile": "oa_024.jpg",
+            "imageSha256": "09a2a331894aff93d75b79c1b36025b2d93132e71075f3a6e536b13646f23a09",
+            "sizeBytes": 55293,
+            "orientedWidth": 640,
+            "orientedHeight": 480,
+            "outcome": "DETECTED",
+            "classifierLabel": "Tomato",
+            "classifierConfidence": 0.95734453,
+            "classifierAccepted": true,
+            "routedCrop": "Tomato",
+            "detectorExecuted": true,
+            "detections": [
+                {
+                    "classIndex": 19,
+                    "className": "Tomato Late Blight",
+                    "score": 0.44546992,
+                    "box": [
+                        327.4536,
+                        556.75244,
+                        359.14325,
+                        607.28687
+                    ]
+                },
+                {
+                    "classIndex": 16,
+                    "className": "Tomato Early Blight",
+                    "score": 0.40196925,
+                    "box": [
+                        275.5758,
+                        357.14514,
+                        291.80994,
+                        372.90503
+                    ]
+                },
+                {
+                    "classIndex": 19,
+                    "className": "Tomato Late Blight",
+                    "score": 0.3305853,
+                    "box": [
+                        351.56683,
+                        525.23914,
+                        382.28082,
+                        552.306
+                    ]
+                },
+                {
+                    "classIndex": 19,
+                    "className": "Tomato Late Blight",
+                    "score": 0.3286182,
+                    "box": [
+                        220.22159,
+                        278.50226,
+                        259.23563,
+                        339.63208
+                    ]
+                },
+                {
+                    "classIndex": 19,
+                    "className": "Tomato Late Blight",
+                    "score": 0.1160055,
+                    "box": [
+                        262.28607,
+                        272.9895,
+                        280.5755,
+                        292.0644
+                    ]
+                }
+            ],
+            "errorMessage": null
+        },
+        {
+            "imageFile": "oa_025.jpg",
+            "imageSha256": "4e14f9f6c84bda7255aa1efd615e6aeaa7db0945ac0eac6a5172f516061c14dc",
+            "sizeBytes": 247962,
+            "orientedWidth": 960,
+            "orientedHeight": 606,
+            "outcome": "REJECTED_OUT_OF_DISTRIBUTION",
+            "classifierLabel": "unknown",
+            "classifierConfidence": 0.7716318,
+            "classifierAccepted": false,
+            "routedCrop": null,
+            "detectorExecuted": false,
+            "detections": [],
+            "errorMessage": null
+        },
+        {
+            "imageFile": "oa_026.jpg",
+            "imageSha256": "e41502d80b165e0efc402eae4bc3fb2272bf6c2c3f18a6c8999cea4ce6963cd2",
+            "sizeBytes": 168791,
+            "orientedWidth": 960,
+            "orientedHeight": 720,
+            "outcome": "REJECTED_OUT_OF_DISTRIBUTION",
+            "classifierLabel": "unknown",
+            "classifierConfidence": 0.46958846,
+            "classifierAccepted": false,
+            "routedCrop": null,
+            "detectorExecuted": false,
+            "detections": [],
+            "errorMessage": null
+        },
+        {
+            "imageFile": "oa_027.jpg",
+            "imageSha256": "83aba12c4c1b70e4934c206aaa3ccddc73d6bdfa245e17a3060e659d8bd124d3",
+            "sizeBytes": 114914,
+            "orientedWidth": 500,
+            "orientedHeight": 667,
+            "outcome": "REJECTED_OUT_OF_DISTRIBUTION",
+            "classifierLabel": "unknown",
+            "classifierConfidence": 0.910494,
+            "classifierAccepted": false,
+            "routedCrop": null,
+            "detectorExecuted": false,
+            "detections": [],
+            "errorMessage": null
+        },
+        {
+            "imageFile": "oa_028.jpg",
+            "imageSha256": "9bfb01d64c0e3411080ae0458499358bbca32e8b916c2b9609a4ec4d0d2aefdf",
+            "sizeBytes": 285724,
+            "orientedWidth": 960,
+            "orientedHeight": 718,
+            "outcome": "REJECTED_OUT_OF_DISTRIBUTION",
+            "classifierLabel": "unknown",
+            "classifierConfidence": 0.9182256,
+            "classifierAccepted": false,
+            "routedCrop": null,
+            "detectorExecuted": false,
+            "detections": [],
+            "errorMessage": null
+        },
+        {
+            "imageFile": "oa_029.jpg",
+            "imageSha256": "b506d7f8d35793bd5b12f7fc178f8f3e4a07a79846d59f5a9ca0c726f7ce99cd",
+            "sizeBytes": 56461,
+            "orientedWidth": 640,
+            "orientedHeight": 288,
+            "outcome": "DETECTED",
+            "classifierLabel": "Corn",
+            "classifierConfidence": 0.94398165,
+            "classifierAccepted": true,
+            "routedCrop": "Corn",
+            "detectorExecuted": true,
+            "detections": [
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.46074948,
+                    "box": [
+                        456.10687,
+                        134.33635,
+                        472.5158,
+                        167.54103
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.35694596,
+                    "box": [
+                        479.24506,
+                        63.255215,
+                        492.12262,
+                        89.349976
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.2961773,
+                    "box": [
+                        574.4342,
+                        139.4935,
+                        589.9127,
+                        169.6094
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.2322542,
+                    "box": [
+                        349.29593,
+                        464.59967,
+                        367.88742,
+                        503.67902
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.20742437,
+                    "box": [
+                        420.7616,
+                        415.08856,
+                        437.4015,
+                        446.16656
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.19724484,
+                    "box": [
+                        327.4574,
+                        508.63815,
+                        344.26666,
+                        539.16895
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.18456797,
+                    "box": [
+                        311.86377,
+                        543.3994,
+                        326.31323,
+                        571.31934
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.17793329,
+                    "box": [
+                        376.59857,
+                        387.47968,
+                        394.23663,
+                        418.9239
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.1748504,
+                    "box": [
+                        325.00598,
+                        355.0401,
+                        340.72168,
+                        383.56366
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.16957296,
+                    "box": [
+                        337.47128,
+                        421.83704,
+                        354.44382,
+                        452.71118
+                    ]
+                },
+                {
+                    "classIndex": 0,
+                    "className": "Corn Cercospora Leaf Spot",
+                    "score": 0.113508314,
+                    "box": [
+                        578.9239,
+                        194.54434,
+                        596.264,
+                        223.64969
+                    ]
+                }
+            ],
+            "errorMessage": null
+        },
+        {
+            "imageFile": "oa_030.jpg",
+            "imageSha256": "ca6caee1a557744111e79673ebc77daa842ca88013b067252fdb0d798ef39f2a",
+            "sizeBytes": 44426,
+            "orientedWidth": 640,
+            "orientedHeight": 426,
+            "outcome": "DETECTED",
+            "classifierLabel": "Tomato",
+            "classifierConfidence": 0.9262268,
+            "classifierAccepted": true,
+            "routedCrop": "Tomato",
+            "detectorExecuted": true,
+            "detections": [
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.8357885,
+                    "box": [
+                        278.93414,
+                        235.55731,
+                        367.27582,
+                        491.87427
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.7961326,
+                    "box": [
+                        230.84464,
+                        2.6329575,
+                        270.02502,
+                        104.26474
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.7741574,
+                    "box": [
+                        296.30298,
+                        66.839005,
+                        341.41895,
+                        151.45462
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.7694833,
+                    "box": [
+                        305.53076,
+                        141.9596,
+                        355.563,
+                        194.7135
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.76384544,
+                    "box": [
+                        216.07523,
+                        186.73566,
+                        305.0981,
+                        254.34808
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.7438806,
+                    "box": [
+                        264.55994,
+                        153.20905,
+                        308.26172,
+                        194.90854
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.7269743,
+                    "box": [
+                        160.77518,
+                        75.270676,
+                        214.29575,
+                        199.75298
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.72352386,
+                    "box": [
+                        319.37976,
+                        183.49962,
+                        393.14618,
+                        235.23643
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.17167355,
+                    "box": [
+                        294.92743,
+                        209.48709,
+                        317.28485,
+                        238.63983
+                    ]
+                },
+                {
+                    "classIndex": 18,
+                    "className": "Tomato Healthy",
+                    "score": 0.11418006,
+                    "box": [
+                        373.7943,
+                        111.21011,
+                        417.1598,
+                        207.03958
+                    ]
+                }
+            ],
+            "errorMessage": null
+        }
+    ],
+    "notes": [
+        "Each image was run once through DetectionPipeline.run(imageBytes, selectedCropId = null), the production entry point, so routing follows the classifier's own crop.",
+        "detections are the routed (crop-restricted) results after the detector's confidence threshold and NMS, i.e. what the app displays.",
+        "imageSha256 is computed from the exact bytes handed to the pipeline."
+    ]
+}

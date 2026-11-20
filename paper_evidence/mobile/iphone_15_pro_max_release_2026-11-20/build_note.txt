@@ -1,0 +1,5 @@
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project iosApp/iosApp.xcodeproj -scheme iosApp -configuration Release -destination id=00008130-000405313CE0001C -derivedDataPath build/ios-release -disableAutomaticPackageResolution "SWIFT_ACTIVE_COMPILATION_CONDITIONS=$(inherited) HEADLESS_BENCHMARK" -allowProvisioningUpdates build
+    SWIFT_ACTIVE_COMPILATION_CONDITIONS = $(inherited) HEADLESS_BENCHMARK
+    export ASSETCATALOG_FILTER_FOR_THINNING_DEVICE_CONFIGURATION\=iPhone16,2
+    export CONFIGURATION\=Release
+    export CONFIGURATION_BUILD_DIR\=/Users/musahibrahimali/Dev/Kotlin/CropDiseaseDetection/build/ios-release/Build/Products/Release-iphoneos

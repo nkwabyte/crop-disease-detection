@@ -1,0 +1,42 @@
+{
+  "android_vs_rect_reference": {
+    "reference": 166,
+    "app": 189,
+    "matched": 137,
+    "share_of_reference_matched": 0.8253012048192772,
+    "share_of_app_matched": 0.7248677248677249,
+    "matched_iou_mean": 0.8272629151324957,
+    "matched_score_abs_diff_mean": 0.0898464310018957,
+    "matched_score_abs_diff_max": 0.42323697074768063
+  },
+  "android_vs_square_reference": {
+    "reference": 189,
+    "app": 189,
+    "matched": 189,
+    "share_of_reference_matched": 1.0,
+    "share_of_app_matched": 1.0,
+    "matched_iou_mean": 0.9995529000204404,
+    "matched_score_abs_diff_mean": 5.915095425774795e-07,
+    "matched_score_abs_diff_max": 3.813032836919028e-06
+  },
+  "ios_vs_rect_reference": {
+    "reference": 166,
+    "app": 190,
+    "matched": 132,
+    "share_of_reference_matched": 0.7951807228915663,
+    "share_of_app_matched": 0.6947368421052632,
+    "matched_iou_mean": 0.8244244899186953,
+    "matched_score_abs_diff_mean": 0.09009744909234332,
+    "matched_score_abs_diff_max": 0.4234189007476806
+  },
+  "ios_vs_square_reference": {
+    "reference": 189,
+    "app": 190,
+    "matched": 182,
+    "share_of_reference_matched": 0.9629629629629629,
+    "share_of_app_matched": 0.9578947368421052,
+    "matched_iou_mean": 0.9429896449550997,
+    "matched_score_abs_diff_mean": 0.0172949455896152,
+    "matched_score_abs_diff_max": 0.12589406593093871
+  }
+}

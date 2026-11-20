@@ -1,0 +1,9 @@
+[iOS-Bench] phase=start residentMB=34.1
+[iOS-Bench] phase=after_cold_load_loop residentMB=34.7
+[iOS-Bench] phase=after_artifacts_and_images residentMB=105.0
+[iOS-Bench] phase=after_classifier_stage residentMB=141.6
+[iOS-Bench] phase=detector_stage_1920x1080_done residentMB=205.7
+[iOS-Bench] phase=detector_stage_1280x960_done residentMB=205.5
+[iOS-Bench] phase=detector_stage_640x480_done residentMB=204.7
+[iOS-Bench] phase=after_detector_stages residentMB=204.7
+[iOS-Bench] phase=after_end_to_end residentMB=327.0

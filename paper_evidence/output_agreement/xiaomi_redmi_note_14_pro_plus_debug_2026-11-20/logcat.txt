@@ -1,0 +1,4 @@
+11-20 10:03:11.584 30104 30104 I adbd    : adbd service requested 'shell,v2,raw:am start -S -n com.nkwabyte.cropdiseasedetection/.MainActivity --ez run_output_agreement true'
+11-20 10:03:12.938 28706 28706 I Agreement: START
+11-20 10:03:19.687 28706  3196 I Agreement: wrote 30 records to /storage/emulated/0/Android/data/com.nkwabyte.cropdiseasedetection/files/output_agreement_1795168993054.json
+11-20 10:03:19.688 28706 28706 I Agreement: DONE export=/storage/emulated/0/Android/data/com.nkwabyte.cropdiseasedetection/files/output_agreement_1795168993054.json
