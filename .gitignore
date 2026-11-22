@@ -116,3 +116,7 @@ weights/
 # Derived YOLO-format view of data/detector (symlinks + generated labels)
 data/detector_yolo/
 .venv-eval/
+
+# Deployed model weights released with the paper evidence package
+!paper_evidence/models/
+!paper_evidence/models/*

@@ -1,6 +1,6 @@
 # Physical-device benchmark exports
 
-These are the raw exports written by the application's built-in benchmark (export schema v4) and used in the paper's on-device results: Table 4 and Figures 2 and 3.
+These are the raw exports written by the application's built-in benchmark (export schema v4) and used in the paper's on-device results: Table 4 and Figure 3.
 The measurement boundaries are defined in the paper's Methods section.
 
 Common settings:
@@ -24,7 +24,14 @@ The two phones are separate single-device evaluations, not a hardware comparison
 
 `SHA256SUMS` verifies the two export files.
 
-## `iphone_15_pro_max_2026-11-19/` — the iOS session in Table 4 and Figure 3
+## `iphone_15_pro_max_release_2026-11-20/` — the iOS session in Table 4 and Figure 3
+
+Release build (Release configuration with the `HEADLESS_BENCHMARK` flag) of committed app source `7859f987c1c0`, iPhone 15 Pro Max, iOS 27.2.1, charging at 95%, thermal state fair; all five routing paths on the same checksum-locked photographs as the Android session; 100 measured iterations each, 0 failures; detector 100/100 on each accepted path and 0/100 on each rejection path.
+Memory: `console_phase_trace.txt` (resident memory at each phase boundary, MiB) and the export's `memorySamples`.
+Figure 3 (file F04) is drawn from these two files by `scripts/revision/make_F04_memory.py`.
+Full details, including the stage breakdown, are in the folder's own `README.md`; `SHA256SUMS` verifies its files.
+
+## `iphone_15_pro_max_2026-11-19/` — debug-build iOS session, archived, not reported
 
 | Field | Value |
 |---|---|
@@ -33,7 +40,7 @@ The two phones are separate single-device evaluations, not a hardware comparison
 | Session | One session, 2026-11-19 (started 16:27:56 UTC); all five routing paths on the same checksum-locked photographs as the Android session; 100 measured iterations each, 0 failures |
 | Condition | Charging at 45% battery; thermal state fair |
 | Fail-closed | Detector executed 100 of 100 times on each accepted path and 0 of 100 times on each rejection path |
-| Memory | `console_phase_trace_run1.txt`: resident memory printed at each phase boundary (labelled `residentMB`, but the value is bytes / 1024², i.e. MiB): 41.2 → 43.2 → 113.8 → 148.7 → 212.6 / 212.6 / 211.7 across the three detector resolutions. The console connection dropped during the end-to-end loop; the export's `memorySamples` give 43.3 MiB before and 311.8 MiB after all measured loops. Figure 3 (file F04) is drawn from these two files by `scripts/revision/make_F04_memory.py`. |
+| Memory | `console_phase_trace_run1.txt`: resident memory printed at each phase boundary (labelled `residentMB`, but the value is bytes / 1024², i.e. MiB): 41.2 → 43.2 → 113.8 → 148.7 → 212.6 / 212.6 / 211.7 across the three detector resolutions. The console connection dropped during the end-to-end loop; the export's `memorySamples` give 43.3 MiB before and 311.8 MiB after all measured loops. This session drew an earlier version of Figure 3; it is superseded by the Release session. |
 | Do not use | `coldLoad` (memory-mapping setup only). `aborted_run_rtdetr_selected_phase_trace.txt` is from a run aborted because RT-DETR-L was selected; it is kept for completeness only. |
 
 The build before the output-transfer fix (per-value boxed objects) was terminated by iOS at about 1,600 MiB during the first detector stage, according to the session record of 2026-09-14.
@@ -44,7 +51,7 @@ That process left no export, so no pre-fix trace is included.
 ## `iphone_15_pro_max_2026-09-14/` — earlier iOS sessions, not reported
 
 Three rejection-path-only sessions (iOS 26.6.2) from build `31fb8f5576a6` plus uncommitted changes to the iOS bridge and benchmark files.
-They are superseded by the 2026-11-19 session and not used in the paper.
+They are superseded by the 2026-11-20 Release session and not used in the paper.
 `pre_fix_schema_v3_not_comparable/` holds three exports from the pre-fix build; they must not be compared with schema-v4 runs.
 
 ## `emulator_and_simulator_not_performance/`

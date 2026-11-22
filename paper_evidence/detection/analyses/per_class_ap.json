@@ -1,0 +1,170 @@
+{
+  "metric": "AP@0.50, COCO 101-point, maxDets 100, held-out test split (1,016 images)",
+  "mAP50": {
+    "YOLO26n (deployed path)": 0.2867350515297415,
+    "RT-DETR-L": 0.3455337406152048
+  },
+  "classes": [
+    {
+      "category_id": 1,
+      "name": "Corn Cercospora Leaf Spot",
+      "test_boxes": 1338,
+      "YOLO26n (deployed path)": 0.3644620731397809,
+      "RT-DETR-L": 0.3871773233817529
+    },
+    {
+      "category_id": 19,
+      "name": "Tomato Septoria",
+      "test_boxes": 1183,
+      "YOLO26n (deployed path)": 0.21345388186790545,
+      "RT-DETR-L": 0.2727036145012318
+    },
+    {
+      "category_id": 16,
+      "name": "Tomato Late Blight",
+      "test_boxes": 813,
+      "YOLO26n (deployed path)": 0.17242309962661506,
+      "RT-DETR-L": 0.21948195840601256
+    },
+    {
+      "category_id": 4,
+      "name": "Corn Streak",
+      "test_boxes": 721,
+      "YOLO26n (deployed path)": 0.28746253372135216,
+      "RT-DETR-L": 0.4367256945001798
+    },
+    {
+      "category_id": 10,
+      "name": "Pepper Leaf Mosaic",
+      "test_boxes": 526,
+      "YOLO26n (deployed path)": 0.0426354015611334,
+      "RT-DETR-L": 0.05935989117555026
+    },
+    {
+      "category_id": 22,
+      "name": "Tomato Healthy",
+      "test_boxes": 486,
+      "YOLO26n (deployed path)": 0.6519043988724166,
+      "RT-DETR-L": 0.6870781263142425
+    },
+    {
+      "category_id": 13,
+      "name": "Pepper Septoria",
+      "test_boxes": 483,
+      "YOLO26n (deployed path)": 0.16184018471151163,
+      "RT-DETR-L": 0.21975278683810254
+    },
+    {
+      "category_id": 17,
+      "name": "Tomato Early Blight",
+      "test_boxes": 465,
+      "YOLO26n (deployed path)": 0.40706931616428976,
+      "RT-DETR-L": 0.4470085785667589
+    },
+    {
+      "category_id": 6,
+      "name": "Pepper Leaf Curl",
+      "test_boxes": 331,
+      "YOLO26n (deployed path)": 0.26425324460250926,
+      "RT-DETR-L": 0.2596861089501561
+    },
+    {
+      "category_id": 9,
+      "name": "Pepper Bacterial Spot",
+      "test_boxes": 327,
+      "YOLO26n (deployed path)": 0.21808136218546545,
+      "RT-DETR-L": 0.24041484663143342
+    },
+    {
+      "category_id": 2,
+      "name": "Corn Common Rust",
+      "test_boxes": 310,
+      "YOLO26n (deployed path)": 0.23054273020261967,
+      "RT-DETR-L": 0.3111190477857604
+    },
+    {
+      "category_id": 3,
+      "name": "Corn Healthy",
+      "test_boxes": 290,
+      "YOLO26n (deployed path)": 0.2582949915376449,
+      "RT-DETR-L": 0.3098021708817397
+    },
+    {
+      "category_id": 20,
+      "name": "Tomato Fusarium",
+      "test_boxes": 207,
+      "YOLO26n (deployed path)": 0.3340346514378818,
+      "RT-DETR-L": 0.3444717757799346
+    },
+    {
+      "category_id": 11,
+      "name": "Pepper Healthy",
+      "test_boxes": 141,
+      "YOLO26n (deployed path)": 0.621029859299267,
+      "RT-DETR-L": 0.5920198485403918
+    },
+    {
+      "category_id": 14,
+      "name": "Pepper Late Blight",
+      "test_boxes": 127,
+      "YOLO26n (deployed path)": 0.09244902476817163,
+      "RT-DETR-L": 0.10165900467261874
+    },
+    {
+      "category_id": 12,
+      "name": "Pepper Fusarium",
+      "test_boxes": 94,
+      "YOLO26n (deployed path)": 0.4978012811131889,
+      "RT-DETR-L": 0.6072042173611426
+    },
+    {
+      "category_id": 7,
+      "name": "Pepper Cercospora",
+      "test_boxes": 89,
+      "YOLO26n (deployed path)": 0.24085946491250354,
+      "RT-DETR-L": 0.3145793446392228
+    },
+    {
+      "category_id": 8,
+      "name": "Pepper Leaf Blight",
+      "test_boxes": 87,
+      "YOLO26n (deployed path)": 0.4122411607877941,
+      "RT-DETR-L": 0.4582122260245924
+    },
+    {
+      "category_id": 18,
+      "name": "Tomato Bacterial Spot",
+      "test_boxes": 84,
+      "YOLO26n (deployed path)": 0.31713457522209504,
+      "RT-DETR-L": 0.43190570610091067
+    },
+    {
+      "category_id": 21,
+      "name": "Tomato Leaf Curl",
+      "test_boxes": 73,
+      "YOLO26n (deployed path)": 0.36008345332258024,
+      "RT-DETR-L": 0.3578128160073852
+    },
+    {
+      "category_id": 5,
+      "name": "Corn Northern Leaf Blight",
+      "test_boxes": 33,
+      "YOLO26n (deployed path)": 0.17065924137212296,
+      "RT-DETR-L": 0.44016705207533524
+    },
+    {
+      "category_id": 23,
+      "name": "Tomato Mosaic",
+      "test_boxes": 25,
+      "YOLO26n (deployed path)": 0.2761902547552045,
+      "RT-DETR-L": 0.44893389501525666
+    },
+    {
+      "category_id": 15,
+      "name": "Pepper Early Blight",
+      "test_boxes": 8,
+      "YOLO26n (deployed path)": 0.0,
+      "RT-DETR-L": 0.0
+    }
+  ]
+}
