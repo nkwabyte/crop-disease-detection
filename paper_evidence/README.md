@@ -2,7 +2,7 @@
 
 This folder backs the paper *Offline On-Device Two-Stage Crop Disease Detection for Smartphone Deployment in Ghana: Held-Out Model Evaluation and Physical-Device Benchmarking* (Ali, Tchao, Kponyo, Agbemenu, Nunoo-Mensah; submitted to *Smart Agricultural Technology*).
 
-It is a frozen snapshot for release `paper-v1.2` (v1.1 plus the iPhone Release-build session and the desktop–phone output-agreement check of 2026-11-20, and the held-out evaluation of YOLO26n on the detector path the application runs).
+It is a frozen snapshot for release `paper-v1.3`: v1.2 (iPhone Release-build session, desktop–phone output agreement and the held-out evaluation of YOLO26n on the detector path the application runs, all 2026-11-20) plus the supplement rewritten for the Release session.
 The scripts that produced it are in `scripts/revision/`.
 
 The images come from the RAIL Crop Disease (Ghana) dataset, CC BY 4.0: <https://www.kaggle.com/datasets/responsibleailab/crop-disease-ghana>.
@@ -16,7 +16,7 @@ Every detection result uses the designated held-out test split: 1,016 photograph
 | Table 1A: 95% bootstrap CI | `detection/analyses/bootstrap_<model>.json` (`scripts/revision/coco_bootstrap.py`) |
 | Table 1A: "no near-dup." column and the leakage analysis | `detection/analyses/leakage_sensitivity.json`, `detection/analyses/test_min_ahash_distance.csv` |
 | Table 1B: precision, recall and F1 at confidence 0.50 and 0.10 | `detection/analyses/operating_points.json` |
-| Table 3: conditional vs true end-to-end recall | `detection/analyses/composed_operating_points.json` (RT-DETR-L); YOLO26n rows: `detection/analyses/deployed_path_eval.json` (`composed`) |
+| Table 3: conditional vs true end-to-end recall | RT-DETR-L rows: `detection/analyses/composed_operating_points.json`; YOLO26n rows: `detection/analyses/deployed_path_eval.json` (`composed`). The YOLO26n entries in `composed_operating_points.json` are superseded (default inference path, not the deployed one) and kept only for the record. Ungated reference: Table 1B (`operating_points.json`; YOLO26n deployed in `deployed_path_eval.json`, `operating_points`) |
 | Table 1, row "YOLO26n, deployed"; image-level hit rates for the shipped configuration | `detection/analyses/deployed_path_eval.json` (`scripts/revision/deployed_path_eval.py`), CI `detection/analyses/bootstrap_yolo26n_deployed.json`; settings in `detection/heldout/yolo26n_deployed/environment_manifest.json` |
 | Desktop–phone output agreement (30 images, both phones) | `output_agreement/` (see its README) |
 | Faster R-CNN training (complete annotations, 30 epochs) | `fasterrcnn_full/training_log.txt`, `metrics_history.json`, `final_eval.json`, `dataset_build_stats.json`, `model_metadata.yaml`, `SHA256SUMS` |

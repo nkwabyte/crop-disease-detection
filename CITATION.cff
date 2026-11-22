@@ -19,5 +19,5 @@ authors:
     affiliation: "Responsible AI Lab (RAIL), KNUST"
 license: MIT
 repository-code: "https://github.com/nkwabyte/crop-disease-detection"
-version: "paper-v1.2"
-date-released: "2026-11-20"
+version: "paper-v1.3"
+date-released: "2026-11-22"
