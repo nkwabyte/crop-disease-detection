@@ -1,11 +1,11 @@
-%% Source: paper_evidence/mobile/iphone_15_pro_max_2026-11-19/
-%%   console_phase_trace_run1.txt (Part A) and
-%%   extended_benchmark_1795105797518.json, memorySamples (Part B).
-%% Rewritten 2026-11-19; the earlier pre/post series had no surviving source.
+%% Source: paper_evidence/mobile/iphone_15_pro_max_release_2026-11-20/
+%%   console_phase_trace.txt (Part A) and
+%%   extended_benchmark_1795167684106.json, memorySamples (Part B).
+%% Rewritten 2026-11-20 (Release build); the earlier pre/post series had no surviving source.
 \needspace{22\baselineskip}
 \tablehead{tab:S7}{iOS resident memory with the contiguous output buffer on
-the physical iPhone~15 Pro Max (one session, 19 November 2026, iOS~27.2.1,
-committed debug build). Values are mebibytes (MiB) of resident memory.}
+the physical iPhone~15 Pro Max (one session, 20 November 2026, iOS~27.2.1,
+committed release build). Values are mebibytes (MiB) of resident memory.}
 
 \nopagebreak\noindent\textbf{Part A. Phase-boundary trace}
 
@@ -14,13 +14,14 @@ committed debug build). Values are mebibytes (MiB) of resident memory.}
 \toprule
 Phase boundary & Resident memory \\
 \midrule
-Start of benchmark                       & 41.2 \\
-After cold-load loop                     & 43.2 \\
-After models and benchmark images loaded & 113.8 \\
-After classifier stage (110 calls)       & 148.7 \\
-After detector stage, $1920\times1080$   & 212.6 \\
-After detector stage, $1280\times960$    & 212.6 \\
-After detector stage, $640\times480$     & 211.7 \\
+Start of benchmark                       & 34.1 \\
+After cold-load loop                     & 34.7 \\
+After models and benchmark images loaded & 105.0 \\
+After classifier stage (110 calls)       & 141.6 \\
+After detector stage, $1920\times1080$   & 205.7 \\
+After detector stage, $1280\times960$    & 205.5 \\
+After detector stage, $640\times480$     & 204.7 \\
+After end-to-end loop (all five paths)   & 327.0 \\
 \bottomrule
 \end{tabular}\end{center}
 
@@ -32,17 +33,15 @@ After detector stage, $640\times480$     & 211.7 \\
 \toprule
 Sample & Resident memory \\
 \midrule
-Before the measured loops (after cold-load timing) & 43.3 \\
-After all measured loops, including end-to-end     & 311.8 \\
+Before the measured loops (after cold-load timing) & 34.9 \\
+After all measured loops, including end-to-end     & 300.7 \\
 \bottomrule
 \end{tabular}\end{center}
 
 {\footnotesize
 \textit{Notes.} (1)~The application printed Part~A at each phase boundary;
-the value is the process resident size divided by $1024^2$. The console
-connection dropped during the end-to-end loop, so the trace has no
-end-to-end line; Part~B's second sample, written to the benchmark export,
-covers that point.
+the value is the process resident size divided by $1024^2$. Part~B's samples are written to the benchmark export at
+different instants from the console lines, so the two parts need not agree.
 (2)~Neither part samples inside a timed call, so a short-lived peak during a
 single inference is not captured.
 (3)~The earlier build passed each of the 226{,}800 detector output values to

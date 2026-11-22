@@ -48,10 +48,21 @@ with the iPhone or Xiaomi results reported in the main manuscript.
 
 The physical-device results are presented in the main manuscript and are not
 duplicated here. They were derived from one complete session on an
-iPhone~15 Pro Max (19 November 2026) and one complete session on a Xiaomi
-Redmi Note~14 Pro+~5G (14 September 2026). Three earlier iPhone sessions
-(14 September 2026) covered the rejection path only, from a build with
-uncommitted changes; they are archived but not reported. All benchmark
+iPhone~15 Pro Max (20 November 2026, release build) and one complete session
+on a Xiaomi Redmi Note~14 Pro+~5G (14 September 2026). Earlier iPhone sessions
+(three rejection-path sessions of 14 September 2026 and a debug-build session
+of 19 November 2026) are archived but not reported.
+
+To confirm that the phones compute what was evaluated on the desktop, both ran
+30 checksum-locked images (24 held-out photographs, four non-crop photographs
+and two EXIF-rotated copies) through the production pipeline on 20 November
+2026. Both returned the desktop classifier label for every accepted image and
+rejected all four non-crop photographs; one image whose confidence lay at the
+0.55 floor was routed differently. Against the desktop deployed detector path
+(one-to-many head, $640\times640$ letterbox, class-wise suppression at IoU
+0.10), Android detections matched exactly (189 of 189 boxes) and the iPhone
+matched 182 of 189 (mean score difference 0.017). The full comparison is in
+the \texttt{output\_agreement} folder of the evidence package. All benchmark
 records are archived in the evidence package.
 
 Each value presented in the physical-device tables was independently
@@ -230,7 +241,7 @@ behaviour and should not be interpreted as physical-device evidence.
 
 \begin{enumerate}
   \item \textbf{iPhone~15 Pro Max.} One complete session was recorded on
-  iOS~27.2.1 while the device was charging at 45\% battery. iOS reported the
+  iOS~27.2.1 while the device was charging at 95\% battery from a release build. iOS reported the
   thermal state as fair. All five routing paths were measured with the same
   checksum-locked photographs as on the Xiaomi device.
 
@@ -254,12 +265,11 @@ behaviour and should not be interpreted as physical-device evidence.
 \section{Build and model provenance}
 \label{sup:provenance}
 
-The reported iPhone session was produced from a clean, committed debug
-build; the headless benchmark entry point is compiled only into debug builds.
-The Xiaomi session was produced from a clean, committed release build. The two
-revisions differ only in benchmark instrumentation (the placement of the
-memory samples and explanatory notes) and an Xcode build-script check; the
-inference, routing and output-transfer code is identical. The platforms are
+Both reported sessions were produced from clean, committed release builds
+(iPhone revision \texttt{7859f987c1c0}, Xiaomi \texttt{f5193cb92d24}). The two
+revisions differ in benchmark instrumentation, an Xcode build-script check and
+the output-agreement mode; the inference, routing and output-transfer code is
+identical. The platforms are
 nevertheless presented as separate evaluations rather than as a controlled
 comparison.
 
@@ -326,8 +336,9 @@ directly verifiable.
   Xiaomi device. These results should not be generalised to other units,
   device models or the broader Android and iOS populations.
 
-  \item \textbf{Build configuration differs by platform.} The iPhone session
-  used a debug build and the Xiaomi session a release build.
+  \item \textbf{Builds differ by revision.} Both sessions used release builds,
+  but from different commits; the output-agreement run on Android used a
+  debuggable build of the iPhone's commit.
 \end{enumerate}
 
 \section{Evidence traceability}
@@ -347,14 +358,14 @@ The numerical results were traced to the following retained evidence:
   classifier configurations.
 
   \item Physical-device latency and routing results were derived from the
-  retained iPhone benchmark record of 19 November 2026 and the single
+  retained iPhone benchmark record of 20 November 2026 and the single
   retained Xiaomi benchmark record.
 
   \item Android behavioural-acceptance results were derived from the
   six-case application log and detector-invocation records.
 
   \item The iOS memory trace was derived from the phase-boundary console log
-  and memory samples of the iPhone session of 19 November 2026. The
+  and memory samples of the iPhone session of 20 November 2026. The
   pre-correction termination point comes from the session record of
   14 September 2026; that process left no export.
 

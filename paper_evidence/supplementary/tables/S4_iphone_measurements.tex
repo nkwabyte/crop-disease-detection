@@ -1,7 +1,7 @@
-%% Source: paper_evidence/mobile/iphone_15_pro_max_2026-11-19/extended_benchmark_1795105797518.json
-%% Rewritten 2026-11-19 (replaces the three rejection-path sessions of 2026-09-14).
+%% Source: paper_evidence/mobile/iphone_15_pro_max_release_2026-11-20/extended_benchmark_1795167684106.json
+%% Rewritten 2026-11-20 (Release build; replaces the debug-build session of 2026-11-19).
 \tablehead{tab:S4}{Physical iPhone~15 Pro Max mobile latency by routing path
-during one session (19 November 2026) using a clean, committed debug build.
+during one session (20 November 2026) using a clean, committed release build.
 All timing values are reported in milliseconds.}
 \begin{center}
 \scriptsize
@@ -11,19 +11,20 @@ All timing values are reported in milliseconds.}
       & Warm/ &      &        &     & Std- &     &     & Det.\ exec./ & Succ./ \\
 Path  & meas. & Mean & Median & p95 & dev  & Min & Max & skipped      & fail.  \\
 \midrule
-Accepted Corn       & 10/100 & 148.19 & 148.09 & 150.30 & 1.38 & 145.72 & 151.73 & 100 / 0 & 100 / 0 \\
-Accepted Pepper     & 10/100 & 157.44 & 157.45 & 167.06 & 7.15 & 147.96 & 184.59 & 100 / 0 & 100 / 0 \\
-Accepted Tomato     & 10/100 & 172.16 & 172.00 & 189.18 & 7.03 & 160.42 & 193.28 & 100 / 0 & 100 / 0 \\
-OOD rejection       & 10/100 & 51.80  & 50.76  & 59.44  & 3.06 & 49.45  & 65.75  & 0 / 100 & 100 / 0 \\
-Crop mismatch       & 10/100 & 50.75  & 50.67  & 52.46  & 1.08 & 49.15  & 56.89  & 0 / 100 & 100 / 0 \\
+Accepted Corn       & 10/100 & 92.83  & 92.74  & 94.21  & 0.69 & 91.55  & 95.17  & 100 / 0 & 100 / 0 \\
+Accepted Pepper     & 10/100 & 96.76  & 96.39  & 99.23  & 2.76 & 94.09  & 113.43 & 100 / 0 & 100 / 0 \\
+Accepted Tomato     & 10/100 & 97.94  & 97.89  & 98.64  & 0.79 & 96.59  & 102.95 & 100 / 0 & 100 / 0 \\
+OOD rejection       & 10/100 & 35.84  & 35.86  & 36.64  & 0.55 & 34.48  & 36.96  & 0 / 100 & 100 / 0 \\
+Crop mismatch       & 10/100 & 35.31  & 35.47  & 35.86  & 0.51 & 34.11  & 37.69  & 0 / 100 & 100 / 0 \\
 \bottomrule
 \end{tabular}
 \end{center}
 
 {\footnotesize
 \textit{Device and models.} iPhone~15 Pro Max (\texttt{iPhone16,2}), iOS~27.2.1,
-8~GB RAM; charging at 45\% battery; thermal state fair. Build revision
-\texttt{1ca6261b8df8} (no uncommitted tracked changes). Classifier
+8~GB RAM; charging at 95\% battery; thermal state fair. Release build of revision
+\texttt{7859f987c1c0} (no uncommitted tracked changes), compiled with the
+headless benchmark entry point enabled. Classifier
 30{,}820{,}096~B (SHA-256 \texttt{39e1b63dac8d\ldots}) and YOLO26n detector
 9{,}768{,}796~B (\texttt{baa36404dbb6\ldots}), the same files as on the Xiaomi
 device. The end-to-end paths used the same checksum-locked photographs as the
@@ -31,18 +32,20 @@ Xiaomi session.
 
 \textit{Isolated-stage figures} (separate measured loops on synthetic patterns,
 so they need not sum to the end-to-end means): classifier inference mean
-20.77~ms; preprocess 8.64~ms; image decode 0.12~ms. Detector inference mean by
-input resolution: $1920\times1080$, 50.50~ms; $1280\times960$, 52.81~ms;
-$640\times480$, 54.07~ms; post-processing 0.91--0.92~ms and output transfer
-1.69--1.76~ms.
+23.07~ms; preprocess 1.83~ms; image decode 0.12~ms. Detector inference mean by
+input resolution: $1920\times1080$, 51.32~ms; $1280\times960$, 53.31~ms;
+$640\times480$, 54.75~ms; post-processing 0.16~ms and output transfer
+0.25--0.27~ms. Within the end-to-end loop on accepted paths: preprocessing
+5.26--6.18~ms, classifier 29.75--30.97~ms, detector 56.70--59.60~ms and
+post-processing 0.17--0.20~ms.
 
-\textit{Notes.} (1)~Process-level CPU utilisation was 1.48 (iOS
+\textit{Notes.} (1)~Process-level CPU utilisation was 1.81 (iOS
 \texttt{getrusage}), which is not comparable with the Android per-thread
 figure. (2)~Sub-millisecond model-initialisation readings are excluded because
-the runtime loads model data lazily. (3)~The headless benchmark entry point is
-compiled only into debug builds. (4)~Three earlier sessions of 14 September
-2026 (iOS~26.6.2) covered the rejection path only, from a build with
-uncommitted changes; they are archived in the evidence package but not
-reported.
+the runtime loads model data lazily. (3)~Earlier sessions are archived in the evidence package but not reported:
+three of 14 September 2026 (iOS~26.6.2, rejection path only, a build with
+uncommitted changes) and one of 19 November 2026 (all paths, debug build of
+revision \texttt{1ca6261b8df8}; accepted paths 148.19--172.16~ms, slower mainly
+in unoptimised preprocessing).
 \par}
 \tabletail
