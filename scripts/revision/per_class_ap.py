@@ -64,18 +64,18 @@ def main(outs):
     import matplotlib.pyplot as plt
     plt.rcParams.update({"font.size": 6})
     y = np.arange(len(cats))
-    fig, ax = plt.subplots(figsize=(3.5, 3.3), dpi=300)
+    fig, ax = plt.subplots(figsize=(3.5, 2.85), dpi=300)
     cols = {"YOLO26n (deployed path)": "#0072B2", "RT-DETR-L": "#E69F00"}
     for i, m in enumerate(MODELS):
         ax.barh(y + (i - 0.5) * 0.4, [res[m][c] for c in cats], height=0.4, color=cols[m],
-                label=f"{m.replace(' (deployed path)', ', deployed')}: {overall[m]:.4f}")
+                label=f"{m.replace(' (deployed path)', ', deployed')} ({overall[m]:.4f})")
     ax.set_yticks(y); ax.set_yticklabels([f"{names[c]} ({support[c]})" for c in cats])
-    ax.set_ylim(len(cats) + 1.6, -0.6); ax.set_xlim(0, 1)
+    ax.set_ylim(len(cats) - 0.4, -0.6); ax.set_xlim(0, 1)
     ax.set_xlabel("AP@0.50 on the held-out test split")
     ax.grid(axis="x", ls=":", color="0.7")
     for s in ("top", "right"):
         ax.spines[s].set_visible(False)
-    ax.legend(loc="lower right", frameon=False, fontsize=6, handlelength=1.2, title="mAP@0.50", title_fontsize=6)
+    ax.legend(loc="lower center", bbox_to_anchor=(0.22, 1.0), ncol=2, frameon=False, fontsize=5.5, handlelength=1.0, columnspacing=0.8, borderaxespad=0.2)
     fig.tight_layout(pad=0.3)
     for o in outs:
         o = Path(o); o.mkdir(parents=True, exist_ok=True)
