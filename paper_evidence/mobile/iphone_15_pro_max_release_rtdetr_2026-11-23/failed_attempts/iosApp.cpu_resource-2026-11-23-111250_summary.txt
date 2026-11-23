@@ -1,0 +1,10 @@
+Date/Time:        2026-11-23 11:10:52.433 +0000
+End time:         2026-11-23 11:12:47.740 +0000
+OS Version:       iPhone OS 27.2.1 (Build 24B156)
+Event:            cpu usage
+Action taken:     none
+CPU:              90 seconds cpu time over 115 seconds (78% cpu average), exceeding limit of 50% cpu over 180 seconds
+CPU limit:        90s
+Limit duration:   180s
+CPU used:         90s
+End time:         2026-11-23 11:12:47.421 +0000

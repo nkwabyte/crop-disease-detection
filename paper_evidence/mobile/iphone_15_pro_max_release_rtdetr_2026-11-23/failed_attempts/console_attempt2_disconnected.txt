@@ -1,0 +1,117 @@
+Launched application with com.nkwabyte.cropdiseasedetection bundle identifier.
+Waiting for the application to terminate…
+[HeadlessBenchmark] START warmupRuns=10 measuredRuns=100
+[iOS-ObjectDetector] Classifier model loaded
+[iOS-ObjectDetector]   File         : crop_classifier_ood.pte
+[iOS-ObjectDetector]   Path         : /private/var/containers/Bundle/Application/<app>/iosApp.app/crop_classifier_ood.pte
+[iOS-ObjectDetector]   Size         : 29.39 MB (30820096 bytes)
+[iOS-ObjectDetector]   Architecture : EfficientNet-B2  |  Task: image_classification
+[iOS-ObjectDetector]   Input        : 260×260 RGB  |  Normalize: ImageNet
+[iOS-ObjectDetector]   Classes      : 4 (Corn, Pepper, Tomato, Other)  |  rejection: argmax=='Other' or below the confidence floor
+[iOS-ObjectDetector]   Backend      : XNNPACK (ExecuTorch 1.3.1)
+[iOS-ObjectDetector] Detection model loaded
+[iOS-ObjectDetector]   File         : crop_disease_rtdetr.pte  (RT-DETR-L)
+[iOS-ObjectDetector]   Path         : /private/var/containers/Bundle/Application/<app>/iosApp.app/crop_disease_rtdetr.pte
+[iOS-ObjectDetector]   Size         : 122.51 MB (128467216 bytes)
+[iOS-ObjectDetector]   Task         : object_detection  |  Layout: DETR_QUERY_MAJOR
+[iOS-ObjectDetector]   Input        : 640×640 RGB  |  Normalize: pixel/255  |  stretched
+[iOS-ObjectDetector]   Classes      : 23  |  NMS: false
+[iOS-ObjectDetector]   Backend      : XNNPACK (ExecuTorch 1.3.1)
+[iOS-Bench] phase=start residentMB=34.8
+[iOS-ObjectDetector] Classifier model loaded
+[iOS-ObjectDetector]   File         : crop_classifier_ood.pte
+[iOS-ObjectDetector]   Path         : /private/var/containers/Bundle/Application/<app>/iosApp.app/crop_classifier_ood.pte
+[iOS-ObjectDetector]   Size         : 29.39 MB (30820096 bytes)
+[iOS-ObjectDetector]   Architecture : EfficientNet-B2  |  Task: image_classification
+[iOS-ObjectDetector]   Input        : 260×260 RGB  |  Normalize: ImageNet
+[iOS-ObjectDetector]   Classes      : 4 (Corn, Pepper, Tomato, Other)  |  rejection: argmax=='Other' or below the confidence floor
+[iOS-ObjectDetector]   Backend      : XNNPACK (ExecuTorch 1.3.1)
+[iOS-ObjectDetector] Detection model loaded
+[iOS-ObjectDetector]   File         : crop_disease_rtdetr.pte  (RT-DETR-L)
+[iOS-ObjectDetector]   Path         : /private/var/containers/Bundle/Application/<app>/iosApp.app/crop_disease_rtdetr.pte
+[iOS-ObjectDetector]   Size         : 122.51 MB (128467216 bytes)
+[iOS-ObjectDetector]   Task         : object_detection  |  Layout: DETR_QUERY_MAJOR
+[iOS-ObjectDetector]   Input        : 640×640 RGB  |  Normalize: pixel/255  |  stretched
+[iOS-ObjectDetector]   Classes      : 23  |  NMS: false
+[iOS-ObjectDetector]   Backend      : XNNPACK (ExecuTorch 1.3.1)
+[iOS-ObjectDetector] Classifier model loaded
+[iOS-ObjectDetector]   File         : crop_classifier_ood.pte
+[iOS-ObjectDetector]   Path         : /private/var/containers/Bundle/Application/<app>/iosApp.app/crop_classifier_ood.pte
+[iOS-ObjectDetector]   Size         : 29.39 MB (30820096 bytes)
+[iOS-ObjectDetector]   Architecture : EfficientNet-B2  |  Task: image_classification
+[iOS-ObjectDetector]   Input        : 260×260 RGB  |  Normalize: ImageNet
+[iOS-ObjectDetector]   Classes      : 4 (Corn, Pepper, Tomato, Other)  |  rejection: argmax=='Other' or below the confidence floor
+[iOS-ObjectDetector]   Backend      : XNNPACK (ExecuTorch 1.3.1)
+[iOS-ObjectDetector] Detection model loaded
+[iOS-ObjectDetector]   File         : crop_disease_rtdetr.pte  (RT-DETR-L)
+[iOS-ObjectDetector]   Path         : /private/var/containers/Bundle/Application/<app>/iosApp.app/crop_disease_rtdetr.pte
+[iOS-ObjectDetector]   Size         : 122.51 MB (128467216 bytes)
+[iOS-ObjectDetector]   Task         : object_detection  |  Layout: DETR_QUERY_MAJOR
+[iOS-ObjectDetector]   Input        : 640×640 RGB  |  Normalize: pixel/255  |  stretched
+[iOS-ObjectDetector]   Classes      : 23  |  NMS: false
+[iOS-ObjectDetector]   Backend      : XNNPACK (ExecuTorch 1.3.1)
+[iOS-ObjectDetector] Classifier model loaded
+[iOS-ObjectDetector]   File         : crop_classifier_ood.pte
+[iOS-ObjectDetector]   Path         : /private/var/containers/Bundle/Application/<app>/iosApp.app/crop_classifier_ood.pte
+[iOS-ObjectDetector]   Size         : 29.39 MB (30820096 bytes)
+[iOS-ObjectDetector]   Architecture : EfficientNet-B2  |  Task: image_classification
+[iOS-ObjectDetector]   Input        : 260×260 RGB  |  Normalize: ImageNet
+[iOS-ObjectDetector]   Classes      : 4 (Corn, Pepper, Tomato, Other)  |  rejection: argmax=='Other' or below the confidence floor
+[iOS-ObjectDetector]   Backend      : XNNPACK (ExecuTorch 1.3.1)
+[iOS-ObjectDetector] Detection model loaded
+[iOS-ObjectDetector]   File         : crop_disease_rtdetr.pte  (RT-DETR-L)
+[iOS-ObjectDetector]   Path         : /private/var/containers/Bundle/Application/<app>/iosApp.app/crop_disease_rtdetr.pte
+[iOS-ObjectDetector]   Size         : 122.51 MB (128467216 bytes)
+[iOS-ObjectDetector]   Task         : object_detection  |  Layout: DETR_QUERY_MAJOR
+[iOS-ObjectDetector]   Input        : 640×640 RGB  |  Normalize: pixel/255  |  stretched
+[iOS-ObjectDetector]   Classes      : 23  |  NMS: false
+[iOS-ObjectDetector]   Backend      : XNNPACK (ExecuTorch 1.3.1)
+[iOS-ObjectDetector] Classifier model loaded
+[iOS-ObjectDetector]   File         : crop_classifier_ood.pte
+[iOS-ObjectDetector]   Path         : /private/var/containers/Bundle/Application/<app>/iosApp.app/crop_classifier_ood.pte
+[iOS-ObjectDetector]   Size         : 29.39 MB (30820096 bytes)
+[iOS-ObjectDetector]   Architecture : EfficientNet-B2  |  Task: image_classification
+[iOS-ObjectDetector]   Input        : 260×260 RGB  |  Normalize: ImageNet
+[iOS-ObjectDetector]   Classes      : 4 (Corn, Pepper, Tomato, Other)  |  rejection: argmax=='Other' or below the confidence floor
+[iOS-ObjectDetector]   Backend      : XNNPACK (ExecuTorch 1.3.1)
+[iOS-ObjectDetector] Detection model loaded
+[iOS-ObjectDetector]   File         : crop_disease_rtdetr.pte  (RT-DETR-L)
+[iOS-ObjectDetector]   Path         : /private/var/containers/Bundle/Application/<app>/iosApp.app/crop_disease_rtdetr.pte
+[iOS-ObjectDetector]   Size         : 122.51 MB (128467216 bytes)
+[iOS-ObjectDetector]   Task         : object_detection  |  Layout: DETR_QUERY_MAJOR
+[iOS-ObjectDetector]   Input        : 640×640 RGB  |  Normalize: pixel/255  |  stretched
+[iOS-ObjectDetector]   Classes      : 23  |  NMS: false
+[iOS-ObjectDetector]   Backend      : XNNPACK (ExecuTorch 1.3.1)
+[iOS-ObjectDetector] Classifier model loaded
+[iOS-ObjectDetector]   File         : crop_classifier_ood.pte
+[iOS-ObjectDetector]   Path         : /private/var/containers/Bundle/Application/<app>/iosApp.app/crop_classifier_ood.pte
+[iOS-ObjectDetector]   Size         : 29.39 MB (30820096 bytes)
+[iOS-ObjectDetector]   Architecture : EfficientNet-B2  |  Task: image_classification
+[iOS-ObjectDetector]   Input        : 260×260 RGB  |  Normalize: ImageNet
+[iOS-ObjectDetector]   Classes      : 4 (Corn, Pepper, Tomato, Other)  |  rejection: argmax=='Other' or below the confidence floor
+[iOS-ObjectDetector]   Backend      : XNNPACK (ExecuTorch 1.3.1)
+[iOS-ObjectDetector] Detection model loaded
+[iOS-ObjectDetector]   File         : crop_disease_rtdetr.pte  (RT-DETR-L)
+[iOS-ObjectDetector]   Path         : /private/var/containers/Bundle/Application/<app>/iosApp.app/crop_disease_rtdetr.pte
+[iOS-ObjectDetector]   Size         : 122.51 MB (128467216 bytes)
+[iOS-ObjectDetector]   Task         : object_detection  |  Layout: DETR_QUERY_MAJOR
+[iOS-ObjectDetector]   Input        : 640×640 RGB  |  Normalize: pixel/255  |  stretched
+[iOS-ObjectDetector]   Classes      : 23  |  NMS: false
+[iOS-ObjectDetector]   Backend      : XNNPACK (ExecuTorch 1.3.1)
+[iOS-Bench] phase=after_cold_load_loop residentMB=36.2
+AppViewModel initialized with state: AppData(selectedCrop=null, selectedCropId=null, detectionResult=[], isLoading=false, errorMessage=null, selectedImageByteArray=null, selectedTheme=System Default, classifierThreshold=0.55, iouThreshold=0.1, detectionThreshold=0.1, userRole=FARMER, recommendationLanguage=ENGLISH, selectedDetectionModel=RTDETR)
+[iOS-ObjectDetector] Classifier model loaded
+[iOS-ObjectDetector]   File         : crop_classifier_ood.pte
+[iOS-ObjectDetector]   Path         : /private/var/containers/Bundle/Application/<app>/iosApp.app/crop_classifier_ood.pte
+[iOS-ObjectDetector]   Size         : 29.39 MB (30820096 bytes)
+[iOS-ObjectDetector]   Architecture : EfficientNet-B2  |  Task: image_classification
+[iOS-ObjectDetector]   Input        : 260×260 RGB  |  Normalize: ImageNet
+[iOS-ObjectDetector]   Classes      : 4 (Corn, Pepper, Tomato, Other)  |  rejection: argmax=='Other' or below the confidence floor
+[iOS-ObjectDetector]   Backend      : XNNPACK (ExecuTorch 1.3.1)
+[iOS-Bench] phase=after_artifacts_and_images residentMB=230.2
+[iOS-Bench] phase=after_classifier_stage residentMB=139.8
+ERROR: An error occurred while communicating with a remote process. (com.apple.dt.CoreDeviceError error 3 (0x03))
+       ----------------------------------------
+           The connection was invalidated. (com.apple.Mercury.error error 1001 (0x3E9))
+           XPCConnectionDescription = <RemoteXPCPeerConnection 0x7c58e082a0> { <remote connection: 0x7c58cd4b40> { type = preconnected, state = canceled, remote service name = (null), server mode = 0, protocol version number = 1, protocol feature flags = 0x6, local service version = 0, remote service version = 0, traffic class = 0, (root, reply) helo received = (1, 1), next msg id = 3, first msg id = 1, send in progress = 0, preexisting socket = -1 }
+exit 1

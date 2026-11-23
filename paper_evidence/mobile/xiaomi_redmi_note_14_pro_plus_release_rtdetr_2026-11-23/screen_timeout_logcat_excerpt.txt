@@ -1,0 +1,5 @@
+11-23 13:01:13.336 I/DisplayPowerController[0]( 2435): BrightnessEvent: brt=6.83661E-4 (6.0%), nits= 2.0, lux=-1.0, reason=manual [ dim ], strat=InvalidBrightnessStrategy, state=ON, stateReason=DEFAULT_POLICY, policy=DIM, flags=, initBrt=0.2499755, rcmdBrt=NaN, preBrt=NaN, preLux=0.0, wasShortTermModelActive=true, autoBrightness=false (default), unclampedBrt=0.2499755, hbmMax=0.499951, hbmMode=off, thrmMax=1.0, rbcStrength=50, powerFactor=1.0, logicalId=0, slowChange=false, rampSpeed=0.240795
+11-23 13:01:31.328 I/WindowManager( 2435): Started going to sleep... (groupId=0 why=OFF_BECAUSE_OF_TIMEOUT)
+11-23 13:01:31.337 I/PowerManagerService( 2435): Going to sleep due to timeout (uid 1000, screenOffTimeout=1800000, activityTimeoutWM=-1, maxDimRatio=0.29999995, maxDimDur=18000, details=null)...
+11-23 13:01:32.034 D/MiuiScreenOnProximityLock( 2435): release reason: going to sleep
+11-23 13:01:32.040 I/WindowManager( 2435): Finished going to sleep... (groupId=0 why=OFF_BECAUSE_OF_TIMEOUT)

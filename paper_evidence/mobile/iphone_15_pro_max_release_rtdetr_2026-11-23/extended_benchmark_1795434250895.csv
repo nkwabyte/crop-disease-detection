@@ -1,0 +1,218 @@
+section,key,value
+meta,schemaVersion,4
+meta,generatedAtEpochMs,1795434250895
+device,platform,ios
+device,manufacturer,Apple
+device,model,"iPhone16,2"
+device,osVersion,27.2.1
+device,apiLevelOrOsBuild,iOS 27.2.1
+device,abis,arm64
+device,isEmulator,false
+device,totalRamBytes,8027389952
+device,batteryLevelPercent,80
+device,isCharging,true
+device,thermalStatus,serious
+device,thermalStatusNote,
+device,buildIdentifier,7859f987c1c0
+device,appVersionName,1.0
+device,appVersionCode,1
+device,installedAppSizeBytes,538317106
+device,installedAppSizeNote,"installedAppSizeBytes is the sum of file sizes under the app's own bundle (ExecuTorchBridge.installedAppSizeBytes()), not the figure Settings > General > iPhone Storage reports: it excludes on-device install-time optimizations, App Store thinning already applied, and any data written since install — a best-effort proxy, like the Android APK-file-size figure it sits next to."
+
+model_artifacts
+name,assetFileName,sizeBytes,sha256
+classifier,crop_classifier_ood.pte,30820096,39e1b63dac8ddea9d88e7549dbbb34a9d7363987de89ed1d7ffbdcc4a86b1aad
+detector (RT-DETR-L),crop_disease_rtdetr.pte,128467216,7a823726f252022d0611baa0c34f5a395d4a7a3da3f7e4c4d433dc31d6a5d0ba
+
+image_manifest
+id,widthPx,heightPx,sizeBytes,sha256,source
+classifier_260x260,260,260,8326,0668c73026b77611050c01e4cf9239940bcf1ef0224fc66f2d0380868d59f90d,synthetic_striped_pattern
+detector_1920x1080,1920,1080,108609,0e60a149e9f14ad66d36b95b3e5a1e6347bb724017bb34ba9e7baa128ea52cd5,synthetic_striped_pattern
+detector_1280x960,1280,960,50269,85fb63411bc826ac2f89bd009694210c65c95271b8cd3ae731ff8071706ee954,synthetic_striped_pattern
+detector_640x480,640,480,37459,ee0264f40d72c9c5b3925ccb5e414e2d589374d673a3f19a9bc108bfbbad7d78,synthetic_striped_pattern
+corn,640,288,37014,6b829037a1c1026dabee932f81253ea3277cceb4aa1d52eedad202ab67f6318d,locked_real_photograph: ML held-out test split; ground-truth detector class 0
+pepper,640,480,68065,b2dc772ab5a232e2e49a609f1afe264cb21d1678c00494300b4e437f5d4ec9ba,locked_real_photograph: ML held-out test split; ground-truth detector class 8
+tomato,640,480,59849,b5c7118b1dfa9dbc7ec8f11bb3f8be50f3236b7b243b248797e66624f71ac26d,locked_real_photograph: ML held-out test split; ground-truth detector class 16
+ood_cassava,960,960,370885,59b0bddc1f353936e1319f20e1281534116fbb99c28a45bdbcd9386f8af7156f,"locked_real_photograph: ML OOD sample set; cassava leaf — a near-miss non-crop, not a random scene"
+
+cold_load
+repetitions,note
+5,"Each repetition calls release() first, so this is a genuine cold load (module/spec state cleared), not the idempotent no-op loadModel()/loadClassifierModel() take when already loaded. release() is only invoked this way from the benchmark path; normal app usage never forces a mid-session cold reload. CAVEAT: these figures are sub-millisecond, which is far too fast to have read a 30 MB / 9 MB .pte off storage — ExecuTorch's Module load is mmap-backed and lazy, so this measures only program-header setup. Method initialisation and the page-in of the weights are deferred to the first forward() and therefore land inside the first inference, not here. Do not cite this as 'time until the model is ready to infer'; after the first repetition the file is also warm in the page cache."
+
+stage,n,meanMs,medianMs,stdDevMs,minMs,maxMs,p50Ms,p90Ms,p95Ms,p99Ms
+cold_load_classifier,5,0.3978251934051514,0.3896249532699585,0.1186203856538882,0.26683300733566284,0.5477920174598694,0.3896249532699585,0.5477920174598694,0.5477920174598694,0.5477920174598694
+cold_load_detector,5,0.4343411922454834,0.43641597032546997,0.10133735052553396,0.272832989692688,0.5263329744338989,0.43641597032546997,0.5263329744338989,0.5263329744338989,0.5263329744338989
+
+classifier_stage_benchmark (warmup=10, measured=100)
+stage,n,meanMs,medianMs,stdDevMs,minMs,maxMs,p50Ms,p90Ms,p95Ms,p99Ms
+image_decode,100,0.16761168999999998,0.167479,0.01521295280889136,0.134125,0.237083,0.167541,0.185584,0.18775,0.204375
+orientation_correction,100,1.474600000000001E-4,1.25E-4,9.523086461729502E-5,0.0,5.83E-4,1.25E-4,2.91E-4,2.92E-4,3.75E-4
+preprocess,100,2.2810970399999997,2.2680835000000004,0.12946399382183996,2.04475,2.58125,2.271875,2.435708,2.532166,2.57675
+classifier_inference,100,36.38273080999999,36.2596665,1.3164885116124596,33.83,39.219625,36.29225,38.379208,38.4765,38.695375
+routing,100,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+end_to_end_classifier_only,100,38.85324537038803,38.75260400772095,1.411746342073895,36.14637500047684,41.87795901298523,38.771417021751404,40.98891603946686,41.16908395290375,41.29887497425079
+
+detector_stage_benchmark_1920x1080 (warmup=10, measured=100)
+stage,n,meanMs,medianMs,stdDevMs,minMs,maxMs,p50Ms,p90Ms,p95Ms,p99Ms
+image_decode,100,0.19607787999999998,0.1919585,0.0312930147548954,0.137916,0.302166,0.192167,0.236625,0.243083,0.282792
+orientation_correction,100,3.546900000000003E-4,3.33E-4,1.5348929453011875E-4,4.2E-5,8.34E-4,3.33E-4,5.42E-4,6.25E-4,7.5E-4
+preprocess,100,12.417762060000005,12.271,1.4607897831988759,10.929041,20.50275,12.308,14.237458,14.634792,15.884292
+detector_inference,100,1759.4100393913195,1719.359145984888,193.43552500264994,1575.9365010298577,2419.939041016579,1723.4134169837876,2111.638915975094,2170.7434170395777,2222.6581250395775
+output_transfer (subset of detector_inference),100,0.026107641319808958,0.024645508729934693,0.007902519263685903,0.01545799732208252,0.0632910410079956,0.024666012397766113,0.03533400810623169,0.039541978359222414,0.05737599743270874
+postprocess_nms,100,0.02776334822177887,0.027166515588760376,0.006071872321910651,0.01774996519088745,0.05354195833206177,0.02733302116394043,0.03458303213119507,0.03704196214675903,0.04629099369049072
+end_to_end_detector_only,100,1772.1084245789052,1732.5604789853096,194.55720160718514,1587.1692910194397,2435.06237500906,1736.4129579663277,2126.9987500309944,2185.686874985695,2236.7217079997063
+
+detector_stage_benchmark_1280x960 (warmup=10, measured=100)
+stage,n,meanMs,medianMs,stdDevMs,minMs,maxMs,p50Ms,p90Ms,p95Ms,p99Ms
+image_decode,100,0.18676662,0.171833,0.05314859346842891,0.136083,0.5745,0.17225,0.233375,0.239416,0.374583
+orientation_correction,100,3.1707000000000013E-4,2.91E-4,1.8079494802765707E-4,0.0,0.001125,2.91E-4,5.41E-4,5.83E-4,0.001
+preprocess,100,9.685083729999995,8.877375,2.5105258130810566,8.519083,31.516917,8.885292,10.872125,11.286625,15.284333
+detector_inference,100,4912.643880819327,1537.2787084839345,32446.220209357456,1453.0922919987527,326119.1588749933,1539.7188339855118,1980.308291994938,2102.954041974434,2876.7022500241355
+output_transfer (subset of detector_inference),100,0.02539746932804107,0.023770999284744264,0.011781757565652333,0.01429198932647705,0.11937499332427978,0.023957992847442627,0.03587602109146118,0.036957993984222406,0.0542080241355896
+postprocess_nms,100,0.030028718709945678,0.024353981018066406,0.037958814150222994,0.018208980560302734,0.3974999785423279,0.024499952793121338,0.034458041191101074,0.036209046840667725,0.07554197311401367
+end_to_end_detector_only,100,4922.612262122035,1546.369478970766,32446.979688777927,1462.750500023365,326136.49804097414,1548.7153749465942,1991.4904580116272,2114.1041670441628,2895.664458990097
+
+detector_stage_benchmark_640x480 (warmup=10, measured=100)
+stage,n,meanMs,medianMs,stdDevMs,minMs,maxMs,p50Ms,p90Ms,p95Ms,p99Ms
+image_decode,100,0.17004084999999994,0.167771,0.015174511828717882,0.1435,0.220042,0.168083,0.190208,0.196792,0.216792
+orientation_correction,100,2.3331000000000008E-4,2.08E-4,1.1985990938920271E-4,4.1E-5,6.66E-4,2.08E-4,3.75E-4,4.58E-4,6.25E-4
+preprocess,100,4.9270187199999995,4.8054585,0.7257832268653724,4.410916,10.498375,4.805875,5.112583,5.215958,8.948667
+detector_inference,100,1645.611185906687,1648.6975419954147,54.48044632298328,1515.0944999896926,1821.2259170088766,1648.9226259792024,1674.2317929914168,1759.5633749572676,1792.5027930120314
+output_transfer (subset of detector_inference),100,0.021448716686706545,0.02106246757507324,0.0033985673311495495,0.015791973957061767,0.030498994644165042,0.02108297615814209,0.026916046142578125,0.027458004768371583,0.029582017532348633
+postprocess_nms,100,0.02395872175693512,0.024020522832870483,0.002954139367750652,0.018584012985229492,0.03995800018310547,0.02408301830291748,0.02620798349380493,0.02704101800918579,0.032582998275756836
+end_to_end_detector_only,100,1650.781982973218,1653.6464579999447,54.83774109920125,1519.7390419840813,1830.4891250133514,1653.881375014782,1679.5353749990463,1770.3121669888496,1797.417582988739
+
+end_to_end_accepted_corn (warmup=10, measured=100, image=corn, order="ensureClassifierLoaded(idempotent)->decode+exifOrientation->classifierPreprocess+inference+postprocess->routingDecision->ensureDetectorLoaded(idempotent, routed only)->detectorPreprocess+inference+postprocess(routed only)->classIdFiltering(routed only)")
+stage,n,meanMs,medianMs,stdDevMs,minMs,maxMs,p50Ms,p90Ms,p95Ms,p99Ms
+end_to_end_accepted_corn,100,1874.8906138294935,1871.7033749818802,102.64296065878278,1705.7493749856949,2199.1027089953423,1872.2557079792023,1994.169791996479,2055.898333966732,2076.9689159989357
+
+end_to_end_accepted_corn_stages
+stage,n,meanMs,medianMs,stdDevMs,minMs,maxMs,p50Ms,p90Ms,p95Ms,p99Ms
+image_decode,100,0.18239744000000002,0.1795625,0.020210718875913643,0.141708,0.265501,0.179625,0.20650000000000002,0.216792,0.246667
+orientation_correction,100,3.017200000000002E-4,2.92E-4,1.061497969566564E-4,1.24E-4,5.84E-4,2.92E-4,4.17E-4,4.59E-4,5.83E-4
+preprocess,100,8.263591629999999,8.0726045,1.7907901416269512,7.273416,24.632291000000002,8.073001,8.678584,8.862,12.722874999999998
+classifier_inference,100,41.336150390000014,41.202729,5.0435150250233916,38.147459,84.793042,41.224208,43.273416,44.559583,49.777375
+routing,100,0.0034666699999999985,0.0034165000000000003,4.7043285580216634E-4,0.0025,0.004875,0.003417,0.004041,0.0045,0.004708
+detector_inference,100,1823.9567715177463,1817.4624374895097,99.621861444525,1658.4187489722328,2143.6728339778824,1817.787624996662,1946.159915009903,1994.6586660168725,2022.0518749709129
+output_transfer (subset of detector_inference),100,0.023669847746314993,0.02320800414466858,0.0045151540462730335,0.01566601228713989,0.040290972232818606,0.02329100256729126,0.029416002677917483,0.03099997901916504,0.03462397270965577
+postprocess_nms,100,0.029126628041267394,0.028208017349243164,0.003510040989160168,0.023666024208068848,0.044791996479034424,0.028208017349243164,0.03458303213119507,0.03566700220108032,0.0377500057220459
+pipeline_total,100,1874.888468320001,1871.7013335000001,102.64285104989062,1705.74675,2199.1005,1872.253792,1994.167542,2055.896125,2076.965791
+
+end_to_end_accepted_corn_counts
+outcome,count
+success,100
+failure,0
+detector_executed,100
+detector_skipped,0
+
+end_to_end_accepted_pepper (warmup=10, measured=100, image=pepper, order="ensureClassifierLoaded(idempotent)->decode+exifOrientation->classifierPreprocess+inference+postprocess->routingDecision->ensureDetectorLoaded(idempotent, routed only)->detectorPreprocess+inference+postprocess(routed only)->classIdFiltering(routed only)")
+stage,n,meanMs,medianMs,stdDevMs,minMs,maxMs,p50Ms,p90Ms,p95Ms,p99Ms
+end_to_end_accepted_pepper,100,2089.0365825110675,2033.0161249637604,255.13944642756283,1964.0886249542236,4274.646874964237,2034.5688749551773,2222.403124988079,2282.4084169864655,3033.6538749933243
+
+end_to_end_accepted_pepper_stages
+stage,n,meanMs,medianMs,stdDevMs,minMs,maxMs,p50Ms,p90Ms,p95Ms,p99Ms
+image_decode,100,0.19324842,0.18702049999999998,0.03502153438515373,0.151584,0.44245900000000005,0.18712499999999999,0.2095,0.22012500000000002,0.360625
+orientation_correction,100,3.2042000000000013E-4,2.925E-4,1.5976922625013132E-4,1.26E-4,0.001541,2.93E-4,4.17E-4,4.58E-4,7.92E-4
+preprocess,100,9.561149570000001,9.161624999999999,1.7829059665828062,8.786875,22.022291,9.163583,9.651916,10.402375,19.097458
+classifier_inference,100,43.951600430000006,42.548479,6.448580097785409,42.092,89.269917,42.549875,43.159625,47.871959,80.004375
+routing,100,0.003859999999999999,0.00375,0.001047948481654523,0.002917,0.011708,0.00375,0.00425,0.0045,0.00925
+detector_inference,100,2034.0469832802091,1978.7402289884644,249.83873538419368,1910.1301250091706,4192.982790988262,1980.223332996662,2169.2134169657784,2229.021540997799,2920.2966659584044
+output_transfer (subset of detector_inference),100,0.028748230209426885,0.023375006254196168,0.025279822267539862,0.018166980266571046,0.2192500318374634,0.023415982357025147,0.034916001430511476,0.04583301346206665,0.17191598826217652
+postprocess_nms,100,0.03349873900413513,0.0263960063457489,0.05685247146927951,0.02245795726776123,0.5881249904632568,0.026417016983032227,0.03145796060562134,0.03258395195007324,0.11454099416732788
+pipeline_total,100,2089.03414832,2033.014146,255.13857337691186,1964.08625,4274.63625,2034.566834,2222.400542,2282.406209,3033.648833
+
+end_to_end_accepted_pepper_counts
+outcome,count
+success,100
+failure,0
+detector_executed,100
+detector_skipped,0
+
+end_to_end_accepted_tomato (warmup=10, measured=100, image=tomato, order="ensureClassifierLoaded(idempotent)->decode+exifOrientation->classifierPreprocess+inference+postprocess->routingDecision->ensureDetectorLoaded(idempotent, routed only)->detectorPreprocess+inference+postprocess(routed only)->classIdFiltering(routed only)")
+stage,n,meanMs,medianMs,stdDevMs,minMs,maxMs,p50Ms,p90Ms,p95Ms,p99Ms
+end_to_end_accepted_tomato,100,1937.5180791825055,1920.7638125419617,75.20519209144518,1849.5487499833107,2321.3919579982758,1921.0007080435753,1987.7820420265198,2098.482458949089,2201.641416013241
+
+end_to_end_accepted_tomato_stages
+stage,n,meanMs,medianMs,stdDevMs,minMs,maxMs,p50Ms,p90Ms,p95Ms,p99Ms
+image_decode,100,0.17918881999999997,0.17610399999999998,0.0168785075495017,0.151834,0.236126,0.176208,0.203,0.21170799999999998,0.226166
+orientation_correction,100,3.1503000000000016E-4,2.925E-4,1.038474459011969E-4,1.24E-4,6.670000000000001E-4,2.93E-4,4.17E-4,5.009999999999999E-4,5.83E-4
+preprocess,100,9.063968769999999,8.9948125,0.40515698842270353,8.580667,11.522041000000002,8.999792,9.306125000000002,9.610624999999999,10.444917
+classifier_inference,100,42.638634999999994,42.536479,1.4066382635945978,40.002875,52.05925,42.536833,43.171459,43.480666,48.066875
+routing,100,0.003887529999999999,0.003792,4.608038092356233E-4,0.002917,0.005333,0.003792,0.0045,0.004584,0.005167
+detector_inference,100,1884.4705832308587,1867.4382080264645,74.34153059605674,1798.1467079551774,2268.425291956608,1867.8299580078126,1934.5473329977265,2033.1460409706192,2147.733083000843
+output_transfer (subset of detector_inference),100,0.022003680859031673,0.022105013736724854,0.0034468712494294053,0.016999002567291262,0.03474997388458252,0.022126024906158448,0.026373967758178712,0.02908302908706665,0.032957974250793456
+postprocess_nms,100,0.029289968013763427,0.02889549732208252,0.0035717179473590643,0.024499952793121338,0.05283302068710327,0.028916001319885254,0.03308403491973877,0.03450000286102295,0.037541985511779785
+pipeline_total,100,1937.5158479600007,1920.761792,75.20516955610236,1849.546833,2321.389667,1920.998625,1987.779542,2098.479708,2201.639458
+
+end_to_end_accepted_tomato_counts
+outcome,count
+success,100
+failure,0
+detector_executed,100
+detector_skipped,0
+
+end_to_end_rejected_out_of_distribution (warmup=10, measured=100, image=ood_cassava, order="ensureClassifierLoaded(idempotent)->decode+exifOrientation->classifierPreprocess+inference+postprocess->routingDecision->ensureDetectorLoaded(idempotent, routed only)->detectorPreprocess+inference+postprocess(routed only)->classIdFiltering(routed only)")
+stage,n,meanMs,medianMs,stdDevMs,minMs,maxMs,p50Ms,p90Ms,p95Ms,p99Ms
+end_to_end_rejected_out_of_distribution,100,51.23565043091774,51.255729019641876,1.2870406935677396,48.23695796728134,56.942833960056305,51.26225000619888,52.76529198884964,53.02366602420807,53.938709020614624
+
+end_to_end_rejected_out_of_distribution_stages
+stage,n,meanMs,medianMs,stdDevMs,minMs,maxMs,p50Ms,p90Ms,p95Ms,p99Ms
+image_decode,100,0.07565419999999999,0.0762295,0.004195052032520641,0.067833,0.088208,0.07625,0.079959,0.081875,0.087125
+orientation_correction,100,9.911000000000005E-5,8.3E-5,6.097223991624415E-5,0.0,2.92E-4,8.3E-5,2.08E-4,2.09E-4,2.92E-4
+preprocess,100,4.43887251,4.4158755,0.15983779922635682,4.11425,4.920542,4.417667,4.645375,4.708334,4.901166
+classifier_inference,100,45.66387292999998,45.675479499999994,1.1728111916150357,43.083125,51.285417,45.683792,47.087833,47.27675,47.966584
+routing,100,4.7457000000000033E-4,4.17E-4,3.896237567425552E-4,2.5E-4,0.004041,4.17E-4,6.67E-4,7.5E-4,0.001
+detector_inference,100,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+output_transfer (subset of detector_inference),100,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+postprocess_nms,100,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+pipeline_total,100,51.233972420000015,51.253854000000004,1.287076253841367,48.235083,56.940542,51.260042,52.763041,53.022125,53.936917
+
+end_to_end_rejected_out_of_distribution_counts
+outcome,count
+success,100
+failure,0
+detector_executed,0
+detector_skipped,100
+
+end_to_end_selected_crop_mismatch (warmup=10, measured=100, image=corn_selected_tomato, order="ensureClassifierLoaded(idempotent)->decode+exifOrientation->classifierPreprocess+inference+postprocess->routingDecision->ensureDetectorLoaded(idempotent, routed only)->detectorPreprocess+inference+postprocess(routed only)->classIdFiltering(routed only)")
+stage,n,meanMs,medianMs,stdDevMs,minMs,maxMs,p50Ms,p90Ms,p95Ms,p99Ms
+end_to_end_selected_crop_mismatch,100,52.13060830354691,51.93174949288368,1.4399295625087698,49.79391700029373,59.24362498521805,51.97879099845886,53.61470901966095,54.04729098081589,56.34370905160904
+
+end_to_end_selected_crop_mismatch_stages
+stage,n,meanMs,medianMs,stdDevMs,minMs,maxMs,p50Ms,p90Ms,p95Ms,p99Ms
+image_decode,100,0.06830001999999999,0.067667,0.0025366888860572667,0.064291,0.079291,0.067709,0.070875,0.07325,0.077042
+orientation_correction,100,8.167000000000002E-5,8.3E-5,5.892728870001874E-5,0.0,3.33E-4,8.3E-5,1.67E-4,2.08E-4,2.92E-4
+preprocess,100,3.45245588,3.451708,0.1123668994660875,3.213542,3.746792,3.452041,3.576667,3.639167,3.725167
+classifier_inference,100,47.62603700000002,47.371395500000006,1.4323324914112028,45.397625,54.84525,47.420208,49.109042,49.522041,51.693166
+routing,100,0.0038203899999999973,0.0036665,7.215404801848989E-4,0.003125,0.009416,0.003667,0.004333,0.004709,0.005459
+detector_inference,100,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+output_transfer (subset of detector_inference),100,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+postprocess_nms,100,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+pipeline_total,100,52.12896331000001,51.9302495,1.4399502840456417,49.792041,59.24225,51.977166,53.613458,54.045625,56.34225
+
+end_to_end_selected_crop_mismatch_counts
+outcome,count
+success,100
+failure,0
+detector_executed,0
+detector_skipped,100
+
+cpu_utilization
+threadCpuTimeMs,wallClockMs,utilizationRatio,measuredOnThread,available,note
+309168.27700000023,181654.63362503052,1.7019564589702785,process (getrusage RUSAGE_SELF — not per-thread),true,"iOS reports PROCESS-level user+system CPU time via getrusage() (ExecuTorchBridge.processCpuTimeMs()), not a per-thread figure like Android's Debug.threadCpuTimeNanos() — the two numbers are not directly comparable across platforms in this export."
+
+memory_samples
+label,totalPssKb,nativeHeapAllocatedKb,javaHeapAllocatedKb,timestampEpochMs,available,note
+before_measured_loop,36192,0,0,1795432519503,true,"On iOS, totalPssKb actually holds mach_task_basic_info.resident_size (RSS-like, via ExecuTorchBridge.residentMemoryBytes()) — iOS exposes no PSS-equivalent to app code, unlike Android's ActivityManager-based PSS. nativeHeapAllocatedKb/javaHeapAllocatedKb are Android-only concepts and are always 0 here, not measurements. Do not directly compare this figure to the Android totalPssKb value without accounting for the difference."
+after_measured_loop,792592,0,0,1795434250886,true,"On iOS, totalPssKb actually holds mach_task_basic_info.resident_size (RSS-like, via ExecuTorchBridge.residentMemoryBytes()) — iOS exposes no PSS-equivalent to app code, unlike Android's ActivityManager-based PSS. nativeHeapAllocatedKb/javaHeapAllocatedKb are Android-only concepts and are always 0 here, not measurements. Do not directly compare this figure to the Android totalPssKb value without accounting for the difference."
+
+notes
+1,"Timing uses a monotonic clock (DispatchTime.now().uptimeNanoseconds, exposed to Kotlin via ExecuTorchBridge.monotonicNowMs()) around the same classify()/detect() code paths used in production; no external tool or automation-layer round-trip time is included in any figure in this export."
+2,"Both platforms now correct EXIF image orientation before resizing — iOS via UIImage.fixOrientation() inside ExecuTorchBridge.preprocessCHW, Android via common/utils/ImageOrientation.kt — so orientationCorrectionMs is a real measurement on both. The Android-only gap recorded as C025, where Android fed the raw sensor-order buffer to models trained on upright images and reported orientationCorrectionMs as a constant 0.0, is fixed."
+3,"All benchmark images are deterministic synthetic striped patterns generated by ExecuTorchBridge.syntheticJpegData, not photographs. Legitimate for latency-only timing (compute cost is driven by tensor shape, not pixel content) but NOT used for any accuracy or output-agreement claim here — the cross-platform output-agreement procedure uses real checksum-locked images instead."
+4,"End-to-end paths are measured against FIXED, checksum-locked real photographs (imageManifest entries whose source begins 'locked_real_photograph'), not synthetic patterns: accepted Corn, accepted Pepper and accepted Tomato each use their own image and canonical crop id; the out-of-distribution path uses a cassava leaf; the mismatch path uses the Corn image with Tomato selected. The same manifest is used on Android, so the two platforms measure identical bytes."
+5,"endToEnd/endToEndByPath measure DetectionPipeline.run(), the same entry point DetectionViewModel.detect() calls in the app. The classifier runs first and gates the detector; a rejected or crop-mismatched image never reaches detector inference, verifiable here as detectorExecutedCount == 0 for those paths."
+6,"Latency is NOT comparable across entries of endToEndByPath: only the accepted path includes detector inference. Do not average them together or quote one as ""the"" end-to-end figure without its path."
+7,"""Offline"" here means no network call occurs anywhere in classify()/detect()/routing — all run entirely against on-device ExecuTorch modules. offlineFailureCount counts classifier/detector error outcomes and thrown exceptions during the timed call, not prediction accuracy."
+8,"Memory samples are resident-memory snapshots bracketing the whole measured phase: 'before_measured_loop' is taken after cold-load timing but before any stage, per-path or CPU loop runs, and 'after_measured_loop' after all of them complete. Neither is taken inside a timed call, so sampling never perturbs the reported latency numbers — but for the same reason they cannot capture a transient peak during a single inference call, and the delta covers every measured loop together rather than any one of them."
+9,"installedAppSizeBytes is the sum of file sizes under the app's own bundle (ExecuTorchBridge.installedAppSizeBytes()), not the figure Settings > General > iPhone Storage reports: it excludes on-device install-time optimizations, App Store thinning already applied, and any data written since install — a best-effort proxy, like the Android APK-file-size figure it sits next to."

@@ -31,6 +31,14 @@ Memory: `console_phase_trace.txt` (resident memory at each phase boundary, MiB) 
 Figure 3 (file F04) is drawn from these two files by `scripts/revision/make_F04_memory.py`.
 Full details, including the stage breakdown, are in the folder's own `README.md`; `SHA256SUMS` verifies its files.
 
+## `iphone_15_pro_max_release_rtdetr_2026-11-23/` — RT-DETR-L on the iPhone (Results, Discussion)
+
+Same Release build (`7859f987c1c0`) and photographs as the session above, with RT-DETR-L selected at detection threshold 0.10. Accepted paths 1,874.89–2,089.04 ms; rejection 51.24–52.13 ms; resident memory 35.3 → 774.0 MiB. The session ended in thermal state serious (the YOLO26n session: fair), so timings are upper bounds. See its README.
+
+## `xiaomi_redmi_note_14_pro_plus_release_rtdetr_2026-11-23/` — RT-DETR-L on the Xiaomi (Results, Discussion)
+
+Release APK of `7859f987c1c0`, RT-DETR-L at 0.10, thermal status none. The screen timed out 30 minutes into the run; only cold load, the classifier and detector stages, accepted corn and pepper, and accepted tomato iterations 0–29 are valid. Accepted corn / pepper 3,201.11 / 3,185.73 ms; PSS 186.5 → 765.1 MiB. See its README.
+
 ## `iphone_15_pro_max_2026-11-19/` — debug-build iOS session, archived, not reported
 
 | Field | Value |

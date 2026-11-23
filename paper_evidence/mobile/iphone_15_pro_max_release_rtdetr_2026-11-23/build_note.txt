@@ -1,0 +1,5 @@
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project iosApp/iosApp.xcodeproj -scheme iosApp -configuration Release -destination id=<device> -derivedDataPath build/ios-release -disableAutomaticPackageResolution "SWIFT_ACTIVE_COMPILATION_CONDITIONS=$(inherited) HEADLESS_BENCHMARK" -allowProvisioningUpdates build
+    SWIFT_ACTIVE_COMPILATION_CONDITIONS = $(inherited) HEADLESS_BENCHMARK
+    export CONFIGURATION\=Release
+** BUILD SUCCEEDED **
+App commit 7859f987c1c0 (clean); Kotlin framework: ./gradlew :app:linkReleaseFrameworkIosArm64 -Dorg.gradle.jvmargs=-Xmx8g
