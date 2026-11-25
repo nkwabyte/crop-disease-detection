@@ -3,16 +3,47 @@
   "upload_type": "software",
   "description": "Training and evaluation code for the two-stage (EfficientNet-B2 crop/OOD gate + YOLO26 / RT-DETR / Faster R-CNN detector) crop-disease system, with the evidence package behind every number in the paper: held-out COCO metrics, bootstrap intervals, leakage-sensitivity and operating-point analyses, Faster R-CNN training records, and physical-device benchmark exports. Images: RAIL Crop Disease (Ghana) dataset, CC BY 4.0, https://www.kaggle.com/datasets/responsibleailab/crop-disease-ghana.",
   "creators": [
-    {"name": "Ali, Musah I.", "affiliation": "Responsible AI Lab (RAIL), Kwame Nkrumah University of Science and Technology"},
-    {"name": "Tchao, Eric Tutu", "affiliation": "Department of Computer Engineering and Responsible AI Lab (RAIL), Kwame Nkrumah University of Science and Technology"},
-    {"name": "Kponyo, Jerry John", "affiliation": "Department of Telecommunication Engineering and Responsible AI Lab (RAIL), Kwame Nkrumah University of Science and Technology"},
-    {"name": "Agbemenu, Andrew Selasi", "affiliation": "Department of Computer Engineering and Responsible AI Lab (RAIL), Kwame Nkrumah University of Science and Technology"},
-    {"name": "Nunoo-Mensah, Henry", "affiliation": "Department of Computer Engineering and Responsible AI Lab (RAIL), Kwame Nkrumah University of Science and Technology"}
+    {
+      "name": "Ali, Musah I.",
+      "affiliation": "Department of Computer Engineering and Responsible AI Lab (RAIL), Kwame Nkrumah University of Science and Technology"
+    },
+    {
+      "name": "Tchao, Eric Tutu",
+      "affiliation": "Department of Computer Engineering and Responsible AI Lab (RAIL), Kwame Nkrumah University of Science and Technology"
+    },
+    {
+      "name": "Kponyo, Jerry John",
+      "affiliation": "Department of Telecommunication Engineering and Responsible AI Lab (RAIL), Kwame Nkrumah University of Science and Technology"
+    },
+    {
+      "name": "Agbemenu, Andrew Selasi",
+      "affiliation": "Department of Computer Engineering and Responsible AI Lab (RAIL), Kwame Nkrumah University of Science and Technology"
+    },
+    {
+      "name": "Nunoo-Mensah, Henry",
+      "affiliation": "Department of Computer Engineering and Responsible AI Lab (RAIL), Kwame Nkrumah University of Science and Technology"
+    }
   ],
   "license": "MIT",
-  "keywords": ["plant disease detection", "on-device inference", "out-of-distribution detection", "YOLO", "ExecuTorch", "Ghana", "smallholder agriculture"],
+  "keywords": [
+    "plant disease detection",
+    "on-device inference",
+    "out-of-distribution detection",
+    "YOLO",
+    "ExecuTorch",
+    "Ghana",
+    "smallholder agriculture"
+  ],
   "related_identifiers": [
-    {"identifier": "https://www.kaggle.com/datasets/responsibleailab/crop-disease-ghana", "relation": "isDerivedFrom", "resource_type": "dataset"},
-    {"identifier": "https://github.com/nkwabyte/CropDiseaseDetection", "relation": "isSupplementedBy", "resource_type": "software"}
+    {
+      "identifier": "https://www.kaggle.com/datasets/responsibleailab/crop-disease-ghana",
+      "relation": "isDerivedFrom",
+      "resource_type": "dataset"
+    },
+    {
+      "identifier": "https://github.com/nkwabyte/CropDiseaseDetection",
+      "relation": "isSupplementedBy",
+      "resource_type": "software"
+    }
   ]
 }
