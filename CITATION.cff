@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "If you use this code or evidence package, please cite it as below."
 title: "Crop disease detection: training, evaluation code and evidence package"
 authors:
-  - family-names: Ali
-    given-names: Musah I.
+  - family-names: Musah Ibrahim
+    given-names: Ali.
     affiliation: "Responsible AI Lab (RAIL), KNUST"
   - family-names: Tchao
     given-names: Eric Tutu
